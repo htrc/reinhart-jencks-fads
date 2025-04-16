@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Jencks Diagram</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+      color: yellow;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: yellow;
+    }
+
+    .search-bar {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 10;
+      background-color: black;
+      padding: 5px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+      padding: 8px;
+      background-color: black;
+      border: 2px solid yellow;
+      color: yellow;
+      font-size: 16px;
+      margin-right: 4px;
+    }
+
+    .search-bar button {
+      cursor: pointer;
+    }
+
+    #slider-container {
+      margin: 20px auto;
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+      position: relative;
+    }
+
+    .slider-svg {
+      width: 100%;
+      height: 100px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .slider-track {
+      stroke: yellow;
+      stroke-width: 6;
+    }
+
+    .slider-handle {
+      fill: yellow;
+      cursor: pointer;
+    }
+
+    .year-marker {
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: yellow;
+      font-family: Helvetica, sans-serif;
+    }
+
+    #svgContainer {
+      display: block;
+      margin: auto;
+      width: 100%;
+      
+      margin-top: -20px;
+      position: relative;
+      z-index: 0;
+    }
+
+    .highlight {
+      fill: yellow !important;
+      font-weight: bold;
+      opacity: 1;
+      filter: none;
+    }
+
+    .blurred {
+      opacity: 0.3;
+      filter: blur(3px);
+      fill: gray !important; /* Add this line if needed */
+    }
+
+
+    .popup, .popup-match {
+      font-size: 14px;
+      font-weight: bold;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0px 0px 10px yellow;
+    }
+
+    .popup {
+      position: absolute;
+      background: rgba(255, 255, 0, 0.9);
+      color: black;
+      padding: 6px 12px;
+      border-radius: 5px;
+      pointer-events: none;
+      white-space: nowrap;
+      border: 1px solid black;
+    }
+
+    .popup-match {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: rgba(0, 255, 0, 0.8);
+      color: black;
+      padding: 12px 20px;
+      border-radius: 8px;
+      animation: fadeOut 3s forwards;
+    }
+
+    .suggestions {
+      position: absolute;
+      background: black;
+      border: 2px solid yellow;
+      color: yellow;
+      max-height: 150px;
+      overflow-y: auto;
+      width: 200px;
+      display: none;
+      text-align: left;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    .suggestions div {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .suggestions div:hover {
+      background: yellow;
+      color: black;
+    }
+
+    .author-details {
+      position: absolute;
+      width: 260px;
+      background: black;
+      color: yellow;
+      padding: 12px;
+      border: 2px solid yellow;
+      border-radius: 5px;
+      font-size: 14px;
+      display: none;
+      text-align: left;
+    }
+
+    .author-details h3 {
+            margin: 5px 0;
+            font-size: 16px;
+            border-bottom: 1px solid yellow;
+            padding-bottom: 5px;
+    }
+
+    .author-details p {
+            margin: 5px 0;
+    }
+    .author-details button {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      background-color: yellow;
+      color: black;
+      border: none;
+      padding: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .author-details button.disabled {
+      background-color: gray !important;
+      color: black;
+      cursor: not-allowed !important;
+      
+    }
+
+    .search-bar input,
+.search-bar button {
+    padding: 8px;
+    background-color: black;
+    border: 2px solid yellow;
+    color: yellow;
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+
+
+.search-bar button {
+    cursor: pointer;
+}
+
+    #keyword-filter {
+      position: absolute;
+      top: 40px; /* adjust as needed */
+      left: 50px;
+      z-index: 10;
+      text-align: left;
+    }
+
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h2>COMPARISONS BETWEEN THE BUILT ENVIRONMENT AND BIOLOGY</h2>
+
+<!-- Wider Layout & Top-Aligned Filters -->
+<!-- Wider container for everything -->
+<div style="width: 800px; margin: 0 auto; padding-top: 10px;">
+
+  <!-- 🔹 Keyword Filter Block (left-aligned, with same style) -->
+  <div id="keyword-filter" class="search-bar" style="width: 300px; ">
+    <label style="color: yellow; font-weight: bold; font-size: 12px; display: block; margin-bottom: 25px; margin-top: 65px;">
+      FILTER RESULTS BY KEYWORD:
+    </label>
+    <div style="display: flex; gap: 6px; width: 200px;">
+      <input type="text" id="search" placeholder="Enter author name" onkeyup="showSuggestions()"
+            style="width: 150px; padding: 6px; background-color: black; border: 2px solid yellow; color: yellow; font-size: 12px;" />
+      <button onclick="highlightText()" style="padding: 4px 6px; font-size: 12px;">Search</button>
+      <button onclick="window.location.href = window.location.href" style="padding: 4px 6px;font-size: 12px;">Reset</button>
+    </div>
+    <div id="suggestions" class="suggestions"></div>
+  </div>
+
+
+
+
+  
+
+    
+<!-- Left-align label to match 25px offset of slider -->
+<div style="width: 700px; margin: 0 auto; text-align: left; padding-bottom: 20px; ">
+  <div style="padding-left: 10px; padding-top: 30px; ">
+    <label style="color: yellow; font-weight: bold; font-size: 12px;">
+      FILTER RESULTS BY YEAR:
+    </label>
+  </div>
+  <div id="year-slider"></div>
+  <div style="text-align: center; margin-bottom: 30px; margin-top: 10px;">
+    <span id="selected-year-range" style="margin-top: 20px; font-size:14px">Loading..</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+  <div id="popup" class="popup"></div>
+  <div id="popupMatch" class="popup-match"></div>
+  <div id="svgContainer"></div>
+  <div class="author-details" id="author-details"></div>
+
+  <script>
+    const svgFilePath = "jencks_1.svg";
+    const suggestionCSV = "author_data1.csv";
+    const detailCSV = "author_editcore.csv";
+    const FORCED_MIN = 1890;
+    const FORCED_MAX = 2010;
+    let originalSVG = "";
+    let namesList = [];
+    let csvData = {};
+
+    window.onload = function () {
+      loadSuggestionCSV();
+      loadDetailCSV();
+      loadSVG();
+      createYearSlider(); // call slider regardless of SVG load
+    };
+
+    function loadSuggestionCSV() {
+      fetch(suggestionCSV).then(r => r.text()).then(data => {
+        namesList = [...new Set(data.split("\n").map(r => r.split(",")[0]?.trim().toLowerCase()).filter(Boolean))];
+      });
+    }
+
+    function loadDetailCSV() {
+      fetch(detailCSV).then(r => r.text()).then(data => {
+        data.split("\n").slice(1).forEach(row => {
+          const cols = row.split(",");
+          if (cols.length > 2) {
+            const key = cols[1].trim().toLowerCase();
+            csvData[key] = {
+              Lastname: cols[1],
+              Firstname: cols[2],
+              Viaf: cols[3],
+              Wikipedia: cols[4],
+              Born: cols[5],
+              Died: cols[6],
+              WorksinHTRC: cols[7],
+              Biological: cols[8]
+            };
+          }
+        });
+      });
+    }
+
+    function loadSVG() {
+      fetch(svgFilePath).then(resp => resp.text()).then(svgData => {
+        originalSVG = svgData;
+        document.getElementById("svgContainer").innerHTML = svgData;
+        const svg = d3.select("#svgContainer svg");
+        d3.csv("extracted_text_positions.csv").then(data => {
+          assignYearsToTextElements(svg, data);
+          updateAuthorTextVisibility(FORCED_MIN, FORCED_MAX);
+        });
+        attachEventHandlers();
+      });
+    }
+
+    function attachEventHandlers() {
+      d3.select("#svgContainer svg").selectAll("text")
+        .on("mouseover", function(event) {
+          const popup = document.getElementById("popup");
+          popup.innerHTML = `<strong>${d3.select(this).text()}</strong>`;
+          popup.style.display = "block";
+          popup.style.left = event.pageX + 10 + "px";
+          popup.style.top = event.pageY + 10 + "px";
+        })
+        .on("mousemove", function(event) {
+          const popup = document.getElementById("popup");
+          popup.style.left = event.pageX + 10 + "px";
+          popup.style.top = event.pageY + 10 + "px";
+        })
+        .on("mouseout", () => document.getElementById("popup").style.display = "none")
+        .on("click", function(event) {
+          event.stopPropagation();  // ⛔️ prevents the global click handler from running
+          const author = d3.select(this).text().trim().toLowerCase();
+          showAuthorDetails(author, event);
+        });
+
+
+    }
+
+    function assignYearsToTextElements(svg, data) {
+      const authors = data.map(r => ({
+        name: r["Author"]?.replace(/-$/, "").trim().toLowerCase(),
+        year: +r["year"]
+      })).filter(a => a.name && !isNaN(a.year));
+
+      const svgBox = svg.node().getBoundingClientRect();
+      const width = svgBox.width;
+
+      svg.selectAll("text").each(function () {
+        const node = d3.select(this);
+        const text = node.text().trim().toLowerCase();
+        const pos = this.getBoundingClientRect().left - svgBox.left;
+        const guessYear = 1890 + (pos / width) * (2010 - 1890);
+
+        const match = authors.filter(a => text.includes(a.name));
+        if (match.length) {
+          const best = match.reduce((a, b) => Math.abs(a.year - guessYear) < Math.abs(b.year - guessYear) ? a : b);
+          node.attr("data-year", best.year);
+        }
+      });
+    }
+
+    function updateAuthorTextVisibility(min, max) {
+      const svg = d3.select("#svgContainer").select("svg");
+      svg.selectAll("text[data-year]").each(function () {
+        const year = +d3.select(this).attr("data-year");
+        const show = year >= min && year <= max;
+        d3.select(this).attr("style", `fill: ${show ? "yellow" : "gray"}; opacity: ${show ? 1 : 0.3};`);
+      });
+    }
+
+
+    function createYearSlider() {
+      
+      const scale = d3.scaleLinear().domain([1890, 2010]).range([25, 625]);
+      const svg = d3.select("#year-slider").append("svg").attr("class", "slider-svg").attr("width", 650).attr("height", 80);
+
+      svg.append("line").attr("class", "slider-track").attr("x1", scale(1890)).attr("x2", scale(2010)).attr("y1", 40).attr("y2", 40);
+      svg.selectAll(".year-marker").data(d3.range(1890, 2011, 10)).enter().append("text")
+        .attr("class", "year-marker").attr("x", d => scale(d)).attr("y", 75).text(d => d).style("font-size", "14px");
+
+      const line = svg.append("line").attr("stroke", "yellow").attr("stroke-width", 0.5).attr("x1", scale(1890)).attr("x2", scale(2010)).attr("y1", 40).attr("y2", 40);
+
+      const left = svg.append("circle").attr("r", 8).attr("fill", "yellow").attr("cy", 40).attr("cx", scale(1890));
+      const right = svg.append("circle").attr("r", 8).attr("fill", "yellow").attr("cy", 40).attr("cx", scale(2010));
+
+      function dragHandle(handle, updateX, updateLine) {
+        return d3.drag().on("drag", e => {
+          const x = Math.max(scale(1890), Math.min(e.x, scale(2010)));
+          handle.attr("cx", x);
+          updateX(x);
+          updateRange();
+        });
+      
+      }
+
+      left.call(dragHandle(left, x => line.attr("x1", x), "x1"));
+      right.call(dragHandle(right, x => line.attr("x2", x), "x2"));
+
+      function getYear(cx) { return Math.round(scale.invert(cx)); }
+
+      function updateRange() {
+        const min = getYear(+left.attr("cx"));
+        const max = getYear(+right.attr("cx"));
+        document.getElementById("selected-year-range").innerText = `${min} - ${max}`;
+        updateAuthorTextVisibility(min, max);
+      }
+
+      updateRange();
+    }
+
+    function showSuggestions() {
+      const input = document.getElementById("search").value.trim().toLowerCase();
+      const matches = namesList.filter(name => name.startsWith(input));
+      const box = document.getElementById("suggestions");
+      if (!input || !matches.length) return box.style.display = "none";
+      box.innerHTML = matches.map(m => `<div onclick="selectSuggestion('${m}')">${m}</div>`).join("");
+      box.style.display = "block";
+    }
+
+    function selectSuggestion(name) {
+      document.getElementById("search").value = name;
+      document.getElementById("suggestions").style.display = "none";
+      highlightText();
+    }
+    function showAuthorDetails(author, event) {
+      const data = csvData[author];
+      if (!data) return;
+
+      const box = document.getElementById("author-details");
+
+      const wikiBtn = data.Wikipedia && data.Wikipedia !== "N/A"
+        ? `<button onclick="window.open('${data.Wikipedia}', '_blank')">Link to Wikipedia</button>`
+        : `<button class="disabled">No Wikipedia Link</button>`;
+
+      const viafBtn = data.Viaf && data.Viaf !== "N/A"
+        ? `<button onclick="window.open('${data.Viaf}', '_blank')">Link to VIAF</button>`
+        : `<button class="disabled">No VIAF Link</button>`;
+
+      box.innerHTML = `
+        <h3 style="border-bottom: 1px solid yellow; padding-bottom: 5px;">${data.Lastname}, ${data.Firstname}</h3>
+        <p><strong>Born:</strong> ${data.Born}</p>
+        <p><strong>Died:</strong> ${data.Died}</p>
+        <p><strong>Works in VIAF Catalog:</strong> ${data.Viaf && data.Viaf !== "N/A" ? "Yes" : "No"}</p>
+        <p><strong>Works in HTRC Catalog:</strong> ${data.WorksinHTRC}</p>
+        <p><strong>Built/Biological Comparisons Found:</strong> ${data.Biological}</p>
+        ${wikiBtn}
+        ${viafBtn}
+      `;
+
+      const bbox = event.target.getBoundingClientRect();
+      box.style.left = bbox.left + window.scrollX + 20 + "px";
+      box.style.top = bbox.top + window.scrollY + 20 + "px";
+      box.style.display = "block";
+    }
+
+    function highlightText() {
+      const input = document.getElementById("search").value.trim().toLowerCase();
+      const texts = document.querySelectorAll("#svgContainer svg text");
+      let found = 0;
+      texts.forEach(text => {
+        const content = text.textContent.trim().toLowerCase();
+        if (content === input) {
+          text.classList.add("highlight");
+          text.classList.remove("blurred");
+          found++;
+        } else {
+          text.classList.remove("highlight");
+          text.classList.add("blurred");
+        }
+      });
+      document.getElementById("popupMatch").innerText = found ? `${found} Match(es) Found` : "No Match Found";
+      document.getElementById("popupMatch").style.display = "block";
+      setTimeout(() => document.getElementById("popupMatch").style.display = "none", 2500);
+    }
+
+
+
+    function resetPage() {
+      document.getElementById("svgContainer").innerHTML = originalSVG;
+      document.getElementById("search").value = "";
+      attachEventHandlers();
+      document.getElementById("author-details").style.display = "none";
+    }
+
+    // Close author details when clicking anywhere outside it
+  document.addEventListener("click", function (e) {
+    const box = document.getElementById("author-details");
+
+    // If the click is not inside the box and not on a text element in the SVG
+    if (!box.contains(e.target) && !(e.target.tagName === "text" && e.target.closest("svg"))) {
+      box.style.display = "none";
+    }
+  });
+
+    
+
+  </script>
+</body>
+</html>

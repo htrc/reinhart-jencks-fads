@@ -26,8 +26,8 @@ jencks-fads/
 This module enhances user navigation in the Jencks Diagram by enabling author-based search, allowing focused exploration and contextual insights across repeated name instances.
 ________________________________________
 ### 🔧 Features
-•	Smart search bar for real-time author name lookup
-•	Auto-suggestion dropdown activated on keystroke
+- •	Smart search bar for real-time author name lookup
+- •	Auto-suggestion dropdown activated on keystroke
 •	Click-to-select suggestions for quick navigation
 •	Instant visual feedback:
 o	Selected authors are highlighted in yellow

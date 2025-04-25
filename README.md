@@ -14,17 +14,20 @@ This project is an interactive visualization tool for exploring author contribut
 
 ```
 jencks-fads/
-├── final.html             # Main interactive HTML page
-├── jencks_1.svg           # SVG diagram of author relationships
-├── author_data1.csv       # CSV used for search suggestions
-├── author_editcore.csv    # Main author metadata (merged, cleaned)
-├── README.md              # Project documentation
+├── index.html                  # Final interactive HTML page with slider, popup, and search
+├── final.html                  # Earlier HTML version (popup + search only)
+├── jencks_1.svg                # SVG diagram of author relationships
+├── author_data1.csv            # CSV used for search suggestions
+├── author_editcore.csv         # Main author metadata (merged, cleaned)
+├── extracted_text_positions.csv # CSV used for assigning year metadata to SVG names
+├── README.md                   # Project documentation
 ```
-
 
 ## Search Engine: Interactive Author Highlighting
 This module enhances user navigation in the Jencks Diagram by enabling author-based search, allowing focused exploration and contextual insights across repeated name instances.
-________________________________________
+
+---
+
 ### 🔧 Features
 - 	Smart search bar for real-time author name lookup
 - 	Auto-suggestion dropdown activated on keystroke
@@ -35,7 +38,9 @@ ________________________________________
 -	Handles multiple instances of the same name across the SVG
 -	Reset button to clear search and restore original view
 -	Search popup displaying number of matches found
-________________________________________
+  
+---
+
 ### 🔍 Matching Logic
 Search functionality operates on clean, case-insensitive comparison of input with <text> elements in the SVG.
 1.	Auto-suggestion
@@ -46,7 +51,9 @@ o	Exact matches in the SVG are highlighted using .highlight class
 o	All others are dimmed and blurred using .blurred class
 3.	Reset Mechanism
 o	Clicking "Reset" reloads the SVG, removes all highlights, and resets the search input
-________________________________________
+
+---
+
 ### ⚙️ Key Functions
 #### showSuggestions()
 - 	Triggered on every keyup in the input field
@@ -76,8 +83,7 @@ ________________________________________
 ### 💡 Integration Note
 This feature is entirely client-side and operates independently of the year slider. However, it coexists smoothly within the combined interface. The styling, color scheme, and interaction model remain consistent with the Jencks aesthetic, supporting seamless user experience.
 
-
-
+---
 
 ## 🕰️ Timeline Slider: Interactive Year Filtering
 
@@ -145,3 +151,65 @@ This logic ensures correct pairing even when authors (e.g., *Wright*) appear mul
 - If outside range:
   - Applies **gray fill** and **reduced opacity**
 - Uses inline styles with `!important` to override existing SVG styles
+
+---
+
+## 🧠 Author Metadata Interaction: Hover & Pop-up Detail Cards
+
+This feature enables users to interactively explore author details within the Jencks Diagram by hovering over or clicking on author names, dynamically pulling information from the `author_editcore.csv` file.
+
+---
+
+### 🔧 Features
+- **Hover Interaction**: Hovering over an author's name displays a tooltip popup with the author’s name.
+- **Click Interaction**: Clicking an author's name opens a detailed pop-up card with metadata.
+- **Dynamic Data Retrieval**: Information is retrieved live from the CSV based on the author name.
+- **Fallback Handling**: 
+  - If an author's metadata is not found in the CSV, no pop-up is displayed.
+  - If certain fields (like VIAF or Wikipedia links) are missing, "No Link" disabled buttons are shown.
+
+---
+
+### 📖 Metadata Displayed
+- Last Name, First Name
+- Birth Year
+- Death Year
+- Works in VIAF Catalog (shows **Yes** if VIAF link exists, **No** otherwise)
+- Works in HTRC Catalog
+- Number of Built/Biological Comparisons
+- Buttons linking to Wikipedia and VIAF pages (if available)
+
+---
+
+### ⚙️ Key Functions
+
+#### `attachEventHandlers()`
+- Adds event listeners to all `<text>` elements in the SVG.
+- On **hover**: Displays a yellow popup showing the author’s name.
+- On **click**: Calls `showAuthorDetails()` to show a full metadata card.
+
+#### `showAuthorDetails(author, event)`
+- Retrieves metadata from `csvData` based on the author's name.
+- Populates and displays a detail card next to the clicked name.
+- Includes logic:
+  - If Wikipedia or VIAF link exists → adds active link buttons.
+  - If not → shows disabled buttons.
+  - Shows "Works in VIAF Catalog" as **Yes** or **No** depending on VIAF data.
+
+#### `resetPage()`
+- Clears pop-ups and restores the original unhighlighted SVG view.
+
+---
+
+### 🔍 Matching Logic
+- Matches the author's **lowercased Last Name** from the `author_editcore.csv`.
+- **Exact matching**: Case-insensitive match between the clicked SVG text and the CSV name field.
+- If a match is not found, no metadata popup is shown.
+- Future versions can improve matching accuracy by using the "Jencks Name" column.
+
+---
+
+### 💡 Integration Note
+- Works independently of the search bar and year slider.
+- Fully integrated into the interactive SVG environment for seamless UX.
+

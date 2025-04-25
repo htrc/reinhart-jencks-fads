@@ -49,24 +49,24 @@ o	Clicking "Reset" reloads the SVG, removes all highlights, and resets the searc
 ________________________________________
 ### ⚙️ Key Functions
 - showSuggestions()
-•	Triggered on every keyup in the input field
-•	Filters names from namesList that start with current input
-•	Populates the .suggestions dropdown dynamically
+- •	Triggered on every keyup in the input field
+- •	Filters names from namesList that start with current input
+- •	Populates the .suggestions dropdown dynamically
 - selectSuggestion(name)
-•	Called when a dropdown suggestion is clicked
-•	Sets input field value and triggers highlighting via highlightText()
+- •	Called when a dropdown suggestion is clicked
+- •	Sets input field value and triggers highlighting via highlightText()
 - highlightText()
-•	Loops through all <text> elements in the SVG
-•	If textContent matches input (case-insensitive):
-o	Adds .highlight class and removes .blurred
-•	Else:
-o	Adds .blurred and removes .highlight
-•	Displays a temporary popup with the number of matches found
+- •	Loops through all <text> elements in the SVG
+- •	If textContent matches input (case-insensitive):
+- o	Adds .highlight class and removes .blurred
+- •	Else:
+- o	Adds .blurred and removes .highlight
+- •	Displays a temporary popup with the number of matches found
 - resetPage()
-•	Restores original SVG content
-•	Clears search input
-•	Reattaches all event handlers
-•	Hides author detail card
+- •	Restores original SVG content
+- •	Clears search input
+- •	Reattaches all event handlers
+- •	Hides author detail card
 ________________________________________
 ### 💡 Integration Note
 This feature is entirely client-side and operates independently of the year slider. However, it coexists smoothly within the combined interface. The styling, color scheme, and interaction model remain consistent with the Jencks aesthetic, supporting seamless user experience.

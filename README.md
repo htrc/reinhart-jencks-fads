@@ -26,15 +26,15 @@ jencks-fads/
 This module enhances user navigation in the Jencks Diagram by enabling author-based search, allowing focused exploration and contextual insights across repeated name instances.
 ________________________________________
 ### 🔧 Features
-- •	Smart search bar for real-time author name lookup
-- •	Auto-suggestion dropdown activated on keystroke
-•	Click-to-select suggestions for quick navigation
-•	Instant visual feedback:
-o	Selected authors are highlighted in yellow
-o	Non-matching names are dimmed and blurred
-•	Handles multiple instances of the same name across the SVG
-•	Reset button to clear search and restore original view
-•	Search popup displaying number of matches found
+- 	Smart search bar for real-time author name lookup
+- 	Auto-suggestion dropdown activated on keystroke
+-	Click-to-select suggestions for quick navigation
+-	Instant visual feedback:
+-	Selected authors are highlighted in yellow
+-	Non-matching names are dimmed and blurred
+-	Handles multiple instances of the same name across the SVG
+-	Reset button to clear search and restore original view
+-	Search popup displaying number of matches found
 ________________________________________
 ### 🔍 Matching Logic
 Search functionality operates on clean, case-insensitive comparison of input with <text> elements in the SVG.

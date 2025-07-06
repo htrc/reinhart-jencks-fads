@@ -2,518 +2,1195 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Jencks Diagram</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Jencks Diagram CMR edits</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
+    /*──────────────────────────────────────────────────────────────────────────*/
+    /* Define universal colors */
+      :root {
+        --maincolor: #fafbf3;
+        --inactivecolor: #7a7a7a;
+      }
+
+
+    /* Full-height flex column, no scrolling */
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
     body {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
       font-family: Arial, Helvetica, sans-serif;
       background-color: black;
-      color: yellow;
-    }
-    h2 {
-      font-size: 24px;
-      font-weight: bold;
-      color: yellow;
+      color: var(--maincolor);
+      text-align: center;
     }
 
-    .search-bar {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      z-index: 10;
-      background-color: black;
-      padding: 5px;
+    /* Header & nav */
+    header {
+      flex: 0 0 auto;
+      background: black;
+      padding: 6px 0;              /* tightened up */
     }
-
-    .search-bar input,
-    .search-bar button {
-      padding: 8px;
-      background-color: black;
-      border: 2px solid yellow;
-      color: yellow;
+    header h2 {
+      margin: 0;
+      line-height: 1.2;
+      font-size: 1.5rem;
+    }
+    nav {
+      flex: 0 0 auto;
+      background: black;
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid var(--maincolor);
+    }
+    .tab-btn {
+      background: black;
+      color: var(--maincolor);
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 6px 12px;           /* less vertical padding */
       font-size: 16px;
-      margin-right: 4px;
-    }
-
-    .search-bar button {
       cursor: pointer;
     }
+    .tab-btn.active {
+      border-bottom-color: var(--maincolor);
+      font-weight: bold;
+    }
 
-    #slider-container {
-      margin: 20px auto;
-      text-align: center;
-      width: 90%;
-      max-width: 700px;
+    /* 3) Visualization fills rest */
+    section#viz {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
       position: relative;
     }
 
-    .slider-svg {
-      width: 100%;
-      height: 100px;
+    /* 4) Controls row */
+    .controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+    }
+
+    /* Keyword filter and suggestions*/
+    #keyword-filter {
+      position: relative;
+      width: 300px;
+      z-index: 10;
+    }
+    #keyword-filter label {
       display: block;
-      margin: 0 auto;
+      color: var(--maincolor);
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 4px;
     }
-
-    .slider-track {
-      stroke: yellow;
-      stroke-width: 6;
+    #keyword-filter input,
+    #keyword-filter button {
+      padding: 6px 8px;
+      background: black;
+      border: 2px solid var(--maincolor);
+      color: var(--maincolor);
+      font-size: 12px;
     }
-
-    .slider-handle {
-      fill: yellow;
+    #keyword-filter button {
       cursor: pointer;
     }
+    .suggestions {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: black;
+      border: 2px solid var(--maincolor);
+      color: var(--maincolor);
+      max-height: 150px;
+      overflow-y: auto;
+      width: 100%;
+      display: none;
+      z-index: 20;
+    }
+    .suggestions div {
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .suggestions div:hover {
+      background: var(--maincolor);
+      color: black;
+    }
+    .author-popup {
+      background: #181818;
+    color: var(--maincolor);
+    border: 2px solid var(--maincolor);
+    border-radius: 7px;
+    box-shadow: 0 6px 28px 0 rgba(0,0,0,0.22), 0 1.5px 8px 0 rgba(0,0,0,0.16);
+    padding: 15px 20px 13px 20px;
+    text-align: left;
+    }
 
+
+.author-details, .static-author-popup {
+  position: absolute;
+  left: 0;
+  top: 90px; /* Adjust so it's just below your popupMatch or search input */
+  z-index: 101;
+  min-width: 280px;
+  max-width: 370px;
+  color: var(--maincolor);
+  padding: 15px 20px 13px 20px;
+  display: none; /* JS sets to block as needed */
+  text-align: left;
+  pointer-events: auto;
+}
+
+.author-details,
+.static-author-popup {
+  line-height: 1.23;      /* Tighter but still very readable */
+}
+
+.author-details p,
+.static-author-popup p {
+  margin: 2px 0 2px 0;    /* Almost no margin between lines */
+  line-height: 1.23;      /* Match popup's own line-height */
+}
+
+.author-details ul,
+.static-author-popup ul {
+  margin: 4px 0 8px 18px;
+  padding-left: 18px;
+  line-height: 1.23;
+}
+
+.author-details li,
+.static-author-popup li {
+  margin-bottom: 0px;     /* No extra gap between terms */
+}
+
+.author-details strong,
+.static-author-popup strong {
+  line-height: 1.00;
+  font-weight: bold;
+}
+
+    /* Date Slider */
+    .slider-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin: 0 12px;
+      z-index: 5;
+    }
+    .slider-svg {
+      width: 100%;
+      height: 80px;
+      display: block;
+    }
+    .slider-track {
+      stroke: var(--maincolor);
+      stroke-width: 2;
+    }
+    .slider-range {
+      stroke: var(--maincolor);
+      stroke-width: 6;
+    }
     .year-marker {
-      font-size: 16px;
+      fill: var(--maincolor);
+      font-size: 12px;
       font-weight: bold;
       text-anchor: middle;
-      fill: yellow;
       font-family: Helvetica, sans-serif;
     }
 
-    #svgContainer {
-      display: block;
-      margin: auto;
-      width: 100%;
-      
-      margin-top: -20px;
-      position: relative;
-      z-index: 0;
+    /* Inactive author - names outside date slider range */
+    .author-inactive {
+      fill: var(--inactivecolor) !important;
+      opacity: 1 !important;
+      pointer-events: none !important; /* disables hover/click */
+      filter: none !important;
     }
 
-    .highlight {
-      fill: yellow !important;
+
+    /* Underlay toggle */
+    #toggle-underlay {
+      position: relative;
+      z-index: 10;
+      background: black;
+      color: var(--maincolor);
+      border: 2px solid var(--maincolor);
+      padding: 8px 14px;
+      font-size: 15px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    /* 5) SVG container */
+    #svgContainer {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    #svgContainer svg {
+      height: 100%;
+      width: auto;
+    }
+    
+    #svgContainer svg text {
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .highlight,.author-hover {
+      fill: #fffb00 !important;
       font-weight: bold;
-      opacity: 1;
-      filter: none;
+      opacity: 1 !important;
+      filter: drop-shadow(0 0 2px #ff39d7) drop-shadow(0 0 7px #fff);
+      text-shadow: 0 0 8px #ff39d7, 0 0 14px #fff;
     }
 
     .blurred {
-      opacity: 0.3;
-      filter: blur(3px);
-      fill: gray !important; /* Add this line if needed */
+      opacity: 0.3 !important;
+      filter: blur(3px) !important;
+      fill: gray !important;
     }
 
-
+    /* Popups */
     .popup, .popup-match {
+      position: absolute;
+      top: calc(100% + 6px); /*just below the search box */
+      display: none;
       font-size: 14px;
       font-weight: bold;
-      display: none;
-      z-index: 1000;
-      box-shadow: 0px 0px 10px yellow;
-    }
-
-    .popup {
-      position: absolute;
-      background: rgba(255, 255, 0, 0.9);
+      background: var(--maincolor);
       color: black;
       padding: 6px 12px;
-      border-radius: 5px;
-      pointer-events: none;
-      white-space: nowrap;
       border: 1px solid black;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 50;
     }
-
     .popup-match {
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      background: rgba(0, 255, 0, 0.8);
-      color: black;
-      padding: 12px 20px;
-      border-radius: 8px;
-      animation: fadeOut 3s forwards;
+      background: rgba(0,255,0,0.8);
+      pointer-events: auto;
+    }
+    @keyframes fadeOut {
+      0%,80% { opacity: 1; }
+      100%   { opacity: 0; }
     }
 
-    .suggestions {
-      position: absolute;
-      background: black;
-      border: 2px solid yellow;
-      color: yellow;
-      max-height: 150px;
-      overflow-y: auto;
-      width: 200px;
-      display: none;
-      text-align: left;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-    }
-
-    .suggestions div {
-      padding: 5px;
-      cursor: pointer;
-    }
-
-    .suggestions div:hover {
-      background: yellow;
-      color: black;
-    }
-
+    /* Author details flyout */
     .author-details {
       position: absolute;
       width: 260px;
-      background: black;
-      color: yellow;
       padding: 12px;
-      border: 2px solid yellow;
-      border-radius: 5px;
       font-size: 14px;
       display: none;
       text-align: left;
-    }
-
+      z-index: 50;
+      }
     .author-details h3 {
-            margin: 5px 0;
-            font-size: 16px;
-            border-bottom: 1px solid yellow;
-            padding-bottom: 5px;
+      margin: 0 0 8px;
+      font-size: 16px;
+      border-bottom: 1px solid var(--maincolor);
+      padding-bottom: 4px;
     }
+    
 
-    .author-details p {
-            margin: 5px 0;
-    }
-    .author-details button {
-      display: block;
-      width: 100%;
-      margin-top: 5px;
-      background-color: yellow;
-      color: black;
-      border: none;
-      padding: 5px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .author-details button.disabled {
-      background-color: gray !important;
-      color: black;
-      cursor: not-allowed !important;
-      
-    }
-
-    .search-bar input,
-.search-bar button {
-    padding: 8px;
-    background-color: black;
-    border: 2px solid yellow;
-    color: yellow;
-    font-size: 16px;
-    margin-right: 4px;
+.author-popup-header {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  font-weight: normal;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
 }
 
-
-
-.search-bar button {
-    cursor: pointer;
+.author-popup-name {
+  font-weight: bold;
+  letter-spacing: 0.01em;
 }
 
-    #keyword-filter {
-      position: absolute;
-      top: 40px; /* adjust as needed */
-      left: 50px;
-      z-index: 10;
+.author-popup-type {
+  font-style: italic;
+  font-weight: normal;
+  color: var(--inactivecolor);
+  font-size: 1.1rem;
+}
+
+    /* About & Data panels */
+    section#about,
+    section#data {
+      display: none;
+      padding: 20px;
       text-align: left;
+      overflow: auto;
+      flex: 1 1 auto;
     }
 
+#svgContainer svg image {
+  pointer-events: none;
+}
+ 
+/* Filter menu styling */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-    @keyframes fadeOut {
-      0% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { opacity: 0; }
-    }
+.filter-btn {
+  background: black;
+  color: var(--maincolor);
+  border: 2px solid var(--maincolor);
+  padding: 7px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  min-width: 170px;
+  background: #181818;
+  border: 2px solid var(--maincolor);
+  border-radius: 7px;
+  z-index: 25;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  padding: 6px 0;
+}
+
+.dropdown-menu .dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: var(--inactivecolor);
+  background: transparent;
+  font-size: 15px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu .dropdown-option.active {
+  color: var(--maincolor);
+}
+
+.dropdown-menu .dropdown-option:hover {
+  background: #2b2b2b;
+  color: var(--maincolor);
+}
+
+.checkmark {
+  display: inline-block;
+  width: 22px;
+  text-align: center;
+  font-size: 18px;
+  margin-right: 8px;
+  color: var(--maincolor);
+}
+.dropdown-option:not(.active) .checkmark {
+  color: var(--inactivecolor);
+}
+
+/* ────────────── AUTHOR INFO POPUP: shared styles ────────────── */
+.author-details,
+.static-author-popup {
+  background: #181818;
+  color: var(--maincolor);
+  border: 2px solid var(--maincolor);
+  border-radius: 7px;
+  box-shadow: 0 6px 28px 0 rgba(0,0,0,0.36), 0 1.5px 8px 0 rgba(0,0,0,0.28);
+  padding: 15px 20px 13px 20px;
+  font-size: 1.08rem;
+  line-height: 1.18;
+  text-align: left;
+  min-width: 260px;
+  max-width: 420px;
+  z-index: 101 !important;
+}
+
+/* Placement differences: floating popup and search bar popup */
+.author-details {
+  position: absolute;
+  width: 265px;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.static-author-popup {
+  position: absolute;
+  left: 0;
+  top: 90px;  /* Adjust as needed for under search bar */
+  min-width: 295px;
+  max-width: 420px;
+  display: none;
+}
+
+/* Header: Last, First (bold) (person) (italics), with line */
+.author-details h3,
+.static-author-popup h3,
+.author-popup-header {
+  margin: 0 0 8px 0;
+  font-size: 1.24rem;
+  font-weight: bold;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  border-bottom: 1.5px solid var(--maincolor);
+  padding-bottom: 4px;
+  letter-spacing: 0.01em;
+  background: transparent;
+}
+.author-popup-name {
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+.author-popup-type {
+  font-style: italic;
+  font-weight: normal;
+  color: var(--inactivecolor);
+  font-size: 1.04rem;
+  margin-left: 6px;
+}
+
+/* Body: single tight spacing */
+.author-details p,
+.static-author-popup p {
+  margin: 1px 0 1px 0 !important;
+  padding: 0 !important;
+  line-height: 1.18 !important;
+}
+
+/* Strong: keep bold, no extra line height */
+.author-details strong,
+.static-author-popup strong {
+  font-weight: bold;
+  line-height: 1.18 !important;
+}
+
+/* Lists for Top Bio Terms */
+.author-details ul,
+.static-author-popup ul {
+  margin: 3px 0 8px 18px !important;
+  padding-left: 18px !important;
+  line-height: 1.18 !important;
+}
+.author-details li,
+.static-author-popup li {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+/* Unified author info popup buttons: horizontal row, blocky, consistent */
+.author-popup-btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  justify-content: flex-start;
+}
+
+.author-popup-btn-row button {
+  flex: 1 1 auto;
+  background: #fafbf3;
+  color: #111;
+  font-weight: bold;
+  border: 3px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 8px 0;
+  min-width: 0;
+  white-space: nowrap;
+  transition: border 0.15s, background 0.13s, color 0.13s;
+  outline: none;
+  box-shadow: none;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  display: block;
+}
+.author-popup-btn-row button:focus {
+  border-color: #ff39d7; /* Pink border on focus for accessibility */
+}
+.author-popup-btn-row button.disabled,
+.author-popup-btn-row button:disabled {
+  background: #555;
+  color: #e0e0e0;
+  border-color: #888;
+  cursor: not-allowed;
+  opacity: 0.75;
+  font-weight: normal;
+}
+
+.htdl-highlight {
+  fill: #00ffc7 !important;  /* Aqua green, or whatever you like */
+  opacity: 1 !important;
+  font-weight: bold;
+  filter: drop-shadow(0 0 3px #00ffc7);
+  text-shadow: 0 0 8px #fff, 0 0 14px #00ffc7;
+  transition: fill 0.3s, filter 0.3s;
+  z-index: 10;
+}
+
+/* Make sure the popups are on top of everything else */
+.author-details,
+.static-author-popup {
+  z-index: 101 !important;
+}
+
+
+
   </style>
 </head>
+
 <body>
-  <h2>COMPARISONS BETWEEN THE BUILT ENVIRONMENT AND BIOLOGY</h2>
+  <!-- Header + Tabs -->
+  <header>
+    <h2>COMPARISONS BETWEEN THE BUILT ENVIRONMENT AND BIOLOGY</h2>
+  </header>
+  <nav>
+    <button class="tab-btn" data-tab="about">About</button>
+    <button class="tab-btn active" data-tab="viz">Visualization</button>
+    <button class="tab-btn" data-tab="data">Download Data</button>
+  </nav>
 
-<!-- Wider Layout & Top-Aligned Filters -->
-<!-- Wider container for everything -->
-<div style="width: 800px; margin: 0 auto; padding-top: 10px;">
+  <!-- About -->
+  <section id="about">
+    <p>
+      <strong>Sample credits – need updating:</strong><br/>
+      The principal investigator ... Faculty Assistance in Data Science (FADS) program at IU.
+    </p>
+  </section>
 
-  <!-- 🔹 Keyword Filter Block (left-aligned, with same style) -->
-  <div id="keyword-filter" class="search-bar" style="width: 300px; ">
-    <label style="color: yellow; font-weight: bold; font-size: 12px; display: block; margin-bottom: 25px; margin-top: 65px;">
-      FILTER RESULTS BY KEYWORD:
-    </label>
-    <div style="display: flex; gap: 6px; width: 200px;">
-      <input type="text" id="search" placeholder="Enter author name" onkeyup="showSuggestions()"
-            style="width: 150px; padding: 6px; background-color: black; border: 2px solid yellow; color: yellow; font-size: 12px;" />
-      <button onclick="highlightText()" style="padding: 4px 6px; font-size: 12px;">Search</button>
-      <button onclick="window.location.href = window.location.href" style="padding: 4px 6px;font-size: 12px;">Reset</button>
+  <!-- Visualization -->
+  <section id="viz">
+    <div class="controls-row">
+      <!-- Keyword filter -->
+      <div id="keyword-filter">
+        <label>FILTER RESULTS BY KEYWORD:</label>
+        <div style="display:flex; gap:4px;">
+          <input id="search" type="text" placeholder="Author" onkeyup="showSuggestions()" />
+          <button onclick="highlightText()">Search</button>
+          <button onclick="resetPage()">Reset</button>
+        </div>
+        <div id="suggestions" class="suggestions"></div>
+        <div id="popupMatch" class="popup-match"></div>
+        <div id="author-search-details" class="author-popup static-author-popup" style="display:none;"></div>
+      </div>
+      <!-- Slider -->
+      <div class="slider-wrapper">
+        <div id="year-slider"></div>
+      </div>
+      <!-- Other Filters -->
+      <div class="filter-dropdown">
+        <button id="filter-dropdown-btn" class="filter-btn">
+        <span id="filter-btn-label">More Filters</span>
+        <span style="font-size: 16px;">▼</span>
+        </button>
+        <div id="filter-dropdown-menu" class="dropdown-menu">
+        <!-- Options will be injected by JS -->
+      </div>
     </div>
-    <div id="suggestions" class="suggestions"></div>
-  </div>
+    </div>
+    <!-- SVG -->
+    <div id="svgContainer"></div>
+  </section>
 
+  <!-- Download -->
+  <section id="data">
+    <p>Here you’ll be able to download the CSVs and SVG. (Links coming soon.)</p>
+  </section>
 
-
-
-  
-
-    
-<!-- Left-align label to match 25px offset of slider -->
-<div style="width: 700px; margin: 0 auto; text-align: left; padding-bottom: 20px; ">
-  <div style="padding-left: 10px; padding-top: 30px; ">
-    <label style="color: yellow; font-weight: bold; font-size: 12px;">
-      FILTER RESULTS BY YEAR:
-    </label>
-  </div>
-  <div id="year-slider"></div>
-  <div style="text-align: center; margin-bottom: 30px; margin-top: 10px;">
-    <span id="selected-year-range" style="margin-top: 20px; font-size:14px">Loading..</span>
-  </div>
-</div>
-
-</div>
-</div>
-
-
+  <!-- Popups -->
   <div id="popup" class="popup"></div>
-  <div id="popupMatch" class="popup-match"></div>
-  <div id="svgContainer"></div>
-  <div class="author-details" id="author-details"></div>
+  <div id="author-details" class="author-popup static-author-popup" style="display:none; position:absolute; width:340px; z-index:101;"></div>
 
+  <!-- Tab‐switching -->
   <script>
-    const svgFilePath = "jencks_1.svg";
-    const suggestionCSV = "author_data1.csv";
-    const detailCSV = "author_editcore.csv";
-    const FORCED_MIN = 1890;
-    const FORCED_MAX = 2010;
-    let originalSVG = "";
-    let namesList = [];
-    let csvData = {};
-
-    window.onload = function () {
-      loadSuggestionCSV();
-      loadDetailCSV();
-      loadSVG();
-      createYearSlider(); // call slider regardless of SVG load
-    };
-
-    function loadSuggestionCSV() {
-      fetch(suggestionCSV).then(r => r.text()).then(data => {
-        namesList = [...new Set(data.split("\n").map(r => r.split(",")[0]?.trim().toLowerCase()).filter(Boolean))];
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tab;
+        document.querySelectorAll('section').forEach(s => {
+          s.style.display = (s.id === t)
+            ? (t === 'viz' ? 'flex' : 'block')
+            : 'none';
+        });
       });
-    }
+    });
+  </script>
 
+  <!-- Core logic -->
+  <script>
+    const svgFilePath  = "jencks-svg-1.svg";
+    const suggestionCSV= "jencks-authors-1.csv";
+    const detailCSV    = "jencks-authors-1.csv";
+    const FORCED_MIN   = 1890;
+    const FORCED_MAX   = 2010;
+    let originalSVG    = "";
+    let csvData        = {};
+    let stuckItemNos = [];
+
+// Define "Other Filter" options 
+const filterOptions = [
+  { key: "showHTDL", label: "Show Authors in HTDL" },
+  { key: "exampleA", label: "Show Timeline" },
+  { key: "exampleB", label: "Enable Dimmer" },
+  { key: "exampleC", label: "Show SVG Shapes" }
+];
+
+// Default states
+let filterStates = {
+  showTimeline: false,
+  showDimmer: true,
+  showSVGShapes: false
+};
+
+function renderDropdownMenu() {
+  const menu = document.getElementById('filter-dropdown-menu');
+  menu.innerHTML = filterOptions.map(opt => `
+    <button class="dropdown-option${filterStates[opt.key] ? ' active' : ''}" 
+            data-key="${opt.key}">
+      <span class="checkmark">${filterStates[opt.key] ? "●" : "○"}</span>
+      ${opt.label}
+    </button>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('filter-dropdown-btn');
+  const menu = document.getElementById('filter-dropdown-menu');
+
+  btn.onclick = function(e) {
+    e.stopPropagation();
+    // Show/hide
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    renderDropdownMenu();
+  };
+
+  // Hide on click elsewhere
+  document.addEventListener('click', () => {
+    menu.style.display = 'none';
+  });
+
+  // Handle filter option clicks
+  menu.addEventListener('click', function(e) {
+    if (e.target.closest('.dropdown-option')) {
+      const key = e.target.closest('.dropdown-option').dataset.key;
+      filterStates[key] = !filterStates[key];
+      renderDropdownMenu();
+      menu.style.display = 'block'; // keep open for multiple selection
+      applyFilters(); // Your function to actually update the SVG
+    }
+  });
+});
+
+
+function resetPage() {
+  document.getElementById("search").value = "";
+  document.getElementById("suggestions").style.display = "none";
+  document.getElementById("popupMatch").style.display = "none";
+  document.getElementById("author-search-details").style.display = "none";
+  const texts = document.querySelectorAll("#svgContainer svg g[id^='i'] text");
+  texts.forEach(text => {
+    text.classList.remove("highlight", "author-hover", "stuck", "author-inactive");
+    text.setAttribute("opacity", 0);
+  });
+  stuckItemNos = [];
+  // Hide the dimmer if using
+  const dimmer = d3.select("#svgContainer svg #dimmer");
+  if (dimmer.node())
+    dimmer.transition().duration(500).attr("opacity", 0);
+}
+
+
+
+
+    // Detail CSV → returns a Promise
     function loadDetailCSV() {
-      fetch(detailCSV).then(r => r.text()).then(data => {
-        data.split("\n").slice(1).forEach(row => {
-          const cols = row.split(",");
-          if (cols.length > 2) {
-            const key = cols[1].trim().toLowerCase();
+      return fetch(detailCSV)
+        .then(r => r.ok
+          ? r.text()
+          : Promise.reject(`Detail CSV load failed: ${r.status}`))
+        .then(txt => {
+          const rows = txt.trim().split("\n");
+          const header = rows.shift().split(",");
+          const idx = {};
+          header.forEach((h,i) => idx[h.trim().toLowerCase()] = i);
+          rows.forEach(r => {
+            const cols = r.split(",");
+            const key = cols[idx["item-no"]] && cols[idx["item-no"]].trim();
+            if (!key) return;
             csvData[key] = {
-              Lastname: cols[1],
-              Firstname: cols[2],
-              Viaf: cols[3],
-              Wikipedia: cols[4],
-              Born: cols[5],
-              Died: cols[6],
-              WorksinHTRC: cols[7],
-              Biological: cols[8]
+              JencksName:      cols[idx["jencks-name"]],
+              LastName:        cols[idx["last-name"]],
+              FirstName:       cols[idx["first-name"]],
+              ItemType:        cols[idx["item-type"]],
+              VIAF:            cols[idx["viaf-link"]],
+              Wikipedia:       cols[idx["wikipedia-link"]],
+              Getty:           cols[idx["getty-link"]],
+              Born:            cols[idx["born"]],
+              Died:            cols[idx["died"]],
+              WorksInHTDL:    +cols[idx["works-in-htdl"]],
+              NumComparisons: +cols[idx["unvrf-built-bio-comparisons"]],
+              ChronoPos:      +cols[idx["pos-in-chrono"]],
+              TopTerms:        cols[idx["top-terms"]],
             };
-          }
+          });
         });
+    }
+
+
+    // Stamp each <g> with data-year
+    function assignYearsToGroups(svg) {
+      svg.selectAll("g[id^='i']").each(function() {
+        const key = d3.select(this).attr("id").slice(1).split("-")[0];
+        const y = csvData[key] && csvData[key].ChronoPos;
+        if (y != null) d3.select(this).attr("data-year", y);
       });
     }
 
-    function loadSVG() {
-      fetch(svgFilePath).then(resp => resp.text()).then(svgData => {
-        originalSVG = svgData;
-        document.getElementById("svgContainer").innerHTML = svgData;
-        const svg = d3.select("#svgContainer svg");
-        d3.csv("extracted_text_positions.csv").then(data => {
-          assignYearsToTextElements(svg, data);
-          updateAuthorTextVisibility(FORCED_MIN, FORCED_MAX);
-        });
-        attachEventHandlers();
-      });
-    }
+    // Hide names by date slider range
+   function updateAuthorsByYear(minYear, maxYear) {
+  // Loop through each author label
+  d3.select("#svgContainer svg")
+    .selectAll("g[id^='i']")
+    .each(function() {
+      const g = d3.select(this);
+      const year = +g.attr("data-year");
+      const isOutOfRange = year < minYear || year > maxYear;
+      g.selectAll("text")
+        .classed("author-inactive", isOutOfRange)
+        .attr("opacity", isOutOfRange ? 1 : 0);
+    });
+}
 
-    function attachEventHandlers() {
-      d3.select("#svgContainer svg").selectAll("text")
-        .on("mouseover", function(event) {
-          const popup = document.getElementById("popup");
-          popup.innerHTML = `<strong>${d3.select(this).text()}</strong>`;
-          popup.style.display = "block";
-          popup.style.left = event.pageX + 10 + "px";
-          popup.style.top = event.pageY + 10 + "px";
-        })
-        .on("mousemove", function(event) {
-          const popup = document.getElementById("popup");
-          popup.style.left = event.pageX + 10 + "px";
-          popup.style.top = event.pageY + 10 + "px";
-        })
-        .on("mouseout", () => document.getElementById("popup").style.display = "none")
-        .on("click", function(event) {
-          event.stopPropagation();  // ⛔️ prevents the global click handler from running
-          const author = d3.select(this).text().trim().toLowerCase();
-          showAuthorDetails(author, event);
-        });
+    // Hover & click
+ function attachEventHandlers() {
+  d3.select("#svgContainer svg")
+    .selectAll("g[id^='i'] text")
+    .on("mouseover", function(event) {
+      if (this.classList.contains("author-inactive")) return; // ignore if outside date range
+      const g = this.closest("g[id^='i']");
+      const itemNo = g.id.slice(1).split("-")[0];
+      // Only show hover if nothing is stuck or if THIS is stuck
+      if (stuckItemNos.length > 0 && !stuckItemNos.includes(itemNo)) return;
+      d3.select(this).classed("author-hover", true).attr("opacity", 1);
+      console.log('Hovered:', itemNo, this.textContent);
+    })
+    .on("mouseout", function(event) {
+      if (this.classList.contains("author-inactive")) return; // ignore if outside date range
+      const g = this.closest("g[id^='i']");
+      const itemNo = g.id.slice(1).split("-")[0];
+      if (stuckItemNos.length > 0 && !stuckItemNos.includes(itemNo)) return;
+      d3.select(this).classed("author-hover", false);
+      // Only hide if not stuck
+      if (!stuckItemNos.includes(itemNo)) d3.select(this).attr("opacity", 0);
+      console.log('Mouseout:', itemNo, this.textContent);
+    })
+    .on("click", function(event) {
+      if (this.classList.contains("author-inactive")) return; // ignore if outside date range
+      event.stopPropagation();
+      const g = this.closest("g[id^='i']");
+      const itemNo = g.id.slice(1).split("-")[0];
+      stuckItemNos = [itemNo];
+      updateStuckHighlights();
+      console.log('Clicked:', itemNo, this.textContent);
+      showAuthorDetails(itemNo, event);
+    });
+}
 
-
-    }
-
-    function assignYearsToTextElements(svg, data) {
-      const authors = data.map(r => ({
-        name: r["Author"]?.replace(/-$/, "").trim().toLowerCase(),
-        year: +r["year"]
-      })).filter(a => a.name && !isNaN(a.year));
-
-      const svgBox = svg.node().getBoundingClientRect();
-      const width = svgBox.width;
-
-      svg.selectAll("text").each(function () {
-        const node = d3.select(this);
-        const text = node.text().trim().toLowerCase();
-        const pos = this.getBoundingClientRect().left - svgBox.left;
-        const guessYear = 1890 + (pos / width) * (2010 - 1890);
-
-        const match = authors.filter(a => text.includes(a.name));
-        if (match.length) {
-          const best = match.reduce((a, b) => Math.abs(a.year - guessYear) < Math.abs(b.year - guessYear) ? a : b);
-          node.attr("data-year", best.year);
-        }
-      });
-    }
-
-    function updateAuthorTextVisibility(min, max) {
-      const svg = d3.select("#svgContainer").select("svg");
-      svg.selectAll("text[data-year]").each(function () {
-        const year = +d3.select(this).attr("data-year");
-        const show = year >= min && year <= max;
-        d3.select(this).attr("style", `fill: ${show ? "yellow" : "gray"}; opacity: ${show ? 1 : 0.3};`);
-      });
-    }
-
-
-    function createYearSlider() {
-      
-      const scale = d3.scaleLinear().domain([1890, 2010]).range([25, 625]);
-      const svg = d3.select("#year-slider").append("svg").attr("class", "slider-svg").attr("width", 650).attr("height", 80);
-
-      svg.append("line").attr("class", "slider-track").attr("x1", scale(1890)).attr("x2", scale(2010)).attr("y1", 40).attr("y2", 40);
-      svg.selectAll(".year-marker").data(d3.range(1890, 2011, 10)).enter().append("text")
-        .attr("class", "year-marker").attr("x", d => scale(d)).attr("y", 75).text(d => d).style("font-size", "14px");
-
-      const line = svg.append("line").attr("stroke", "yellow").attr("stroke-width", 0.5).attr("x1", scale(1890)).attr("x2", scale(2010)).attr("y1", 40).attr("y2", 40);
-
-      const left = svg.append("circle").attr("r", 8).attr("fill", "yellow").attr("cy", 40).attr("cx", scale(1890));
-      const right = svg.append("circle").attr("r", 8).attr("fill", "yellow").attr("cy", 40).attr("cx", scale(2010));
-
-      function dragHandle(handle, updateX, updateLine) {
-        return d3.drag().on("drag", e => {
-          const x = Math.max(scale(1890), Math.min(e.x, scale(2010)));
-          handle.attr("cx", x);
-          updateX(x);
-          updateRange();
-        });
-      
-      }
-
-      left.call(dragHandle(left, x => line.attr("x1", x), "x1"));
-      right.call(dragHandle(right, x => line.attr("x2", x), "x2"));
-
-      function getYear(cx) { return Math.round(scale.invert(cx)); }
-
-      function updateRange() {
-        const min = getYear(+left.attr("cx"));
-        const max = getYear(+right.attr("cx"));
-        document.getElementById("selected-year-range").innerText = `${min} - ${max}`;
-        updateAuthorTextVisibility(min, max);
-      }
-
-      updateRange();
-    }
-
-    function showSuggestions() {
-      const input = document.getElementById("search").value.trim().toLowerCase();
-      const matches = namesList.filter(name => name.startsWith(input));
-      const box = document.getElementById("suggestions");
-      if (!input || !matches.length) return box.style.display = "none";
-      box.innerHTML = matches.map(m => `<div onclick="selectSuggestion('${m}')">${m}</div>`).join("");
-      box.style.display = "block";
-    }
-
-    function selectSuggestion(name) {
-      document.getElementById("search").value = name;
-      document.getElementById("suggestions").style.display = "none";
-      highlightText();
-    }
-    function showAuthorDetails(author, event) {
-      const data = csvData[author];
-      if (!data) return;
-
-      const box = document.getElementById("author-details");
-
-      const wikiBtn = data.Wikipedia && data.Wikipedia !== "N/A"
-        ? `<button onclick="window.open('${data.Wikipedia}', '_blank')">Link to Wikipedia</button>`
-        : `<button class="disabled">No Wikipedia Link</button>`;
-
-      const viafBtn = data.Viaf && data.Viaf !== "N/A"
-        ? `<button onclick="window.open('${data.Viaf}', '_blank')">Link to VIAF</button>`
-        : `<button class="disabled">No VIAF Link</button>`;
-
-      box.innerHTML = `
-        <h3 style="border-bottom: 1px solid yellow; padding-bottom: 5px;">${data.Lastname}, ${data.Firstname}</h3>
-        <p><strong>Born:</strong> ${data.Born}</p>
-        <p><strong>Died:</strong> ${data.Died}</p>
-        <p><strong>Works in VIAF Catalog:</strong> ${data.Viaf && data.Viaf !== "N/A" ? "Yes" : "No"}</p>
-        <p><strong>Works in HTRC Catalog:</strong> ${data.WorksinHTRC}</p>
-        <p><strong>Built/Biological Comparisons Found:</strong> ${data.Biological}</p>
-        ${wikiBtn}
-        ${viafBtn}
-      `;
-
-      const bbox = event.target.getBoundingClientRect();
-      box.style.left = bbox.left + window.scrollX + 20 + "px";
-      box.style.top = bbox.top + window.scrollY + 20 + "px";
-      box.style.display = "block";
-    }
-
-    function highlightText() {
-      const input = document.getElementById("search").value.trim().toLowerCase();
-      const texts = document.querySelectorAll("#svgContainer svg text");
-      let found = 0;
-      texts.forEach(text => {
-        const content = text.textContent.trim().toLowerCase();
-        if (content === input) {
-          text.classList.add("highlight");
-          text.classList.remove("blurred");
-          found++;
-        } else {
-          text.classList.remove("highlight");
-          text.classList.add("blurred");
-        }
-      });
-      document.getElementById("popupMatch").innerText = found ? `${found} Match(es) Found` : "No Match Found";
-      document.getElementById("popupMatch").style.display = "block";
-      setTimeout(() => document.getElementById("popupMatch").style.display = "none", 2500);
-    }
-
-
-
-    function resetPage() {
-      document.getElementById("svgContainer").innerHTML = originalSVG;
-      document.getElementById("search").value = "";
-      attachEventHandlers();
-      document.getElementById("author-details").style.display = "none";
-    }
-
-    // Close author details when clicking anywhere outside it
-  document.addEventListener("click", function (e) {
-    const box = document.getElementById("author-details");
-
-    // If the click is not inside the box and not on a text element in the SVG
-    if (!box.contains(e.target) && !(e.target.tagName === "text" && e.target.closest("svg"))) {
-      box.style.display = "none";
+// Sticky highlight everywhere needed with dimmer
+function updateStuckHighlights() {
+  const texts = document.querySelectorAll("#svgContainer svg g[id^='i'] text");
+  let count = 0;
+  texts.forEach(text => {
+    const g = text.closest("g[id^='i']");
+    if (!g) return;
+    const itemNo = String(g.id.slice(1).split("-")[0]);
+    if (stuckItemNos.includes(itemNo)) {
+      text.classList.add("highlight");
+      text.setAttribute("opacity", 1);
+      count++;
+    } else {
+      text.classList.remove("highlight");
+      text.classList.remove("author-hover");
+      text.setAttribute("opacity", 0);
+      text.classList.remove("author-inactive"); // <-- Clear inactive author filter
+      console.log("Checking g.id:", g.id, "itemNo:", itemNo, "typeof:", typeof itemNo, "stuckItemNos:", stuckItemNos, stuckItemNos.map(x => typeof x));
     }
   });
 
-    
+  // Dimmer: fade in if anything is stuck, out if nothing
+  const dimmerRect = d3.select("#svgContainer svg #dimmer");
+if (stuckItemNos.length) {
+  dimmerRect.transition().duration(500).attr("opacity", 0.5);
+} else {
+  dimmerRect.transition().duration(500).attr("opacity", 0);}
+}
+
+function showSearchAuthorDetails(itemNo) {
+  const d = csvData[itemNo];
+  if (!d) return;
+  // Find all entries with same First + Last
+  const years = [];
+  for (const k in csvData) {
+    const r = csvData[k];
+    if (
+      (r.FirstName || "").trim().toLowerCase() === (d.FirstName || "").trim().toLowerCase() &&
+      (r.LastName || "").trim().toLowerCase() === (d.LastName || "").trim().toLowerCase() &&
+      r.ChronoPos
+    ) {
+      years.push(r.ChronoPos);
+    }
+  }
+  years.sort((a, b) => a - b);
+
+  // --- Fix: put everything in the template string ---
+  document.getElementById("author-search-details").innerHTML = `
+    <h3 class="author-popup-header">
+      <span class="author-popup-name">${d.LastName}${d.FirstName ? `, ${d.FirstName}` : ""}</span>
+      ${d.ItemType ? `<span class="author-popup-type"> (${d.ItemType})</span>` : ""}
+    </h3>
+    <p><strong>All Chronogram Positions:</strong> ${years.join(", ") || "(none)"}</p>
+    <p><strong>Born:</strong> ${d.Born||""}</p>
+    <p><strong>Died:</strong> ${d.Died||""}</p>
+    <p><strong>Works in HTDL:</strong> ${d.WorksInHTDL ?? ""}</p>
+    <p><strong>Unverified Comparisons:</strong> ${d.NumComparisons||""}</p>
+    <p><strong>Top Bio Terms:</strong></p>
+    <ul style="margin:0 0 8px 18px; text-align:left;">
+      ${d.TopTerms && d.TopTerms.trim()
+        ? d.TopTerms.split(/\s+/).slice(0,5).map(term => `<li>${term.trim()}</li>`).join('')
+        : '<li>(none)</li>'}
+    </ul>
+    <div class="author-popup-btn-row">
+  <!-- Example using JS template literals: -->
+  ${d.Wikipedia && d.Wikipedia !== "N/A"
+    ? `<button onclick="window.open('${d.Wikipedia}','_blank')">Wikipedia</button>`
+    : `<button class="disabled" disabled>Wikipedia</button>`}
+  ${d.VIAF && d.VIAF !== "N/A"
+    ? `<button onclick="window.open('${d.VIAF}','_blank')">VIAF</button>`
+    : `<button class="disabled" disabled>VIAF</button>`}
+  ${d.Getty && d.Getty !== "N/A"
+    ? `<button onclick="window.open('${d.Getty}','_blank')">Getty</button>`
+    : `<button class="disabled" disabled>Getty</button>`}
+</div>
+
+  `;
+  document.getElementById("author-search-details").style.display = "block";
+}
+
+
+    // Author flyout
+    function showAuthorDetails(key, e) {
+      const d = csvData[key];
+      if (!d) return;
+      const box = document.getElementById("author-details");
+      box.innerHTML = `
+  <h3 class="author-popup-header">
+    <span class="author-popup-name">${d.LastName}${d.FirstName ? `, ${d.FirstName}` : ""}</span>
+    ${d.ItemType ? `<span class="author-popup-type"> (${d.ItemType})</span>` : ""}
+  </h3>
+  <p><strong>Chronogram Position:</strong> ${d.ChronoPos||""}</p>
+  <p><strong>Born:</strong> ${d.Born||""}</p>
+  <p><strong>Died:</strong> ${d.Died||""}</p>
+  <p><strong>Works in HTDL:</strong> ${d.WorksInHTDL ?? ""}</p>
+  <p><strong>Unverified Comparisons:</strong> ${d.NumComparisons||""}</p>
+  <p><strong>Top Bio Terms:</strong></p>
+    <ul style="margin:0 0 8px 18px; text-align:left;">
+      ${d.TopTerms && d.TopTerms.trim()
+        ? d.TopTerms.split(/\s+/).slice(0,5).map(term => `<li>${term.trim().replace(/^"|"$/g, "")}</li>`).join('')
+        : '<li>(none)</li>'
+      }
+    </ul>
+    <div class="author-popup-btn-row">
+  <!-- Example using JS template literals: -->
+  ${d.Wikipedia && d.Wikipedia !== "N/A"
+    ? `<button onclick="window.open('${d.Wikipedia}','_blank')">Wikipedia</button>`
+    : `<button class="disabled" disabled>Wikipedia</button>`}
+  ${d.VIAF && d.VIAF !== "N/A"
+    ? `<button onclick="window.open('${d.VIAF}','_blank')">VIAF</button>`
+    : `<button class="disabled" disabled>VIAF</button>`}
+  ${d.Getty && d.Getty !== "N/A"
+    ? `<button onclick="window.open('${d.Getty}','_blank')">Getty</button>`
+    : `<button class="disabled" disabled>Getty</button>`}
+</div>
+`;
+
+      const rect = e.target.getBoundingClientRect();
+      box.style.left = rect.right + window.scrollX + 10 + "px";
+      box.style.top  = rect.top  + window.scrollY + "px";
+      box.style.display = "block";
+    }
+
+    // Load & inject SVG
+    function loadSVG() {
+  fetch(svgFilePath)
+    .then(r => r.ok ? r.text() : Promise.reject(`SVG failed: ${r.status}`))
+    .then(txt => {
+      originalSVG = txt;
+      document.getElementById("svgContainer").innerHTML = txt;
+      const svg = d3.select("#svgContainer svg");
+    // Set dimmer rect to cover full SVG (in case it's wrong in the file)
+      const w = svg.attr("width") || svg.node().viewBox.baseVal.width;
+      const h = svg.attr("height") || svg.node().viewBox.baseVal.height;
+        svg.select("g#dimmer rect")
+          .attr("width", w)
+          .attr("height", h)
+          .attr("x", 0)
+          .attr("y", 0);
+      // Force the dimmer to 0 opacity on load!
+      svg.select("#dimmer").attr("opacity", 0);
+
+      // Hide all non-text elements inside Timeline (if desired)
+      svg.selectAll('g#Timeline *:not(text)')
+         .attr('opacity', 0);
+
+      // Make every author label interactive
+      svg.selectAll("g[id^='i'] text")
+        .each(function() {
+          this.style.pointerEvents = "all";
+        });
+
+      assignYearsToGroups(svg);
+      svg.selectAll("g[id^='i'] text").attr("opacity", 0);
+      attachEventHandlers();
+
+      // Underlay toggle button
+      const btn = document.getElementById("toggle-underlay");
+      let vis = false;
+      btn.onclick = () => {
+        vis = !vis;
+        svg.select("image")
+          .transition().duration(2000)
+          .attr("opacity", vis ? 1 : 0);
+        btn.textContent = vis
+          ? "Hide original Jencks chronogram"
+          : "Show original Jencks chronogram";
+      };
+    })
+    .catch(console.error);
+}
+
+    // Slider
+    function createYearSlider() {
+      const MIN=1890, MAX=2010, Y=40;
+      const scale = d3.scaleLinear()
+        .domain([MIN,MAX])
+        .range([25,625]);
+      const svg = d3.select("#year-slider")
+        .append("svg")
+        .attr("class","slider-svg")
+        .attr("width",650)
+        .attr("height",80);
+      // track & range
+      svg.append("line")
+        .attr("class","slider-track")
+        .attr("x1",scale(MIN)).attr("x2",scale(MAX))
+        .attr("y1",Y).attr("y2",Y);
+      const range = svg.append("line")
+        .attr("class","slider-range")
+        .attr("x1",scale(MIN)).attr("x2",scale(MAX))
+        .attr("y1",Y).attr("y2",Y);
+      // decades
+      svg.selectAll(".year-marker")
+        .data(d3.range(MIN,MAX+1,10))
+        .enter().append("text")
+          .attr("class","year-marker")
+          .attr("x",d=>scale(d))
+          .attr("y",Y+35)
+          .text(d=>d);
+      // handles
+      const drag = which => d3.drag().on("drag",e=>{
+        const x = Math.max(scale(MIN), Math.min(e.x, scale(MAX)));
+        if(which==="x1"){
+          leftHandle.attr("cx",x);
+          range.attr("x1",x);
+          leftLabel.attr("x",x)
+            .text(Math.round(scale.invert(x)));
+        } else {
+          rightHandle.attr("cx",x);
+          range.attr("x2",x);
+          rightLabel.attr("x",x)
+            .text(Math.round(scale.invert(x)));
+        }
+       // updateAuthorTextVisibility(
+        updateAuthorsByYear(
+          Math.round(scale.invert(leftHandle.attr("cx"))),
+          Math.round(scale.invert(rightHandle.attr("cx")))
+        );
+      });
+      const leftHandle = svg.append("circle")
+        .attr("r",8).attr("cx",scale(MIN)).attr("cy",Y)
+        .attr("fill","var(--maincolor)").call(drag("x1"));
+      const rightHandle = svg.append("circle")
+        .attr("r",8).attr("cx",scale(MAX)).attr("cy",Y)
+        .attr("fill","var(--maincolor)").call(drag("x2"));
+      // labels
+      const leftLabel = svg.append("text")
+        .attr("class","handle-label")
+        .attr("x",scale(MIN)).attr("y",Y-12)
+        .attr("text-anchor","middle")
+        .style("font-size","12px")
+        .style("fill","var(--maincolor)")
+        .text(MIN);
+      const rightLabel = svg.append("text")
+        .attr("class","handle-label")
+        .attr("x",scale(MAX)).attr("y",Y-12)
+        .attr("text-anchor","middle")
+        .style("font-size","12px")
+        .style("fill","var(--maincolor)")
+        .text(MAX);
+    }
+
+ // --- Suggestion map: displayName → [item-no,...]
+let suggestionMap = {};  // Lowercase "First Last" → array of item-no
+let namesList = [];      // Sorted display list for suggestions
+
+function loadSuggestionCSV() {
+  d3.csv(suggestionCSV).then(data => {
+    suggestionMap = {};
+    data.forEach(row => {
+      const display = ((row["first-name"]||"") + " " + (row["last-name"]||"")).replace(/\s+/g, " ").trim();
+      const itemno = (row["item-no"]||"").trim(); // No +
+      if (display && itemno) {
+        const key = display.toLowerCase();
+        if (!suggestionMap[key]) suggestionMap[key] = [];
+        suggestionMap[key].push(itemno);
+      }
+    });
+    namesList = Object.keys(suggestionMap).sort(); // alpha sort
+  // DEBUG: Check map for Lethaby
+    console.log("lethaby in suggestionMap?", suggestionMap["william lethaby"]);
+  });
+}
+
+
+// Show matching suggestions below the input
+function showSuggestions() {
+  const input = document.getElementById("search").value.trim().toLowerCase();
+  const box = document.getElementById("suggestions");
+  if (!input) { box.style.display = "none"; return; }
+  const matches = namesList.filter(name => name.includes(input));
+  if (!matches.length) { box.style.display = "none"; return; }
+  box.innerHTML = matches.map(m =>
+    `<div onclick="selectSuggestion('${m.replace(/'/g,"\\'")}')">${m.replace(/\b\w/g,c=>c.toUpperCase())}</div>`
+  ).join("");
+  box.style.display = "block";
+}
+
+// Highlight text in SVG by item-no(s)
+function highlightText() {
+  const input = document.getElementById("search").value.trim().toLowerCase().replace(/\s+/g, " ");
+  const itemNos = suggestionMap[input] || [];
+  stuckItemNos = (suggestionMap[input] || []).map(x => String(x));
+  updateStuckHighlights();
+  // Feedback in green box
+  document.getElementById("popupMatch").innerText =
+    itemNos.length ? `${itemNos.length} Match(es) Found` : "No Match Found";
+  document.getElementById("popupMatch").style.display = "block";
+  // ---- Show author info below match bar (if found) ----
+  if (itemNos.length > 0) {
+    showSearchAuthorDetails(itemNos[0]); // First item-no
+  } else {
+    document.getElementById("author-search-details").style.display = "none";
+  }
+  console.log("HighlightText stuckItemNos:", stuckItemNos);
+}
+
+
+// User clicks a suggestion
+function selectSuggestion(name) {
+  document.getElementById("search").value = name;
+  document.getElementById("suggestions").style.display = "none";
+  highlightText(); // Sticks the match(es)
+}
+
+
+function applyFilters() {
+  const svg = d3.select("#svgContainer svg");
+  if (svg.empty()) return;
+
+  // -- HTDL filter --
+  svg.selectAll("g[id^='i'] text").each(function() {
+    const g = this.closest("g[id^='i']");
+    if (!g) return;
+    const itemNo = g.id.slice(1).split("-")[0];
+    const works = csvData[itemNo] ? csvData[itemNo].WorksInHTDL : 0;
+
+    if (filterStates.showHTDL && works > 0) {
+      this.classList.add("htdl-highlight");
+    } else {
+      this.classList.remove("htdl-highlight");
+    }
+  });
+
+  // --- Dimming effect for HTDL highlight
+    const highlighted = svg.selectAll("g[id^='i'] text.htdl-highlight").size();
+    const dimmerRect = d3.select("#svgContainer svg #dimmer");
+    if (filterStates.showHTDL && highlighted > 0) {
+    dimmerRect.transition().duration(300).attr("opacity", 0.5);} 
+    else {dimmerRect.transition().duration(300).attr("opacity", 0);}
+}
+
+    // Startup
+    window.onload = function(){
+      loadSuggestionCSV();
+      loadDetailCSV()
+        .then(() => {
+          loadSVG();
+          createYearSlider();
+        })
+        .catch(console.error);
+        document.getElementById("search").value = "";
+  document.getElementById("suggestions").style.display = "none";
+  document.getElementById("popupMatch").style.display = "none";
+    };
+
+// Open/close dropdown on button click
+document.addEventListener("click", e => {
+  const box = document.getElementById("author-details");
+  // Only hide if the click is NOT inside the popup or a name label in SVG
+  if (!box.contains(e.target) && !(e.target.tagName === "text" && e.target.closest("svg"))) {
+    box.style.display = "none";
+    // --- New: Unstick authors and fade out dimmer ---
+    stuckItemNos = [];
+    updateStuckHighlights();
+    // Optionally clear the search
+    // document.getElementById("search").value = "";
+    // document.getElementById("suggestions").style.display = "none";
+  }
+});
+
+  // Hide menu when clicking elsewhere
+  document.addEventListener('click', () => {
+    menu.style.display = 'none';
+  });
+
+  // Toggle filter states on click
+  menu.addEventListener('click', function(e) {
+    if (e.target.closest('.dropdown-option')) {
+      const key = e.target.closest('.dropdown-option').dataset.key;
+      filterStates[key] = !filterStates[key];
+      renderDropdownMenu();
+      menu.style.display = 'block'; // keep open for multiple selection
+
+      // Call function to update SVG based on filters
+      applyFilters();
+    }
+  });
 
   </script>
 </body>

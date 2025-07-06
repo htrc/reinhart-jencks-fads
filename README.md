@@ -1,215 +1,132 @@
-# Interactive Jencks Diagram
+Interactive Jencks Diagram (CR Fork)
 
-This project is an interactive visualization tool for exploring author contributions related to comparisons between the built environment and biology, using the Jencks Diagram.
+This project is an interactive visualization tool for exploring author contributions and conceptual connections between the built environment and biology, using an annotated digital version of the Jencks "Evolutionary Tree" Diagram.
+This codebase was originally developed as part of the IU Faculty Assistance in Data Science (FADS) initiative, and is being further developed and maintined with assistance from the HathiTrust Research Center.
 
-## 💡 Features
+🚀 Live Features Overview
 
-- **Dynamic Search Bar**: Search author names using autocomplete and highlight functionality.
-- **Interactive Hover**: Hover over names on the SVG to view quick info.
-- **Author Metadata Popup**: Click on an author to see metadata from `author_editcore.csv`.
-- **Date Filter Slider**: Filter authors visually by decade range.
-- **Responsive Layout**: Optimized for readability and visual clarity.
+    Interactive SVG Chronogram: Explore the Jencks Diagram with clickable and highlightable author names, all mapped to their respective metadata and external links.
 
-### 📂 File Structure
+    Smart Search Bar: Autocomplete and instant search for authors, with highlighting of all SVG matches and contextual metadata pop-up under the search area.
 
-```
+    Year Range Slider: Dual-handle slider filters visible authors by decade (1890–2010), with instant updates in the SVG.
+
+    Pop-up Author Details: Click on any author name to open a floating metadata pane (with links to Wikipedia, VIAF, Getty), styled for visual clarity.
+
+    HTDL Filter: “Show Authors in HTDL” filter highlights all authors with digitized works available, with an optional dimmer effect for clarity.
+
+    Responsive, Accessible UI: Designed for both desktop and projection/teaching environments, using a modern dark Jencks-like aesthetic.
+
+    Modular, Clean Code: Clear separation of concerns for search, filtering, pop-up logic, and SVG manipulation, making the app easy to extend and refactor.
+
+📁 File Structure
+
 jencks-fads/
-├── index.html                  # Final interactive HTML page with slider, popup, and search
-├── final.html                  # Earlier HTML version (popup + search only)
-├── jencks_1.svg                # SVG diagram of author relationships
-├── author_data1.csv            # CSV used for search suggestions
-├── author_editcore.csv         # Main author metadata (merged, cleaned)
-├── extracted_text_positions.csv # CSV used for assigning year metadata to SVG names
-├── README.md                   # Project documentation
-```
+├── index.html                  # Main interactive HTML/JS application
+├── jencks-svg-1.svg            # Core SVG diagram (authorship/relationship map)
+├── jencks-authors-1.csv        # Main cleaned and relabeled author metadata file
+├── README.md                   # This documentation
 
-## Search Engine: Interactive Author Highlighting
-This module enhances user navigation in the Jencks Diagram by enabling author-based search, allowing focused exploration and contextual insights across repeated name instances.
+🧩 Core Interactions
+🔍 Author Search
 
----
+    Autocomplete search with real-time suggestions.
 
-### 🔧 Features
-- 	Smart search bar for real-time author name lookup
-- 	Auto-suggestion dropdown activated on keystroke
--	Click-to-select suggestions for quick navigation
--	Instant visual feedback:
--	Selected authors are highlighted in yellow
--	Non-matching names are dimmed and blurred
--	Handles multiple instances of the same name across the SVG
--	Reset button to clear search and restore original view
--	Search popup displaying number of matches found
-  
----
+    On selection, all matching SVG names are highlighted in yellow, all other names dim.
 
-### 🔍 Matching Logic
-Search functionality operates on clean, case-insensitive comparison of input with <text> elements in the SVG.
-1.	Auto-suggestion
-o	Matches all authors from the CSV whose names start with the typed string
-o	Populates a clickable dropdown list with these matches
-2.	Highlighting
-o	Exact matches in the SVG are highlighted using .highlight class
-o	All others are dimmed and blurred using .blurred class
-3.	Reset Mechanism
-o	Clicking "Reset" reloads the SVG, removes all highlights, and resets the search input
+    Pop-up under the search shows detailed author info (and all their chronogram positions if an author appears multiple times).
 
----
+    Reset returns the diagram to its original, unfiltered state.
 
-### ⚙️ Key Functions
-#### showSuggestions()
-- 	Triggered on every keyup in the input field
-- 	Filters names from namesList that start with current input
-- 	Populates the .suggestions dropdown dynamically
-  
-#### selectSuggestion(name)
-- 	Called when a dropdown suggestion is clicked
-- 	Sets input field value and triggers highlighting via highlightText()
-  
-#### highlightText()
-- 	Loops through all <text> elements in the SVG
-- 	If textContent matches input (case-insensitive):
-- o	Adds .highlight class and removes .blurred
-- 	Else:
-- o	Adds .blurred and removes .highlight
-- 	Displays a temporary popup with the number of matches found
-  
-#### resetPage()
-- 	Restores original SVG content
-- 	Clears search input
-- 	Reattaches all event handlers
-- 	Hides author detail card
-  
-________________________________________
+⏳ Year Range Slider
 
-### 💡 Integration Note
-This feature is entirely client-side and operates independently of the year slider. However, it coexists smoothly within the combined interface. The styling, color scheme, and interaction model remain consistent with the Jencks aesthetic, supporting seamless user experience.
+    Adjust start/end handles to filter authors by their year/decade.
 
----
+    Only authors within the selected date range remain visible/highlighted.
 
-## 🕰️ Timeline Slider: Interactive Year Filtering
+    Inactive authors are greyed out and unclickable.
 
-This module enables interactive exploration of the Jencks Diagram by year range, helping users analyze author appearances across time.
+👤 Author Pop-Up
 
-### 🔧 Features
-- Dual-handle **year range slider** from **1890 to 2010**
-- **Dynamic filtering**: Author names fade in/out based on selected year range
-- **Accurate matching** using author name and positional estimation
-- Handles **multiple instances** of the same author in the SVG
-- **Logs unmatched** names for refinement and debugging
-- Styled in the **Jencks aesthetic**: black background, Helvetica font, yellow/gray text
+    Hover: Highlights an author’s name in the SVG (visual glow).
 
----
+    Click: Pops up a floating card with:
 
-### 🔍 Matching Logic
-Each author from the CSV is matched to SVG `<text>` elements using:
+        Last Name, First Name (in bold), and (person) in italic.
 
-1. **Name Matching**  
-   - Case-insensitive, partial regex matching to account for name variations  
+        Chronogram position(s)
 
-2. **Positional Estimation**  
-   - Estimates the year of a `<text>` element based on its `x-position` in the SVG  
-   - Matches to the closest author year from the CSV by minimizing absolute year difference  
+        Born/Died
 
-This logic ensures correct pairing even when authors (e.g., *Wright*) appear multiple times across decades.
+        Works in HTDL (number, always shown)
 
----
+        Number of Unverified Comparisons
 
-### ⚙️ Key Functions
+        Top Bio Terms (up to 5)
 
-#### `loadJencksDiagram()`
-- Loads `jencks_diagram.svg` into `#diagram-holder` using `fetch`
-- Logs any errors during load
+        Wikipedia, VIAF, and Getty link buttons (greyed out if N/A)
 
-#### `loadAndAssignCSV()`
-- Loads author data from the CSV
-- Waits for SVG to finish loading
-- Triggers matching via:
-  - `assignYearsToTextElements(svg, data)`
-  - `updateAuthorTextVisibility(FORCED_MIN, FORCED_MAX)`
+    The pop-up floats beside the clicked SVG name or below the search bar for search results.
 
-#### `assignYearsToTextElements(svg, data)`
-- Cleans and normalizes author names
-- Loops through `<text>` nodes
-- Estimates each node's year from its x-position
-- Matches to CSV authors and assigns a `data-year` attribute
-- Logs unmatched names for review
+    Buttons: Wikipedia, VIAF, and Getty links open in new tabs; greyed out if data missing.
 
-#### `createYearSlider()`
-- Constructs a **dual-handle range slider** using D3.js
-- Decade-based ticks from 1890 to 2010
-- Middle line indicates active year range
-- Triggers `updateRange()` on handle drag
+📖 HTDL Filter
 
-#### `updateRange()`
-- Converts slider handle positions to years
-- Updates the displayed range
-- Calls `updateAuthorTextVisibility(minYear, maxYear)`
+    “Show Authors in HTDL” option in “More Filters” highlights all authors with HTDL works in the SVG.
 
-#### `updateAuthorTextVisibility(minSel, maxSel)`
-- Loops through all `<text>` elements with `data-year`
-- If within selected range:
-  - Sets **yellow fill** and **full opacity**
-- If outside range:
-  - Applies **gray fill** and **reduced opacity**
-- Uses inline styles with `!important` to override existing SVG styles
+    Optional dimmer effect reduces the visual prominence of non-highlighted names, making HTDL authors stand out.
 
----
+🧑‍💻 Implementation Details
 
-## 🧠 Author Metadata Interaction: Hover & Pop-up Detail Cards
+    All interactive logic is client-side (no server code or frameworks required).
 
-This feature enables users to interactively explore author details within the Jencks Diagram by hovering over or clicking on author names, dynamically pulling information from the `author_editcore.csv` file.
+    Uses D3.js v7 for all SVG and DOM manipulation.
 
----
+    Author data and metadata are loaded dynamically from CSVs.
 
-### 🔧 Features
-- **Hover Interaction**: Hovering over an author's name displays a tooltip popup with the author’s name.
-- **Click Interaction**: Clicking an author's name opens a detailed pop-up card with metadata.
-- **Dynamic Data Retrieval**: Information is retrieved live from the CSV based on the author name.
-- **Fallback Handling**: 
-  - If an author's metadata is not found in the CSV, no pop-up is displayed.
-  - If certain fields (like VIAF or Wikipedia links) are missing, "No Link" disabled buttons are shown.
+    Pop-up positioning: Search pop-up appears under the search bar; SVG pop-up appears beside the clicked name.
 
----
+    All styling is handled in a unified CSS block in index.html.
 
-### 📖 Metadata Displayed
-- Last Name, First Name
-- Birth Year
-- Death Year
-- Works in VIAF Catalog (shows **Yes** if VIAF link exists, **No** otherwise)
-- Works in HTRC Catalog
-- Number of Built/Biological Comparisons
-- Buttons linking to Wikipedia and VIAF pages (if available)
+    Multiple pop-ups can be open at once (search + SVG click), and each is styled for clarity and accessibility.
 
----
+⚙️ Extensibility & Customization
 
-### ⚙️ Key Functions
+    All data sources and SVG/CSV filenames can be swapped out in index.html.
 
-#### `attachEventHandlers()`
-- Adds event listeners to all `<text>` elements in the SVG.
-- On **hover**: Displays a yellow popup showing the author’s name.
-- On **click**: Calls `showAuthorDetails()` to show a full metadata card.
+    New filters can be added via the dropdown filter menu (More Filters).
 
-#### `showAuthorDetails(author, event)`
-- Retrieves metadata from `csvData` based on the author's name.
-- Populates and displays a detail card next to the clicked name.
-- Includes logic:
-  - If Wikipedia or VIAF link exists → adds active link buttons.
-  - If not → shows disabled buttons.
-  - Shows "Works in VIAF Catalog" as **Yes** or **No** depending on VIAF data.
+    UI can be re-styled with a single CSS update.
 
-#### `resetPage()`
-- Clears pop-ups and restores the original unhighlighted SVG view.
+    Collaboration-ready: Clear code comments, modular functions, and easy to adapt for expert collaborators or further extension.
 
----
+🛠️ How to Run
 
-### 🔍 Matching Logic
-- Matches the author's **lowercased Last Name** from the `author_editcore.csv`.
-- **Exact matching**: Case-insensitive match between the clicked SVG text and the CSV name field.
-- If a match is not found, no metadata popup is shown.
-- Future versions can improve matching accuracy by using the "Jencks Name" column.
+    Clone the repo or download the source.
 
----
+    Place the SVG and CSVs in the project directory.
 
-### 💡 Integration Note
-- Works independently of the search bar and year slider.
-- Fully integrated into the interactive SVG environment for seamless UX.
+    Open index.html in a web browser.
+
+        (For best results, use a simple local HTTP server for CSV loading: e.g., python -m http.server in the project folder, then browse to http://localhost:8000/)
+
+    All features work locally, with no build step required.
+
+📝 Contributing/Expert Notes
+
+    This repo is currently under active expert development and refactoring.
+
+    If you’re extending the core logic (especially around pop-ups, filtering, or dimming), please note the modular function structure and update shared logic in only one place where possible.
+
+    Feel free to open issues/PRs for any bugs, inconsistencies, or feature requests!
+
+👏 Credits & Acknowledgements
+
+    Original Jencks Diagram design: [Charles Jencks]
+
+    Prototype created by: IU Faculty Assistance in Data Science (FADS) -- coding by Princy Reshma Ramaseshan, Neeraj Boyapati, and Achu Jeeju, led by Chris Reinhart, Ryan Dubnicek and John Walsh.
+
+    Forked and extended by: Chris Reinhart, in preparation for additional work by HTRC and Nikolaus Nova Parulian.
+
+    Special thanks to all prior contributors in the prototype repo, and to all collaborators extending this visualization for research and teaching.
 

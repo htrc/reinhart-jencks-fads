@@ -1018,6 +1018,59 @@
               this.style.pointerEvents = "all";
             });
 
+          // Add minimap for svg navigation
+          // load svg to a #preview element
+          /* Disabled for now, not working
+          const minimapContainer = d3.select("#svgContainer svg").append("g")
+            .attr("id", "preview")
+            .attr("transform", "translate(20,20) scale(0.1)")
+            .style("pointer-events", "none");
+          
+          //document.getElementById("preview").innerHTML = txt;
+                    
+          minimapContainer.append("image")
+            .attr("href", svgFilePath)
+            .attr("width", w) // Original width
+            .attr("height", h) // Original height
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("opacity", 0.75);
+
+          // Create a preview group inside the SVG
+          const preview = svg.select("#preview");
+
+          // Create a rectangle to represent the viewport                    
+          const rect = preview
+            .append("rect")
+            .style("fill-opacity", "0")
+            .style("stroke", "red")
+            .style("stroke-width", "3px");
+
+          function updateViewport() {
+            const { width: svgWidth, height: svgHeight } = svg
+              .node()
+              .getBoundingClientRect();
+
+            rect.attr("width", svgWidth).attr("height", svgHeight);
+          }
+          */
+
+          function zoomed(event) {
+            svg.selectChild("image").attr("transform", event.transform);
+            svg.select("g#author-names").attr("transform", event.transform);
+            // Update the minimap rectangle position and size
+            transform = event.transform;
+            const scale = 1 / transform.k;
+            const inverseTransform = new d3.ZoomTransform(
+              scale,
+              -transform.x * scale,
+              -transform.y * scale
+            );
+
+            //rect.attr("transform", inverseTransform.toString());
+          }
+          // End of Minimap implementation
+
           // Add d3 Pan & Zoom for svgContainer
           // Add zoom behavior
           //d3.select("#svgContainer").style("overflow", "hidden"); // Prevent scrollbars
@@ -1033,16 +1086,23 @@
               [0, 0],
               [width, height],
             ])
-            .on("zoom", function (event) {
+            .on("zoom", zoomed);
+          
+          /*
+          function (event) {
               svg.selectChild("image").attr("transform", event.transform);
               svg.select("g#author-names").attr("transform", event.transform);
-            });
+            }
+          */
           svg.call(zoom);
           // Center the SVG initially
           const initialScale = 1;
           const initialX = (w * (1 - initialScale)) / 2;
           const initialY = (h * (1 - initialScale)) / 2;
           svg.call(zoom.transform, d3.zoomIdentity.translate(initialX, initialY).scale(initialScale));
+
+          //updateViewport();
+          //window.addEventListener("resize", updateViewport);
 
           document.getElementById("reset-zoom").onclick = function () {
             // Reset zoom to initial state

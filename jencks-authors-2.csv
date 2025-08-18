@@ -1,0 +1,655 @@
+item-no,pos-in-chrono,jencks-name,last-name,first-name,item-type,viaf-link,wikipedia-link,getty-link,born,died,works-in-htdl,unvrf-built-bio-comparisons,top-terms
+1,1899,Lethaby,Lethaby,William,person,http://viaf.org/viaf/49308242,https://en.wikipedia.org/wiki/William_Lethaby,N/A,1/18/1857,7/17/1931,0,124,term1 term2 term3 term4 term5
+2,1900,ARTS & CRAFTS,ARTS & CRAFTS,,movement,N/A,https://en.wikipedia.org/wiki/Arts_and_Crafts_movement,https://www.getty.edu/vow/AATFullDisplay?find=arts+crafts&logic=AND&note=&english=N&prev_page=1&subjectid=300266319,,,,6,term1 term2 term3 term4 term5
+3,1898,Ricardo,Ricardo,Halsey,person,https://viaf.org/en/viaf/21992043,https://en.wikipedia.org/wiki/Halsey_Ricardo,N/A,8/6/1854,2/15/1928,,14,term1 term2 term3 term4 term5
+4,1898,Berlage,Berlage,Hendrik Petrus,person,http://viaf.org/viaf/59236068,https://en.wikipedia.org/wiki/H._P._Berlage,N/A,2/21/1856,9/12/1934,0,0,term1 term2 term3 term4 term5
+5,1899,Belcher,Belcher,John,person,http://viaf.org/viaf/23057212,https://en.wikipedia.org/wiki/John_Belcher_(architect),N/A,7/10/1841,11/8/1913,9999,5,term1 term2 term3 term4 term5
+6,1900,Mckim MW,Mckim MW,,firm,http://viaf.org/viaf/121010936,"https://en.wikipedia.org/wiki/McKim,_Mead_%26_White",N/A,,,0,0,term1 term2 term3 term4 term5
+7,1898,BURNHAM,Burnham,Daniel,person,http://viaf.org/viaf/73928913,https://en.wikipedia.org/wiki/Daniel_Burnham,N/A,9/4/1846,6/1/1912,9999,2,term1 term2 term3 term4 term5
+8,1898,Guimard,Guimard,Hector,person,http://viaf.org/viaf/71400445,https://en.wikipedia.org/wiki/Hector_Guimard,N/A,3/10/1867,5/20/1942,0,0,term1 term2 term3 term4 term5
+9,1898,Domenech,Domenech,Lluis,person,https://viaf.org/viaf/49316848,https://en.wikipedia.org/wiki/Llu%C3%ADs_Dom%C3%A8nech_i_Montaner,N/A,12/21/1850,12/27/1923,0,0,term1 term2 term3 term4 term5
+10,1899,Endell,Endell,August,person,http://viaf.org/viaf/61711138,https://en.wikipedia.org/wiki/August_Endell,N/A,4/12/1871,4/13/1925,0,0,term1 term2 term3 term4 term5
+11,1900,Sullivan,Sullivan,Louis,person,http://viaf.org/viaf/14805742,https://en.wikipedia.org/wiki/Louis_Sullivan,N/A,9/3/1856,4/14/1924,9999,3,term1 term2 term3 term4 term5
+12,1902,de Baudot,de Baudot,Anatole,person,http://viaf.org/viaf/17356208,https://en.wikipedia.org/wiki/Anatole_de_Baudot,,10/14/1834,2/28/1915,0,0,term1 term2 term3 term4 term5
+13,1899,Kotera,Kotera,Jan,person,http://viaf.org/viaf/69848397,https://en.wikipedia.org/wiki/Jan_Kot%C4%9Bra,N/A,12/18/1871,4/17/1923,0,0,term1 term2 term3 term4 term5
+14,1900,Maillart,Maillart,Robert,person,http://viaf.org/viaf/35251528,https://en.wikipedia.org/wiki/Robert_Maillart,N/A,2/16/1872,4/5/1940,0,0,term1 term2 term3 term4 term5
+15,1903,A.LOOS,Loos,Adolf,person,http://viaf.org/viaf/17225994,https://en.wikipedia.org/wiki/Adolf_Loos,N/A,12/10/1870,8/23/1933,0,0,term1 term2 term3 term4 term5
+16,1905,ornament & crime,ornament & crime,,written work,http://viaf.org/viaf/192617461,https://en.wikipedia.org/wiki/Ornament_and_Crime,,,,,0,term1 term2 term3 term4 term5
+17,1906,WERKBUND,WERKBUND,,movement,N/A,https://en.wikipedia.org/wiki/Deutscher_Werkbund,N/A,,,,4,term1 term2 term3 term4 term5
+18,1907,Muthesius,Muthesius,Hermann,person,http://viaf.org/viaf/36994033,https://en.wikipedia.org/wiki/Hermann_Muthesius,,4/20/1861,10/29/1927,0,0,term1 term2 term3 term4 term5
+19,1918,Berg,Berg,Max,person,http://viaf.org/viaf/67209074,https://en.wikipedia.org/wiki/Max_Berg,,4/17/1870,1/22/1947,0,0,term1 term2 term3 term4 term5
+20,1921,Nervi,Nervi,Pier Luigi,person,http://viaf.org/viaf/71453417,https://en.wikipedia.org/wiki/Pier_Luigi_Nervi,,6/21/1891,1/9/1979,0,0,term1 term2 term3 term4 term5
+21,1924,Le Ricolais,Le Ricolais,Robert,person,http://viaf.org/viaf/255267,https://en.wikipedia.org/wiki/Robert_Le_Ricolais,,10/30/1894,6/4/1977,0,0,term1 term2 term3 term4 term5
+22,1925,Freyssinet,Freyssinet,Eugène,person,http://viaf.org/viaf/54279372,https://en.wikipedia.org/wiki/Eug%C3%A8ne_Freyssinet,,6/13/1879,6/8/1962,0,0,term1 term2 term3 term4 term5
+23,1927,Ginzburg,Ginzburg,Moisei,person,http://viaf.org/viaf/36973011,https://en.wikipedia.org/wiki/Moisei_Ginzburg,,06/04/1892,1/7/1946,0,0,term1 term2 term3 term4 term5
+24,1929,Fuller,Fuller,Buckminster,person,https://viaf.org/en/viaf/36898370,https://en.wikipedia.org/wiki/Buckminster_Fuller,,7/12/1895,7/1/1983,9999,9,term1 term2 term3 term4 term5
+25,1932,Williams,Williams,William Carlos,person,http://viaf.org/viaf/29542054,https://en.wikipedia.org/wiki/William_Carlos_Williams,,9/17/1883,3/4/1963,9999,33,term1 term2 term3 term4 term5
+26,1932,Stam,Stam,Mart,person,http://viaf.org/viaf/72195519,https://en.wikipedia.org/wiki/Mart_Stam,,8/5/1899,2/21/1986,0,0,term1 term2 term3 term4 term5
+27,1931,Hilberseimer,Hilberseimer,Ludwig,person,http://viaf.org/viaf/24648931,https://en.wikipedia.org/wiki/Ludwig_Hilberseimer,,9/14/1885,5/6/1967,9999,8,term1 term2 term3 term4 term5
+28,1930,H.Meyer,Meyer,Hannes,person,http://viaf.org/viaf/20472726,https://en.wikipedia.org/wiki/Hannes_Meyer,,11/18/1889,7/19/1954,0,0,term1 term2 term3 term4 term5
+29,1930,Chareau,Chareau,Pierre,person,http://viaf.org/viaf/24610646,https://en.wikipedia.org/wiki/Pierre_Chareau,,8/4/1883,8/24/1950,0,0,term1 term2 term3 term4 term5
+30,1938,Torroja,Torroja,Eduardo,person,http://viaf.org/viaf/32877262,https://en.wikipedia.org/wiki/Eduardo_Torroja,,8/27/1899,6/15/1961,0,0,term1 term2 term3 term4 term5
+31,1938,Wachsmann,Wachsmann,Konrad,person,http://viaf.org/viaf/94333531,https://en.wikipedia.org/wiki/Konrad_Wachsmann,,5/16/1901,11/25/1980,0,0,term1 term2 term3 term4 term5
+32,1939,Stadia,Stadia,,,,,,,,0,0,term1 term2 term3 term4 term5
+33,1950,Norwicki,Nowicki,Maciej,person,http://viaf.org/viaf/28397801,https://en.wikipedia.org/wiki/Maciej_Nowicki_(architect),,6/26/1910,9/1/1950,0,0,term1 term2 term3 term4 term5
+34,1953,Morandi,Morandi,Giorgio,person,http://viaf.org/viaf/7399099,https://en.wikipedia.org/wiki/Giorgio_Morandi,,7/20/1890,6/18/1964,0,0,term1 term2 term3 term4 term5
+35,1956,Schultze-Fielitze,Schultze-Fielitze,Eckhard,person,http://viaf.org/viaf/52753170,https://de.wikipedia.org/wiki/Eckhard_Schulze-Fielitz,,12/24/1929,9/1/2021,0,0,term1 term2 term3 term4 term5
+36,1955,Nervi,Nervi,Pier Luigi,person,http://viaf.org/viaf/71453417,https://en.wikipedia.org/wiki/Pier_Luigi_Nervi,,6/21/1891,1/9/1979,0,0,term1 term2 term3 term4 term5
+37,1956,EAMES,Eames,Charles and Ray,person,"http://viaf.org/viaf/15576677
+http://viaf.org/viaf/62354916",https://en.wikipedia.org/wiki/Charles_and_Ray_Eames,,,,0,0,term1 term2 term3 term4 term5
+38,1952,,Saarinen,Eero,person,http://viaf.org/viaf/41868977,https://en.wikipedia.org/wiki/Eero_Saarinen,,8/20/1910,9/1/1961,9999,,term1 term2 term3 term4 term5
+39,1957,Neumann,Neumann,Alfred,person,http://viaf.org/viaf/316391418,https://en.wikipedia.org/wiki/Alfred_Neumann_(architect),,1/26/1900,10/23/1968,0,0,term1 term2 term3 term4 term5
+40,1958,E.Otto,Otto,E.,person,,,,,,,7,term1 term2 term3 term4 term5
+41,1960,PROUVE,Prouvé,Jean,person,http://viaf.org/viaf/2475783,https://en.wikipedia.org/wiki/Jean_Prouv%C3%A9,,4/18/1901,3/23/1984,0,0,term1 term2 term3 term4 term5
+42,1960,Friedman,Friedman,Yona,person,http://viaf.org/viaf/49225738,https://en.wikipedia.org/wiki/Yona_Friedman,,6/5/1923,2/20/2020,0,0,term1 term2 term3 term4 term5
+43,1960,Arups,Arups,,firm,http://viaf.org/viaf/119774526,https://en.wikipedia.org/wiki/Arup_Group,,1946,,0,0,term1 term2 term3 term4 term5
+44,1962,Piano,Piano,Renzo,person,http://viaf.org/viaf/95804495,https://en.wikipedia.org/wiki/Renzo_Piano,,9/14/1937,,0,0,term1 term2 term3 term4 term5
+45,1962,Koenig,Koenig,Pierre,person,http://viaf.org/viaf/109094818,https://en.wikipedia.org/wiki/Pierre_Koenig,,10/17/1925,4/4/2004,0,0,term1 term2 term3 term4 term5
+46,1963,Maldonado,Maldonado,Tomás,person,http://viaf.org/viaf/44425548,https://en.wikipedia.org/wiki/Tom%C3%A1s_Maldonado,,4/25/1922,11/26/2018,9999,565634,term1 term2 term3 term4 term5
+47,1965,Woods,Woods,Lebbeus,person,http://viaf.org/viaf/112843370,https://en.wikipedia.org/wiki/Lebbeus_Woods,,5/31/1940,10/30/2012,9999,45,term1 term2 term3 term4 term5
+48,1971,EISENMAN,Eisenman,Peter,person,http://viaf.org/viaf/54297401,https://en.wikipedia.org/wiki/Peter_Eisenman,,8/11/1932,,0,0,term1 term2 term3 term4 term5
+49,1971,Hejduk,Hejduk,John,person,http://viaf.org/viaf/108623765,https://en.wikipedia.org/wiki/John_Hejduk,,7/19/1929,7/3/2000,9999,34,term1 term2 term3 term4 term5
+50,1971,FOSTER,Foster,Norman,person,http://viaf.org/viaf/76453877,"https://en.wikipedia.org/wiki/Norman_Foster,_Baron_Foster_of_Thames_Bank",,6/1/1935,,9999,5,term1 term2 term3 term4 term5
+51,1971,ROGERS,Rogers,Richard,person,http://viaf.org/viaf/90597250,https://en.wikipedia.org/wiki/Richard_Rogers,,7/23/1933,12/18/2021,0,0,term1 term2 term3 term4 term5
+52,1972,McHale,McHale,John,person,http://viaf.org/viaf/22293115,https://en.wikipedia.org/wiki/John_McHale_(artist),,8/19/1922,11/2/1978,9999,345,term1 term2 term3 term4 term5
+53,1973,Meier,Meier,Richard,person,http://viaf.org/viaf/98048351,https://en.wikipedia.org/wiki/Richard_Meier,,10/12/1934,,9999,3,term1 term2 term3 term4 term5
+54,1975,Gwathmy,Gwathmey,Charles,person,http://viaf.org/viaf/111000464,https://en.wikipedia.org/wiki/Charles_Gwathmey,,6/19/1938,8/3/2009,9999,3,term1 term2 term3 term4 term5
+55,1976,Shinohara,Shinohara,Kazuo,person,http://viaf.org/viaf/95707447,https://en.wikipedia.org/wiki/Kazuo_Shinohara,,4/2/1925,7/15/2006,9999,8,term1 term2 term3 term4 term5
+56,1975,Arups,Arups,,firm,http://viaf.org/viaf/119774526,https://en.wikipedia.org/wiki/Arup_Group,,1946,,0,0,term1 term2 term3 term4 term5
+57,1977,Kurokawa,Kurokawa,Kisho,person,http://viaf.org/viaf/34524329,https://en.wikipedia.org/wiki/Kisho_Kurokawa,,4/8/1934,10/12/2007,9999,45,term1 term2 term3 term4 term5
+58,1977,Peichl,Peichl,Gustav,person,http://viaf.org/viaf/64799820,https://en.wikipedia.org/wiki/Gustav_Peichl,,3/18/1928,11/17/2019,0,0,term1 term2 term3 term4 term5
+59,1977,Grimshaw,Grimshaw,Nicholas,person,http://viaf.org/viaf/79406851,https://en.wikipedia.org/wiki/Nicholas_Grimshaw,,10/9/1939,,9999,73,term1 term2 term3 term4 term5
+60,1978,Banham,Banham,Reyner,person,http://viaf.org/viaf/108384896,https://en.wikipedia.org/wiki/Reyner_Banham,,3/2/1922,3/19/1988,9999,34,term1 term2 term3 term4 term5
+61,1979,Leo,Leo,,,,,,,,,3,term1 term2 term3 term4 term5
+62,1979,Hopkins,Hopkins,Michael ,person,http://viaf.org/viaf/101582971,https://en.wikipedia.org/wiki/Michael_Hopkins_(architect),,5/7/1935,6/17/2023,0,0,term1 term2 term3 term4 term5
+63,1980,Hasegawa,Hasegawa,Itsuko,person,http://viaf.org/viaf/62274276,https://en.wikipedia.org/wiki/Itsuko_Hasegawa,,1941,,9999,34567,term1 term2 term3 term4 term5
+64,1980,Calatrava,Calatrava,Santiago,person,http://viaf.org/viaf/37713693,https://en.wikipedia.org/wiki/Santiago_Calatrava,,7/28/1951,,9999,46,term1 term2 term3 term4 term5
+65,1982,Behnisch,Behnisch,Gunter,person,http://viaf.org/viaf/820613,https://en.wikipedia.org/wiki/G%C3%BCnter_Behnisch,,6/12/1922,7/12/2010,0,0,term1 term2 term3 term4 term5
+66,1980,PAWSON,Pawson,John,person,http://viaf.org/viaf/59307110,https://en.wikipedia.org/wiki/John_Pawson,,1949,,9999,45,term1 term2 term3 term4 term5
+67,1984,ANDO,Ando,Tadao,person,http://viaf.org/viaf/109158630,https://en.wikipedia.org/wiki/Tadao_Ando,,9/13/1941,,9999,56,term1 term2 term3 term4 term5
+68,1986,Maya Lin,Lin,Maya,person,http://viaf.org/viaf/49460689,https://en.wikipedia.org/wiki/Maya_Lin,,10/5/1959,,9999,4,term1 term2 term3 term4 term5
+69,1987,Nouvel,Nouvel,Jean,person,http://viaf.org/viaf/95789815,https://en.wikipedia.org/wiki/Jean_Nouvel,,8/12/1945,,9999,46,term1 term2 term3 term4 term5
+70,1988,Legoretta,Legoretta,Ricardo,person,http://viaf.org/viaf/670785,https://en.wikipedia.org/wiki/Ricardo_Legorreta,,5/7/1931,12/30/2011,0,0,term1 term2 term3 term4 term5
+71,1990,MAKI,Maki,Fumihiko,person,http://viaf.org/viaf/95869911,https://en.wikipedia.org/wiki/Fumihiko_Maki,,9/6/1928,6/6/2024,9999,345,term1 term2 term3 term4 term5
+72,1991,Siza,Siza Vieria,Alvaro,person,http://viaf.org/viaf/5027394,https://en.wikipedia.org/wiki/%C3%81lvaro_Siza_Vieira,,6/25/1933,,0,0,term1 term2 term3 term4 term5
+73,1992,Piano,Piano,Renzo,person,http://viaf.org/viaf/95804495,https://en.wikipedia.org/wiki/Renzo_Piano,,9/14/1937,,0,0,term1 term2 term3 term4 term5
+74,1993,Jiricna,Jiricna,Eva,person,http://viaf.org/viaf/5112937,https://en.wikipedia.org/wiki/Eva_Ji%C5%99i%C4%8Dn%C3%A1,,3/3/1939,,0,0,term1 term2 term3 term4 term5
+75,1993,Von Gerkan,von Gerkan,Meinhard,person,http://viaf.org/viaf/84759263,https://en.wikipedia.org/wiki/Meinhard_von_Gerkan,,1/3/1935,11/30/2022,9999,4,term1 term2 term3 term4 term5
+76,1994,Grimshaw,Grimshaw,Nicholas,person,http://viaf.org/viaf/79406851,https://en.wikipedia.org/wiki/Nicholas_Grimshaw,,10/9/1939,,9999,3,term1 term2 term3 term4 term5
+77,1993,Perrault,Perrault,Dominique,person,http://viaf.org/viaf/117938509,https://en.wikipedia.org/wiki/Dominique_Perrault,,4/9/1953,,9999,56,term1 term2 term3 term4 term5
+78,1993,Ritchie,Ritchie,Ian,person,http://viaf.org/viaf/46917705,https://en.wikipedia.org/wiki/Ian_Ritchie_(architect),,6/24/1947,,9999,745,term1 term2 term3 term4 term5
+79,1998,FOSTER,Foster,Norman,person,http://viaf.org/viaf/76453877,"https://en.wikipedia.org/wiki/Norman_Foster,_Baron_Foster_of_Thames_Bank",,6/1/1935,,9999,,term1 term2 term3 term4 term5
+80,1998,YEANG,Yeang,Ken,person,http://viaf.org/viaf/73922661,https://en.wikipedia.org/wiki/Ken_Yeang,,10/6/1948,,9999,4,term1 term2 term3 term4 term5
+81,2001,ROGERS,Rogers,Richard,person,http://viaf.org/viaf/90597250,https://en.wikipedia.org/wiki/Richard_Rogers,,7/23/1933,12/18/2021,0,0,term1 term2 term3 term4 term5
+82,2002,Norton,Norton,,,,,,,,0,0,term1 term2 term3 term4 term5
+83,2002,BROOKES,Brookes,,,http://viaf.org/viaf/73850749,,,,,0,0,term1 term2 term3 term4 term5
+84,,Sejima,Sejima,,,http://viaf.org/viaf/92989241,,,,,,3,term1 term2 term3 term4 term5
+85,2002,Herzog & De-Meuron,Herzog & de Meuron,Jacques,,http://viaf.org/viaf/118759,https://en.wikipedia.org/wiki/Jacques_Herzog,,4/19/1950,,0,0,term1 term2 term3 term4 term5
+86,1926,AALTO,Aalto,Alvar,person,http://viaf.org/viaf/71410602,https://en.wikipedia.org/wiki/Alvar_Aalto,,2/3/1898,5/11/1976,9999,,term1 term2 term3 term4 term5
+87,1932,AALTO,Aalto,Alvar,person,http://viaf.org/viaf/71410602,https://en.wikipedia.org/wiki/Alvar_Aalto,,2/3/1898,5/11/1976,9999,,term1 term2 term3 term4 term5
+88,1960,AALTO,Aalto,Alvar,person,http://viaf.org/viaf/71410602,https://en.wikipedia.org/wiki/Alvar_Aalto,,2/3/1898,5/11/1976,9999,,term1 term2 term3 term4 term5
+89,1993,R.Adams,Adams,R.,person,,,,,,0,0,term1 term2 term3 term4 term5
+90,1980,Alberts,Alberts,Anton,person,http://viaf.org/viaf/96210715,https://en.wikipedia.org/wiki/Anton_Alberts_(architect),,7/6/1927,8/16/1999,0,0,term1 term2 term3 term4 term5
+91,1959,Albini,Albini,Franco,person,http://viaf.org/viaf/845533,https://en.wikipedia.org/wiki/Franco_Albini,,10/17/1905,11/1/1977,0,0,term1 term2 term3 term4 term5
+92,1980,C.Alexander,Alexander,Christopher,person,http://viaf.org/viaf/200760292,https://en.wikipedia.org/wiki/Christopher_Alexander,,10/4/1936,3/17/2022,9999,,term1 term2 term3 term4 term5
+93,1996,Alsop,Alsop,William,person,http://viaf.org/viaf/79069104,https://en.wikipedia.org/wiki/Will_Alsop,,12/12/1947,5/12/2018,0,0,term1 term2 term3 term4 term5
+94,1997,Andreau,Andreu,Paul,person,http://viaf.org/viaf/95844639,https://en.wikipedia.org/wiki/Paul_Andreu,,7/10/1938,10/11/2018,9999,,term1 term2 term3 term4 term5
+95,1999,Arad,Arad,Ron,person,http://viaf.org/viaf/96365202,https://en.wikipedia.org/wiki/Ron_Arad_(industrial_designer),,4/24/1951,,9999,,term1 term2 term3 term4 term5
+96,1976,ARAU,ARAU,,firm,http://viaf.org/viaf/138848799,https://fr.wikipedia.org/wiki/Atelier_de_recherche_et_d%27action_urbaines,,,,0,0,term1 term2 term3 term4 term5
+97,1992,ARM,ARM,,firm,http://viaf.org/viaf/137115246,https://en.wikipedia.org/wiki/ARM_Architecture_(company),,1988,,0,0,term1 term2 term3 term4 term5
+98,1980,Arquitectonica,Arquitectonica,,firm,http://viaf.org/viaf/135562537,https://arquitectonica.com/ https://en.wikipedia.org/wiki/Arquitectonica,,1977,,0,0,term1 term2 term3 term4 term5
+99,1987,Arquitectonica,Arquitectonica,,firm,http://viaf.org/viaf/135562537,https://arquitectonica.com/ https://en.wikipedia.org/wiki/Arquitectonica,,1977,,0,0,term1 term2 term3 term4 term5
+100,1908,Ashbee,Ashbee,Charles Robert,person,http://viaf.org/viaf/76389729,https://en.wikipedia.org/wiki/Charles_Robert_Ashbee,,5/17/1863,5/23/1942,0,0,term1 term2 term3 term4 term5
+101,1913,Asplund,Asplund,Gunnar,person,http://viaf.org/viaf/47560120,https://en.wikipedia.org/wiki/Gunnar_Asplund,,9/22/1885,10/20/1940,0,0,term1 term2 term3 term4 term5
+102,1960,Aulenti,Aulenti,Gae,person,http://viaf.org/viaf/79173999,https://en.wikipedia.org/wiki/Gae_Aulenti,,12/4/1927,10/31/2012,0,0,term1 term2 term3 term4 term5
+103,1916,Bacon,Bacon,Henry,person,http://viaf.org/viaf/68810776,https://en.wikipedia.org/wiki/Henry_Bacon,,11/28/1866,2/16/2024,9999,,term1 term2 term3 term4 term5
+104,1989,Badran,Badran,Rasem,person,http://viaf.org/viaf/96507036,https://en.wikipedia.org/wiki/Rasem_Badran,,1945,,0,0,term1 term2 term3 term4 term5
+105,1955,Bakema,Bakema,Jaap,person,http://viaf.org/viaf/74646638,https://en.wikipedia.org/wiki/Jaap_Bakema,,3/8/1914,2/20/1981,0,0,term1 term2 term3 term4 term5
+106,1913,Baker,Baker,Herbert,person,http://viaf.org/viaf/195963266,https://en.wikipedia.org/wiki/Herbert_Baker,,6/9/1862,2/4/1946,9999,,term1 term2 term3 term4 term5
+107,1997,Balmond ,Balmond ,Cecil,person,http://viaf.org/viaf/64828512,https://en.wikipedia.org/wiki/Cecil_Balmond,,1943,,0,0,term1 term2 term3 term4 term5
+108,1925,Bartning,Bartning,Otto,person,http://viaf.org/viaf/22932473,https://en.wikipedia.org/wiki/Otto_Bartning,,04/12/1883,2/20/1959,9999,,term1 term2 term3 term4 term5
+109,1985,Beeby,Beeby,Thomas,person,http://viaf.org/viaf/31578069,https://en.wikipedia.org/wiki/Thomas_H._Beeby,,1941,,0,0,term1 term2 term3 term4 term5
+110,1995,Behnisch,Behnisch,Gunter,person,http://viaf.org/viaf/820613,https://en.wikipedia.org/wiki/G%C3%BCnter_Behnisch,,6/12/1922,7/12/2010,0,0,term1 term2 term3 term4 term5
+111,1907,BEHRENS,Behrens,Peter,person,http://viaf.org/viaf/74643773,https://en.wikipedia.org/wiki/Peter_Behrens,,4/14/1868,2/27/1940,0,0,term1 term2 term3 term4 term5
+112,1937,Bel Geddes,Bel Geddes,Norman,person,http://viaf.org/viaf/39589087,https://en.wikipedia.org/wiki/Norman_Bel_Geddes,,4/27/1893,5/8/1958,9999,,term1 term2 term3 term4 term5
+113,1958,Belluschi,Belluschi,Pietro,person,http://viaf.org/viaf/219148995742359750171,https://en.wikipedia.org/wiki/Pietro_Belluschi,,8/18/1899,2/14/1994,9999,,term1 term2 term3 term4 term5
+114,1998,Benson,Benson,Gordon,person,http://viaf.org/viaf/74749519,https://en.wikipedia.org/wiki/Benson_%26_Forsyth,,10/5/1944,,0,0,term1 term2 term3 term4 term5
+115,1991,Bicknell,Bicknell,Julian,person,http://viaf.org/viaf/3023049,https://en.wikipedia.org/wiki/Julian_Bicknell,,2/23/1945,,0,0,term1 term2 term3 term4 term5
+116,1910,Bloomfiled,Blomfiled,Reginald,person,http://viaf.org/viaf/55247013,https://en.wikipedia.org/wiki/Reginald_Blomfield,,12/20/1856,12/27/1942,0,0,term1 term2 term3 term4 term5
+117,1982,Bofill,Bofill,Ricardo,person,http://viaf.org/viaf/109088379,https://en.wikipedia.org/wiki/Ricardo_Bofill,,12/5/1939,1/14/2022,9999,,term1 term2 term3 term4 term5
+118,1929,D.Bohm,Bohm,Dominikus,person,http://viaf.org/viaf/27865161,https://en.wikipedia.org/wiki/Dominikus_B%C3%B6hm,,10/23/1880,8/6/1955,0,0,term1 term2 term3 term4 term5
+119,1968,G.Bohm,Böhm,Gottfried,person,http://viaf.org/viaf/92946938,https://en.wikipedia.org/wiki/Gottfried_B%C3%B6hm,,1/23/1920,6/9/2021,0,0,term1 term2 term3 term4 term5
+120,1997,Bolles-Wilson,Bolles+Wilson,,,http://viaf.org/viaf/263893601,https://en.wikipedia.org/wiki/Bolles%2BWilson,,1980,,0,0,term1 term2 term3 term4 term5
+121,1910,Bonatz,Bonatz,Paul,person,http://viaf.org/viaf/72185130,https://en.wikipedia.org/wiki/Paul_Bonatz,,12/6/1877,12/20/1956,0,0,term1 term2 term3 term4 term5
+122,1898,Ricardo,Bosco,Ricardo Velázquez,person,http://viaf.org/viaf/52750908,https://en.wikipedia.org/wiki/Ricardo_Vel%C3%A1zquez_Bosco,,3/21/1843,7/31/1923,0,0,term1 term2 term3 term4 term5
+123,1988,Botta,Botta,Mario,person,http://viaf.org/viaf/95775085,https://en.wikipedia.org/wiki/Mario_Botta,,4/1/1943,,9999,,term1 term2 term3 term4 term5
+124,1902,Bournville,Bournville,,,,,,,,0,0,term1 term2 term3 term4 term5
+125,1953,Breuer,Breuer,Marcel,person,http://viaf.org/viaf/9899554,https://en.wikipedia.org/wiki/Marcel_Breuer,,5/21/1902,7/1/1981,9999,,term1 term2 term3 term4 term5
+126,1910,Brydon,Brydon,J.M.,person,http://viaf.org/viaf/96593857,https://en.wikipedia.org/wiki/J._M._Brydon,,1840,5/25/1901,0,0,term1 term2 term3 term4 term5
+127,1902,Burnet,Burnet,John James,person,http://viaf.org/viaf/13370629,https://en.wikipedia.org/wiki/John_James_Burnet,,5/31/1857,7/2/1938,0,0,term1 term2 term3 term4 term5
+128,,,Burnet,John,,http://viaf.org/viaf/13370629,https://en.wikipedia.org/wiki/John_Burnet_(architect),,9/27/1814,1/15/1901,,,term1 term2 term3 term4 term5
+129,1977,Byker,Byker,,,,,,,,0,0,term1 term2 term3 term4 term5
+130,1915,Chiattone,Chiattone,Mario,person,http://viaf.org/viaf/77404291,https://www.encyclopedia.com/education/dictionaries-thesauruses-pictures-and-press-releases/chiattone-mario,,1891,1957,0,0,term1 term2 term3 term4 term5
+131,1999,Ciriani,Ciriani,Henri,person,http://viaf.org/viaf/54263344,https://en.wikipedia.org/wiki/Henri_Ciriani,,12/30/1936,,0,0,term1 term2 term3 term4 term5
+132,1996,Clubs,Clubs,,,,,,,,0,0,term1 term2 term3 term4 term5
+133,1997,Coates,Coates,Nigel,person,http://viaf.org/viaf/95722473,https://en.wikipedia.org/wiki/Nigel_Coates_(architect),,1949,,0,0,term1 term2 term3 term4 term5
+134,1989,Correa,Correa,Charles,person,http://viaf.org/viaf/49365166,https://en.wikipedia.org/wiki/Charles_Correa,,9/1/1930,6/16/2015,9999,,term1 term2 term3 term4 term5
+135,1954,Costa,Costa,Lúcio,person,http://viaf.org/viaf/24785160,https://en.wikipedia.org/wiki/L%C3%BAcio_Costa,,2/27/1902,6/13/1998,0,0,term1 term2 term3 term4 term5
+136,1928,Cret,Cret,Paul Philippe,person,http://viaf.org/viaf/88942809,https://en.wikipedia.org/wiki/Paul_Philippe_Cret,,10/23/1876,9/8/1945,0,0,term1 term2 term3 term4 term5
+137,1965,Cumbernauld,Cumbernauld,,,"https://viaf.org/en/viaf/124365072
+https://viaf.org/en/viaf/133741637",,,,,0,0,term1 term2 term3 term4 term5
+138,1911,Czech Cubists,Czech Cubists,,,,https://en.wikipedia.org/wiki/Czech_Cubism,,1912-1914,,0,0,term1 term2 term3 term4 term5
+139,1907,Darmstadt Mathildenhohe,Darmstadt Mathildenhohe,,,http://viaf.org/viaf/205929307,https://whc.unesco.org/en/list/1614/,,1899,,0,0,term1 term2 term3 term4 term5
+140,1965,De Carlo,De Carlo,Giancarlo,person,http://viaf.org/viaf/95745219,https://en.wikipedia.org/wiki/Giancarlo_De_Carlo,,12/12/1919,6/4/2005,9999,,term1 term2 term3 term4 term5
+141,1939,de Finetti,de Finetti,Giuseppe,person,http://viaf.org/viaf/64881157,https://it.wikipedia.org/wiki/Giuseppe_de_Finetti,,3/5/1892,1/19/1952,0,0,term1 term2 term3 term4 term5
+142,1914,De Klerk,de Klerk,Michel,person,http://viaf.org/viaf/54971116,https://en.wikipedia.org/wiki/Michel_de_Klerk,,11/24/1884,11/24/1923,0,0,term1 term2 term3 term4 term5
+143,1921,De Klerk,de Klerk,Michel,person,http://viaf.org/viaf/54971116,https://en.wikipedia.org/wiki/Michel_de_Klerk,,11/24/1884,11/24/1923,0,0,term1 term2 term3 term4 term5
+144,1988,Derrida,Derrida,Jacques,person,http://viaf.org/viaf/88958529,https://en.wikipedia.org/wiki/Jacques_Derrida,,7/15/1930,10/9/2004,9999,,term1 term2 term3 term4 term5
+145,1998,Dixon- Jones,Dixon,Jeremy,person,http://viaf.org/viaf/59987981,https://en.wikipedia.org/wiki/Jeremy_Dixon,,5/31/1939,,0,0,term1 term2 term3 term4 term5
+145,1998,Dixon-Jones,Jones,Edward,person,http://viaf.org/viaf/47845428,https://en.wikipedia.org/wiki/Edward_Jones_(English_architect),,10/20/1939,,0,0,term1 term2 term3 term4 term5
+146,1968,Dolce Vita,Dolce Vita,,,,,,,,0,0,term1 term2 term3 term4 term5
+147,1990,Domenig,Domenig,Gunther,person,https://viaf.org/viaf/93110836,https://en.wikipedia.org/wiki/G%C3%BCnther_Domenig,,7/6/1934,6/15/2012,0,0,term1 term2 term3 term4 term5
+148,1959,Dominioni,Dominioni,Luigi Caccia,person,http://viaf.org/viaf/96604094,https://en.wikipedia.org/wiki/Luigi_Caccia_Dominioni,,12/7/1913,11/13/2016,0,0,term1 term2 term3 term4 term5
+149,1962,Doxiadis,Doxiadis,Constantinos Apostolou,person,http://viaf.org/viaf/312689,https://en.wikipedia.org/wiki/Constantinos_Apostolou_Doxiadis,,5/14/1913,6/28/1975,0,0,term1 term2 term3 term4 term5
+150,1922,Dudok,Dudok,Willem Marinus,person,http://viaf.org/viaf/109410238,https://en.wikipedia.org/wiki/Willem_Marinus_Dudok,,7/6/1884,4/6/1974,0,0,term1 term2 term3 term4 term5
+151,1929,Duiker,Duiker,Jan,person,http://viaf.org/viaf/54978148,https://en.wikipedia.org/wiki/Jan_Duiker,,3/1/1890,2/23/1935,0,0,term1 term2 term3 term4 term5
+152,1957,Eames,Eames,Charles and Ray,,"http://viaf.org/viaf/15576677
+http://viaf.org/viaf/62354916",https://en.wikipedia.org/wiki/Charles_and_Ray_Eames,,,,0,0,term1 term2 term3 term4 term5
+153,1961,Eierman,Eiermann,Egon,person,http://viaf.org/viaf/10640142,https://en.wikipedia.org/wiki/Egon_Eiermann,,9/29/1904,7/19/1970,0,0,term1 term2 term3 term4 term5
+154,1987,EISENMAN,Eisenmann,Peter,person,http://viaf.org/viaf/54297401,https://en.wikipedia.org/wiki/Peter_Eisenman,,8/11/1932,,0,0,term1 term2 term3 term4 term5
+155,1985,E.Wakil,El-Wakil,Abdel-Wahad,person,http://viaf.org/viaf/95808569,https://en.wikipedia.org/wiki/Abdel-Wahed_El-Wakil,,8/7/1943,,0,0,term1 term2 term3 term4 term5
+156,1948,Erith,Erith,Raymond,person,http://viaf.org/viaf/8239452,https://en.wikipedia.org/wiki/Raymond_Erith,,8/7/1904,11/30/1973,0,0,term1 term2 term3 term4 term5
+157,1956,Erskine,Erskine,Ralph,person,http://viaf.org/viaf/95748450,https://en.wikipedia.org/wiki/Ralph_Erskine_(architect),,2/24/1914,3/16/2005,0,0,term1 term2 term3 term4 term5
+158,1971,Erskine,Erskine,Ralph,person,http://viaf.org/viaf/95748450,https://en.wikipedia.org/wiki/Ralph_Erskine_(architect),,2/24/1914,3/16/2005,0,0,term1 term2 term3 term4 term5
+159,1999,Evans,Evans,,,,,,,,0,0,term1 term2 term3 term4 term5
+160,1990,Ferrell,Farrell,Terry,person,http://viaf.org/viaf/95727196,https://en.wikipedia.org/wiki/Terry_Farrell_(architect),,5/12/1938,,9999,,term1 term2 term3 term4 term5
+161,1979,Fathy,Fathy,Hassan,person,http://viaf.org/viaf/96467572,https://en.wikipedia.org/wiki/Hassan_Fathy,,3/23/1900,11/30/1989,9999,,term1 term2 term3 term4 term5
+162,1926,Ferris,Ferris,Hugh,person,http://viaf.org/viaf/39100,https://en.wikipedia.org/wiki/Hugh_Ferriss,,7/12/1889,1/28/1962,0,0,term1 term2 term3 term4 term5
+163,1924,Finsterlin,Finsterlin,Hermann,person,http://viaf.org/viaf/24726854,https://en.wikipedia.org/wiki/Hermann_Finsterlin,,08/18/1887,9/16/1973,0,0,term1 term2 term3 term4 term5
+164,1909,Fischer,Fischer,Alfred,person,https://viaf.org/en/viaf/102403710,https://en.wikipedia.org/wiki/Alfred_Fischer_(architect),,8/29/1881,4/10/1950,0,0,term1 term2 term3 term4 term5
+165,1996,M.Fisher,Fisher,Mark,person,http://viaf.org/viaf/29739141,https://en.wikipedia.org/wiki/Mark_Fisher_(architect),,4/20/1947,6/25/2013,0,0,term1 term2 term3 term4 term5
+166,2002,FOA,FOA,,,http://viaf.org/viaf/151063924,https://en.wikipedia.org/wiki/Foreign_Office_Architects,,1993,,0,0,term1 term2 term3 term4 term5
+167,1985,Frampton,Frampton,Kenneth,person,http://viaf.org/viaf/95801733,https://en.wikipedia.org/wiki/Kenneth_Frampton,,11/20/1930,,9999,,term1 term2 term3 term4 term5
+168,1944,Fromin,Fromin,,,,,,,,0,0,term1 term2 term3 term4 term5
+169,1993,Fuksas,Fuksas,Massimiliano,person,http://viaf.org/viaf/73967204,https://en.wikipedia.org/wiki/Massimiliano_Fuksas,,1/9/1944,,9999,,term1 term2 term3 term4 term5
+170,1958,Fuller,Fuller,Buckminster,person,http://viaf.org/viaf/36898370,https://en.wikipedia.org/wiki/Buckminster_Fuller,,7/12/1895,7/1/1983,9999,9,term1 term2 term3 term4 term5
+171,1955,Gardella,Gardella,Ignazio,person,https://viaf.org/en/viaf/100244344,https://en.wikipedia.org/wiki/Ignazio_Gardella,,3/30/1905,3/16/1999,0,0,term1 term2 term3 term4 term5
+172,1902,Garnier,Garnier,Charles,person,https://viaf.org/en/viaf/41840486,https://en.wikipedia.org/wiki/Charles_Garnier_(architect),,11/6/1825,9/3/1898,0,0,term1 term2 term3 term4 term5
+173,1903,Garnier,Garnier,Charles,person,https://viaf.org/en/viaf/41840486,https://en.wikipedia.org/wiki/Charles_Garnier_(architect),,11/6/1825,9/3/1898,0,0,term1 term2 term3 term4 term5
+174,1902,GAUDI,Gaudi,Antoni,person,http://viaf.org/viaf/9855586,https://en.wikipedia.org/wiki/Antoni_Gaud%C3%AD,,6/25/1852,6/10/1926,0,0,term1 term2 term3 term4 term5
+175,1980,GEHRY,Gehry,Frank,person,http://viaf.org/viaf/89113091,https://en.wikipedia.org/wiki/Frank_Gehry,,2/28/1929,,9999,,term1 term2 term3 term4 term5
+176,1982,GEHRY,Gehry,Frank,person,http://viaf.org/viaf/89113091,https://en.wikipedia.org/wiki/Frank_Gehry,,2/28/1929,,9999,,term1 term2 term3 term4 term5
+177,1992,GEHRY,Gehry,Frank,person,http://viaf.org/viaf/89113091,https://en.wikipedia.org/wiki/Frank_Gehry,,2/28/1929,,9999,,term1 term2 term3 term4 term5
+178,1963,Gibberd,Gibberd,Frederick,person,http://viaf.org/viaf/45638637,https://en.wikipedia.org/wiki/Frederick_Gibberd,,1/7/1908,1/9/1984,9999,,term1 term2 term3 term4 term5
+179,1930,Giedion,Giedion,Sigfried,person,http://viaf.org/viaf/64006335,https://en.wikipedia.org/wiki/Sigfried_Giedion,,4/14/1888,4/10/1968,0,0,term1 term2 term3 term4 term5
+180,1918,Gilbert,Gilbert,Cass,person,http://viaf.org/viaf/50037456,https://en.wikipedia.org/wiki/Cass_Gilbert,,11/24/1859,5/17/1934,9999,,term1 term2 term3 term4 term5
+181,1919,Gill,Gill,Irving`,person,http://viaf.org/viaf/72271842,https://en.wikipedia.org/wiki/Irving_Gill,,4/26/1870,10/7/1936,0,0,term1 term2 term3 term4 term5
+182,1929,Ginzburg,Ginzburg,Moisei,person,http://viaf.org/viaf/36973011,https://en.wikipedia.org/wiki/Moisei_Ginzburg,,06/04/1892,1/7/1946,0,0,term1 term2 term3 term4 term5
+183,1903,Gocar,Gocar,Josef,person,http://viaf.org/viaf/13212528,https://en.wikipedia.org/wiki/Josef_Go%C4%8D%C3%A1r,,3/13/1880,9/10/1945,0,0,term1 term2 term3 term4 term5
+184,1956,Goff,Goff,Bruce,person,http://viaf.org/viaf/109413242,https://en.wikipedia.org/wiki/Bruce_Goff,,6/8/1904,8/4/1982,9999,,term1 term2 term3 term4 term5
+185,1979,Gough,Gough,Piers,person,http://viaf.org/viaf/267354602,https://en.wikipedia.org/wiki/Piers_Gough,,4/24/1946,,0,0,term1 term2 term3 term4 term5
+186,1976,Graves,Graves,Michael ,person,http://viaf.org/viaf/30270790,https://en.wikipedia.org/wiki/Michael_Graves,,7/9/1934,3/12/2015,9999,,term1 term2 term3 term4 term5
+187,1908,Greene & Greene,Greene,Charles Sumner,,http://viaf.org/viaf/143038977,https://en.wikipedia.org/wiki/Greene_and_Greene,,1868,1957,9999,,term1 term2 term3 term4 term5
+187,1908,Greene & Greene,Greene,Henry Mather,,http://viaf.org/viaf/143038977,https://en.wikipedia.org/wiki/Greene_and_Greene,,1/23/1870,10/2/1954,9999,,term1 term2 term3 term4 term5
+189,1962,Greene,Greene,Herb,person,http://viaf.org/viaf/40683934,https://en.wikipedia.org/wiki/Herb_Greene_(architect),,1929,,9999,,term1 term2 term3 term4 term5
+190,1927,GROPIUS,Gropius,Walter,person,http://viaf.org/viaf/80534904,https://en.wikipedia.org/wiki/Walter_Gropius,,5/18/1883,7/5/1969,9999,,term1 term2 term3 term4 term5
+191,1968,Habraken,Habraken,John,person,http://viaf.org/viaf/79211690,https://en.wikipedia.org/wiki/N._John_Habraken,,10/29/1928,10/21/2023,0,0,term1 term2 term3 term4 term5
+192,1990,Hadid,Hadid,Zaha,person,http://viaf.org/viaf/95748872,https://en.wikipedia.org/wiki/Zaha_Hadid,,10/31/1950,3/31/2016,9999,,term1 term2 term3 term4 term5
+193,1912,Hampstead,Hampstead,,,,,,,,0,0,term1 term2 term3 term4 term5
+194,1996,Hara,Hara,Hiroshi,person,http://viaf.org/viaf/91665087,https://en.wikipedia.org/wiki/Hiroshi_Hara_(architect),,9/9/1936,,9999,,term1 term2 term3 term4 term5
+195,1922,Haring,Haring,Hugo,person,https://viaf.org/en/viaf/71465805,https://en.wikipedia.org/wiki/Hugo_H%C3%A4ring,,05/11/1882,5/17/1958,0,0,term1 term2 term3 term4 term5
+196,1941,HARRIS,Harris,Harwell Hamilton,person,http://viaf.org/viaf/38309362,https://en.wikipedia.org/wiki/Harwell_Hamilton_Harris,,7/2/1903,11/18/1990,0,0,term1 term2 term3 term4 term5
+197,1961,Harrison,Harrison,Wallace,person,http://viaf.org/viaf/79404254,https://en.wikipedia.org/wiki/Wallace_Harrison,,09/28/1895,12/2/1981,0,0,term1 term2 term3 term4 term5
+198,2002,Hasegawa,Hasegawa,Itsuko,person,http://viaf.org/viaf/62274276,https://en.wikipedia.org/wiki/Itsuko_Hasegawa,,1941,,9999,34567,term1 term2 term3 term4 term5
+199,1960,Hausermann,Hausermann,Pascal,group of architects,https://viaf.org/en/viaf/66585853,https://architectuul.com/architect/pascal-hausermann,,1936,2011,0,0,term1 term2 term3 term4 term5
+200,1921,Hauszinsteur,Hauszinsteur,,,,,,,,0,0,term1 term2 term3 term4 term5
+201,1989,Hecker,Hecker,Ziv,person,http://viaf.org/viaf/10654358,https://en.wikipedia.org/wiki/Zvi_Hecker,,5/31/1931,9/24/2023,0,0,term1 term2 term3 term4 term5
+202,1912,Hellerau,Hellerau,,,,,,,,0,0,term1 term2 term3 term4 term5
+203,1968,Hertzberger,Hertzberger,Herman,person,http://viaf.org/viaf/54244045,https://en.wikipedia.org/wiki/Herman_Hertzberger,,7/6/1932,,0,0,term1 term2 term3 term4 term5
+204,1904,Hoffman,Hoffman,Josef,person,http://viaf.org/viaf/66567152,https://en.wikipedia.org/wiki/Josef_Hoffmann,,12/15/1870,5/7/1956,0,0,term1 term2 term3 term4 term5
+205,1916,Holden,Holden,Charles,person,http://viaf.org/viaf/62770217,https://en.wikipedia.org/wiki/Charles_Holden,,5/12/1875,5/1/1960,0,0,term1 term2 term3 term4 term5
+206,1999,Holl,Holl,Steven,person,http://viaf.org/viaf/71450966,https://en.wikipedia.org/wiki/Steven_Holl,,12/9/1947,,9999,,term1 term2 term3 term4 term5
+207,1977,HOLLEIN,Hollein,Hans,person,http://viaf.org/viaf/95867967,https://en.wikipedia.org/wiki/Hans_Hollein,,3/30/1934,4/24/2014,9999,,term1 term2 term3 term4 term5
+208,1925,HOOD,Hood,Raymond,person,http://viaf.org/viaf/69725381,https://en.wikipedia.org/wiki/Raymond_Hood,,3/29/1881,8/14/1934,9999,,term1 term2 term3 term4 term5
+209,1985,Hopkins,Hopkins,Michael ,person,http://viaf.org/viaf/101582971,https://en.wikipedia.org/wiki/Michael_Hopkins_(architect),,5/7/1935,6/17/2023,0,0,term1 term2 term3 term4 term5
+210,1902,HORTA,Horta,Victor,person,http://viaf.org/viaf/41863991,https://en.wikipedia.org/wiki/Victor_Horta,,1/6/1861,9/8/1947,0,0,term1 term2 term3 term4 term5
+211,1903,Ebenezer Howard,Howard,Ebenezer,person,http://viaf.org/viaf/69028545,https://en.wikipedia.org/wiki/Ebenezer_Howard,,1/29/1850,5/1/1928,0,0,term1 term2 term3 term4 term5
+212,1976,Hundertwasser,Hundertwasser,Friedensreich,person,http://viaf.org/viaf/12426797,https://en.wikipedia.org/wiki/Friedensreich_Hundertwasser,,12/15/1928,2/19/2000,9999,,term1 term2 term3 term4 term5
+213,1978,Ishii,Ishii,Kazuhiro,person,http://viaf.org/viaf/52827221,n/a,,2/1/1944,1/14/2015,0,0,term1 term2 term3 term4 term5
+214,1973,ISOZAKI,Isozaki,Arata,person,http://viaf.org/viaf/95829814,https://en.wikipedia.org/wiki/Arata_Isozaki,,7/23/1931,12/28/2022,9999,,term1 term2 term3 term4 term5
+215,1961,Jacobs,Jacobs,Jane,person,http://viaf.org/viaf/90712053,https://en.wikipedia.org/wiki/Jane_Jacobs,,5/4/1916,4/25/2006,0,0,term1 term2 term3 term4 term5
+216,1961,Jacobs,Jacobs,Robert Allan,person,http://viaf.org/viaf/172474832,https://en.wikipedia.org/wiki/Robert_Allan_Jacobs,,9/16/1905,11/4/1993,9999,,term1 term2 term3 term4 term5
+217,1973,JENCKS,Jencks,Charles,person,http://viaf.org/viaf/101610494,https://en.wikipedia.org/wiki/Charles_Jencks,,6/21/1939,10/13/2019,9999,,term1 term2 term3 term4 term5
+431,1992,Jencks,Jencks,Charles,person,http://viaf.org/viaf/101610494,https://en.wikipedia.org/wiki/Charles_Jencks,,6/21/1939,10/13/2019,9999,,term1 term2 term3 term4 term5
+218,1910,,Jensen-Klint,Peder Vilhelm,,http://viaf.org/viaf/13478240,https://en.wikipedia.org/wiki/Peder_Vilhelm_Jensen-Klint,,06/21/1853,12/1/1930,0,0,term1 term2 term3 term4 term5
+219,1979,Jerde,Jerde,Jon,person,http://viaf.org/viaf/4219149198258074940004,https://en.wikipedia.org/wiki/Jon_Jerde,,1/22/1940,2/9/2015,0,0,term1 term2 term3 term4 term5
+220,1961,Johansen,Johansen,John M.,person,http://viaf.org/viaf/113523673,https://en.wikipedia.org/wiki/John_M._Johansen,,6/29/1916,10/26/2012,0,0,term1 term2 term3 term4 term5
+221,1952,Johnson,Johnson,Philip,person,http://viaf.org/viaf/108419418,https://en.wikipedia.org/wiki/Philip_Johnson,,7/8/1906,1/25/2005,9999,,term1 term2 term3 term4 term5
+222,1976,Johnson,Johnson,Philip,person,http://viaf.org/viaf/108419418,https://en.wikipedia.org/wiki/Philip_Johnson,,7/8/1906,1/25/2005,9999,,term1 term2 term3 term4 term5
+224,1905,Jourdain,Jourdain,Frantz,person,http://viaf.org/viaf/64130335,https://en.wikipedia.org/wiki/Frantz_Jourdain,,10/3/1847,8/22/1935,0,0,term1 term2 term3 term4 term5
+225,1966,KAHN,Kahn,Louis,person,http://viaf.org/viaf/95195639,https://en.wikipedia.org/wiki/Louis_Kahn,,3/5/1901,3/17/1974,9999,,term1 term2 term3 term4 term5
+226,1977,Kallman,Kallman,Gerhard,person,http://viaf.org/viaf/5058157643283538590004,https://en.wikipedia.org/wiki/Gerhard_Kallmann,,2/13/1915,6/19/2012,0,0,term1 term2 term3 term4 term5
+227,1993,Karmi,Karmi,Ram,person,http://viaf.org/viaf/96239445,https://en.wikipedia.org/wiki/Ram_Karmi,,1931,4/11/2013,0,0,term1 term2 term3 term4 term5
+228,1938,Keisler,Kiesler,Frederick John,person,http://viaf.org/viaf/24651477,https://en.wikipedia.org/wiki/Frederick_John_Kiesler,,9/22/1890,12/27/1965,9999,,term1 term2 term3 term4 term5
+229,1959,Keisler,Kiesler,Frederick John,person,http://viaf.org/viaf/24651477,https://en.wikipedia.org/wiki/Frederick_John_Kiesler,,9/22/1890,12/27/1965,9999,,term1 term2 term3 term4 term5
+230,1968,Kikutake,Kikutake,Kiyonori,person,http://viaf.org/viaf/96133831,https://en.wikipedia.org/wiki/Kiyonori_Kikutake,,4/1/1928,12/26/2011,0,0,term1 term2 term3 term4 term5
+231,2001,Kipnis,Kipnis,Jeff,person,http://viaf.org/viaf/10000483,https://en.wikipedia.org/wiki/Jeff_Kipnis,,1951,,0,0,term1 term2 term3 term4 term5
+232,1996,Kitagawara,Kitagawara,Atsushi,person,http://viaf.org/viaf/108332632,https://en.wikipedia.org/wiki/Atsushi_Kitagawara,,1951,,0,0,term1 term2 term3 term4 term5
+233,1912,Klint,Klint,Kaare,person,http://viaf.org/viaf/436149106000068490236,https://en.wikipedia.org/wiki/Kaare_Klint,,12/15/1888,3/23/1954,,,term1 term2 term3 term4 term5
+234,1938,Klotz,Klotz,Clemens,person,http://viaf.org/viaf/18022555,https://en.wikipedia.org/wiki/Clemens_Klotz,,5/31/1886,8/18/1969,0,0,term1 term2 term3 term4 term5
+235,1959,Koch,Koch,Carl,person,http://viaf.org/viaf/95835129,https://en.wikipedia.org/wiki/Carl_Koch_(architect),,5/11/1912,7/3/1998,9999,,term1 term2 term3 term4 term5
+236,1986,KOOLHAAS,Koolhaas,Rem,person,http://viaf.org/viaf/111300727,https://en.wikipedia.org/wiki/Rem_Koolhaas,,11/17/1944,,9999,,term1 term2 term3 term4 term5
+237,1985,KPF,KPF,,,http://viaf.org/viaf/124919683,https://en.wikipedia.org/wiki/Kohn_Pedersen_Fox,,1976,,0,0,term1 term2 term3 term4 term5
+238,1917,Kramer,Kramer,Piet,person,http://viaf.org/viaf/74659080,https://en.wikipedia.org/wiki/Piet_Kramer,,7/1/1881,2/4/1961,0,0,term1 term2 term3 term4 term5
+239,1942,Kreis,Kreis,Wilhelm,person,http://viaf.org/viaf/115619930,https://en.wikipedia.org/wiki/Wilhelm_Kreis,,3/17/1873,8/13/1955,0,0,term1 term2 term3 term4 term5
+240,1981,L.Krier,Krier,Leon,person,http://viaf.org/viaf/14843343,https://en.wikipedia.org/wiki/L%C3%A9on_Krier,,4/7/1946,,9999,,term1 term2 term3 term4 term5
+241,1994,R.Krier,Krier,Rob,person,http://viaf.org/viaf/24638029,https://en.wikipedia.org/wiki/Rob_Krier,,6/10/1938,11/1/2023,9999,,term1 term2 term3 term4 term5
+242,1970,Kroll,Kroll,Lucien,person,http://viaf.org/viaf/64099970,https://en.wikipedia.org/wiki/Lucien_Kroll,,3/13/1927,8/1/2022,9999,,term1 term2 term3 term4 term5
+243,1962,Kurokawa,Kurokawa,Kisho,person,http://viaf.org/viaf/34524329,https://en.wikipedia.org/wiki/Kisho_Kurokawa,,4/8/1934,10/12/2007,9999,45,term1 term2 term3 term4 term5
+244,1992,KUROKAWA,Kurokawa,Kisho,person,http://viaf.org/viaf/34524329,https://en.wikipedia.org/wiki/Kisho_Kurokawa,,4/8/1934,10/12/2007,9999,45,term1 term2 term3 term4 term5
+245,1977,La Tendenza,La Tendenza,,,http://viaf.org/viaf/260393336,https://www.studiointernational.com/la-tendenza-italian-architecture-1965-1985,,,,0,0,term1 term2 term3 term4 term5
+246,1900,Lanchester & Rickards,Lanchester,Henry Vaughan,person,http://viaf.org/viaf/56459619,https://en.wikipedia.org/wiki/H._V._Lanchester,,8/9/1863,1/16/1953,0,0,term1 term2 term3 term4 term5
+246,1900,Lanchester & Rickards,Rickards,Edwin Alfred,person,http://viaf.org/viaf/11294337,https://en.wikipedia.org/wiki/E._A._Rickards,,6/?/1872,8/29/1920,0,0,term1 term2 term3 term4 term5
+247,1920,LE CORBUSIER,Le Corbusier,,person,http://viaf.org/viaf/56612471,https://en.wikipedia.org/wiki/Le_Corbusier,,10/06/1887,8/27/1965,9999,,term1 term2 term3 term4 term5
+248,1927,LE CORBUSIER,Le Corbusier,,person,http://viaf.org/viaf/56612471,https://en.wikipedia.org/wiki/Le_Corbusier,,10/06/1887,8/27/1965,9999,,term1 term2 term3 term4 term5
+249,1950,LE CORBUSIER,Le Corbusier,,person,http://viaf.org/viaf/56612471,https://en.wikipedia.org/wiki/Le_Corbusier,,10/06/1887,8/27/1965,9999,,term1 term2 term3 term4 term5
+250,1965,Le Corbusier,Le Corbusier,,person,http://viaf.org/viaf/56612471,https://en.wikipedia.org/wiki/Le_Corbusier,,10/06/1887,8/27/1965,9999,,term1 term2 term3 term4 term5
+251,1900,Lechner,Lechner,Odon,person,http://viaf.org/viaf/35263153,"https://en.wikipedia.org/wiki/%C3%96d%C3%B6n_Lechner#:~:text=In%20the%20early%201900s%2C%20he,his%20search%20for%20larger%20commissions.",,8/27/1845,6/10/1914,0,0,term1 term2 term3 term4 term5
+252,1933,Lemaresquier,Lemaresquier,Charles,person,http://viaf.org/viaf/44292846,https://en.wikipedia.org/wiki/Charles_Lemaresquier,,10/16/1870,1/6/1972,0,0,term1 term2 term3 term4 term5
+253,1923,Leonidov,Leonidov,Ivan,person,http://viaf.org/viaf/67264236,https://en.wikipedia.org/wiki/Ivan_Leonidov,,2/9/1902,11/6/1959,0,0,term1 term2 term3 term4 term5
+254,1903,Letchworth,Letchworth,,,http://viaf.org/viaf/141900024,https://en.wikipedia.org/wiki/Letchworth,,,,0,0,term1 term2 term3 term4 term5
+255,1958,Lewerentz,Lewerentz,Sigurd,person,http://viaf.org/viaf/77114985,https://en.wikipedia.org/wiki/Sigurd_Lewerentz,,7/29/1885,12/29/1975,0,0,term1 term2 term3 term4 term5
+256,1939,Libera,Libera,Adalberto,person,http://viaf.org/viaf/59883492,https://en.wikipedia.org/wiki/Adalberto_Libera,,7/16/1903,3/17/1963,0,0,term1 term2 term3 term4 term5
+257,2001,LIBESKIND,Libeskind,Daniel,person,http://viaf.org/viaf/95823527,https://en.wikipedia.org/wiki/Daniel_Libeskind,,5/12/1946,,9999,,term1 term2 term3 term4 term5
+258,1919,Lissitzky,Lissitzky,El ,person,http://viaf.org/viaf/41890867,https://en.wikipedia.org/wiki/El_Lissitzky,,11/24/1890,12/30/1941,0,0,term1 term2 term3 term4 term5
+259,1945,lofam,Lofam,,,,,,,,0,0,term1 term2 term3 term4 term5
+260,1930,LOUGHEUR ACT,Lougheur Act,,,,,,,,,,term1 term2 term3 term4 term5
+261,1996,Amory Lovins,Lovins,Amory,,http://viaf.org/viaf/108190727,https://en.wikipedia.org/wiki/Amory_Lovins,,11/13/1947,,0,0,term1 term2 term3 term4 term5
+262,1929,Lucrat,Lucrat,Andre,person,http://viaf.org/viaf/49293198,https://en.wikipedia.org/wiki/Andr%C3%A9_Lur%C3%A7at,,8/27/1894,7/11/1970,0,0,term1 term2 term3 term4 term5
+263,1914,LUTYENS,Lutyens,Edwin,person,http://viaf.org/viaf/64048126,https://en.wikipedia.org/wiki/Edwin_Lutyens,,3/29/1869,1/1/1944,0,0,term1 term2 term3 term4 term5
+264,1916,Lutyens & Unwin,Lutyens,Edwin,,http://viaf.org/viaf/64048126,https://en.wikipedia.org/wiki/Edwin_Lutyens,,3/29/1869,1/1/1944,0,0,term1 term2 term3 term4 term5
+265,2002,Lynn,Lynn,Greg,person,http://viaf.org/viaf/47604012,https://en.wikipedia.org/wiki/Greg_Lynn,,1964,,0,0,term1 term2 term3 term4 term5
+266,1987,MacCormac,MacCormac,Richard,person,http://viaf.org/viaf/261246317,https://en.wikipedia.org/wiki/Richard_MacCormac,,9/3/1938,7/26/2014,0,0,term1 term2 term3 term4 term5
+267,1904,Mackintosh,Mackintosh,Charles,person,http://viaf.org/viaf/74645185,https://en.wikipedia.org/wiki/Charles_Rennie_Mackintosh,,6/7/1868,12/10/1928,0,0,term1 term2 term3 term4 term5
+268,1905,Mackintosh,Mackintosh,Charles,person,http://viaf.org/viaf/74645185,https://en.wikipedia.org/wiki/Charles_Rennie_Mackintosh,,6/7/1868,12/10/1928,0,0,term1 term2 term3 term4 term5
+269,1957,Maekawa,Maekawa,Kunio,person,http://viaf.org/viaf/91944476,https://en.wikipedia.org/wiki/Kunio_Maekawa,,5/14/1905,6/26/1986,0,0,term1 term2 term3 term4 term5
+270,1997,Makovecz,Makovecz,Imre,person,http://viaf.org/viaf/111336623,https://en.wikipedia.org/wiki/Imre_Makovecz,,11/20/1935,9/27/2011,0,0,term1 term2 term3 term4 term5
+271,1924,E.MAY & FRANKFURT,May,Ernst,,http://viaf.org/viaf/37711461,https://en.wikipedia.org/wiki/Ernst_May,,7/27/1886,9/11/1970,0,0,term1 term2 term3 term4 term5
+272,1908,Maybeck,Maybeck,Bernard,person,http://viaf.org/viaf/820361,https://en.wikipedia.org/wiki/Bernard_Maybeck,,2/7/1862,10/3/1957,9999,,term1 term2 term3 term4 term5
+273,1995,Mecanoo,Mecanoo,,firm,http://viaf.org/viaf/150284077,https://en.wikipedia.org/wiki/Mecanoo,,1984,,0,0,term1 term2 term3 term4 term5
+274,2002,MEIER,Meier,Richard,person,http://viaf.org/viaf/185821601,https://en.wikipedia.org/wiki/Richard_Meier,,10/12/1934,,9999,3,term1 term2 term3 term4 term5
+275,1926,Melnikov,Melnikov,Konstantin,person,http://viaf.org/viaf/111746182,https://en.wikipedia.org/wiki/Konstantin_Melnikov,,08/03/1890,11/28/1974,0,0,term1 term2 term3 term4 term5
+276,1923,Mendelsohn,Mendelsohn,Erich,person,http://viaf.org/viaf/2612145857099822922047,https://en.wikipedia.org/wiki/Erich_Mendelsohn,,03/21/1887,9/15/1953,0,0,term1 term2 term3 term4 term5
+277,1910,Mewes & Davies,Mewes,Charles,person,http://viaf.org/viaf/95721546,https://en.wikipedia.org/wiki/Charles_Mew%C3%A8s,,1/30/1858,8/9/1914,0,0,term1 term2 term3 term4 term5
+278,1942,Michelucci,Michelucci,Giovanni,person,http://viaf.org/viaf/112495870,https://en.wikipedia.org/wiki/Giovanni_Michelucci,,1/2/1891,12/31/1990,0,0,term1 term2 term3 term4 term5
+279,1961,Michelucci,Michelucci,Giovanni,person,http://viaf.org/viaf/112495870,https://en.wikipedia.org/wiki/Giovanni_Michelucci,,1/2/1891,12/31/1990,0,0,term1 term2 term3 term4 term5
+280,1921,MIES,Mies van der Rohe,Ludwig ,person,http://viaf.org/viaf/95153318,https://en.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe,,3/27/1886,8/17/1969,0,0,term1 term2 term3 term4 term5
+281,1956,MIES,Mies van der Rohe,Ludwig ,person,http://viaf.org/viaf/95153318,https://en.wikipedia.org/wiki/Ludwig_Mies_van_der_Rohe,,3/27/1886,8/17/1969,0,0,term1 term2 term3 term4 term5
+282,1973,Milton Keyens,Milton Keyens,,,http://viaf.org/viaf/152452862,https://en.wikipedia.org/wiki/Milton_Keynes,,1/23/1967,,0,0,term1 term2 term3 term4 term5
+283,1991,Miralles,Miralles,Enric,person,http://viaf.org/viaf/37721524,https://en.wikipedia.org/wiki/Enric_Miralles,,2/12/1955,7/3/2000,9999,,term1 term2 term3 term4 term5
+284,1930,Moholy-Nagy,Moholy-Nagy,Laszlo,person,http://viaf.org/viaf/22203431,https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Moholy-Nagy,,7/20/1895,11/24/1946,0,0,term1 term2 term3 term4 term5
+285,1992,MONEO,Moneo,Rafael,person,http://viaf.org/viaf/95770804,https://en.wikipedia.org/wiki/Rafael_Moneo,,5/9/1937,,9999,,term1 term2 term3 term4 term5
+286,1970,Moore,Moore,Charles (Willard),person,http://viaf.org/viaf/108418919,https://en.wikipedia.org/wiki/Charles_Moore_(architect),,10/31/1925,12/16/1993,9999,,term1 term2 term3 term4 term5
+287,1909,Moser,Moser,Karl,person,http://viaf.org/viaf/3263091,https://en.wikipedia.org/wiki/Karl_Moser,,8/10/1860,2/28/1936,0,0,term1 term2 term3 term4 term5
+288,1989,MOSS,Moss,Eric Owen,person,http://viaf.org/viaf/111523176,https://en.wikipedia.org/wiki/Eric_Owen_Moss,,7/25/1943,,9999,,term1 term2 term3 term4 term5
+289,2001,Mozuma,Mozuma,,,,"https://en.wikipedia.org/wiki/Mazuma,_Nevada",,,,,,term1 term2 term3 term4 term5
+290,1913,Muthesius,Muthesius,Hermann,person,http://viaf.org/viaf/36994033,https://en.wikipedia.org/wiki/Hermann_Muthesius,,4/20/1861,10/29/1927,0,0,term1 term2 term3 term4 term5
+291,1936,Muzio,Muzio,Giovanni,person,http://viaf.org/viaf/3270688,https://en.wikipedia.org/wiki/Giovanni_Muzio,,2/12/1893,5/21/1982,0,0,term1 term2 term3 term4 term5
+292,1997,Navarro ecological design,Navarro,Agustin,person,http://viaf.org/viaf/96203323,https://en.wikipedia.org/wiki/Agust%C3%ADn_Hern%C3%A1ndez_Navarro,,2/29/1924,11/10/2022,0,0,term1 term2 term3 term4 term5
+293,1951,Neutra,Neutra,Richard,person,http://viaf.org/viaf/66513638,https://en.wikipedia.org/wiki/Richard_Neutra,,4/8/1892,4/16/1970,9999,,term1 term2 term3 term4 term5
+294,1955,Niemeyer,Niemeyer,Oscar,person,http://viaf.org/viaf/95725437,https://en.wikipedia.org/wiki/Oscar_Niemeyer,,12/15/1907,12/5/2012,0,0,term1 term2 term3 term4 term5
+295,1964,Niemeyer,Niemeyer,Oscar,person,http://viaf.org/viaf/95725437,https://en.wikipedia.org/wiki/Oscar_Niemeyer,,12/15/1907,12/5/2012,0,0,term1 term2 term3 term4 term5
+296,1973,Nikken Sekki,Nikken Sekki,,firm,http://viaf.org/viaf/134336057,https://en.wikipedia.org/wiki/Nikken_Sekkei,,,,0,0,term1 term2 term3 term4 term5
+297,1973,Norberg-Schulz,Norberg-Schulz,Christian,person,http://viaf.org/viaf/108178407,https://en.wikipedia.org/wiki/Christian_Norberg-Schulz,,5/23/1926,3/28/2000,9999,,term1 term2 term3 term4 term5
+298,1992,NOUVEL,Nouvel,Jean,person,http://viaf.org/viaf/95789815,https://en.wikipedia.org/wiki/Jean_Nouvel,,8/12/1945,,9999,46,term1 term2 term3 term4 term5
+299,1901,Olbrich,Olbrich,Joseph Maria,person,http://viaf.org/viaf/39646235,https://en.wikipedia.org/wiki/Joseph_Maria_Olbrich,,12/22/1867,9/8/1908,0,0,term1 term2 term3 term4 term5
+300,1926,Osa,Osa,,,,https://en.wikipedia.org/wiki/OSA_Group,,1925,1930,0,0,term1 term2 term3 term4 term5
+301,1919,Ostberg,Ostberg,Ragnar,person,http://viaf.org/viaf/54274637,https://en.wikipedia.org/wiki/Ragnar_%C3%96stberg,,7/14/1866,2/5/1945,0,0,term1 term2 term3 term4 term5
+302,1922,Oud,Oud,J.J.,person,http://viaf.org/viaf/59169249,https://en.wikipedia.org/wiki/J._J._P._Oud,,2/9/1890,4/5/1963,0,0,term1 term2 term3 term4 term5
+303,1980,Outram,Outram,John,person,http://viaf.org/viaf/44136111,https://en.wikipedia.org/wiki/John_Outram,,6/21/1934,,0,0,term1 term2 term3 term4 term5
+304,1910,Parker & Unwin,Parker,Richard Barry,,http://viaf.org/viaf/35379988,https://en.wikipedia.org/wiki/Richard_Barry_Parker,,11/18/1867,2/21/1947,0,0,term1 term2 term3 term4 term5
+305,1986,Pattern Language,Pattern Language,,book,http://viaf.org/viaf/9246156858511749780007,https://en.wikipedia.org/wiki/A_Pattern_Language,,1977,,0,0,term1 term2 term3 term4 term5
+306,1979,Pei,Pei,I M,person,http://viaf.org/viaf/2491588,https://en.wikipedia.org/wiki/I._M._Pei,,4/26/1917,5/16/2019,0,0,term1 term2 term3 term4 term5
+307,1989,Pelli,Pelli,Cesar,person,http://viaf.org/viaf/109411704,https://en.wikipedia.org/wiki/C%C3%A9sar_Pelli,,10/12/1926,7/19/2019,9999,,term1 term2 term3 term4 term5
+308,1997,Pelli,Pelli,Cesar,person,http://viaf.org/viaf/109411704,https://en.wikipedia.org/wiki/C%C3%A9sar_Pelli,,10/12/1926,7/19/2019,9999,,term1 term2 term3 term4 term5
+309,1999,Perrella,Perrella,Stephen,person,http://viaf.org/viaf/24682120,https://www.archpaper.com/2008/03/stephen-perrella-1956-2008/,,,,0,0,term1 term2 term3 term4 term5
+310,1901,Perret,Perret,Auguste,person,http://viaf.org/viaf/32045176,https://en.wikipedia.org/wiki/Auguste_Perret,,2/12/1874,2/25/1954,0,0,term1 term2 term3 term4 term5
+311,1923,PESSAC,PESSAC,,,,,,,,0,0,term1 term2 term3 term4 term5
+312,1942,Piacentini,Piacentini,Marcello,person,http://viaf.org/viaf/39370470,https://en.wikipedia.org/wiki/Marcello_Piacentini,,12/8/1881,5/19/1960,0,0,term1 term2 term3 term4 term5
+313,1972,Pietila,Pietilä,Reima,person,http://viaf.org/viaf/95709497,https://en.wikipedia.org/wiki/Reima_and_Raili_Pietil%C3%A4,,8/25/1923,8/26/1993,0,0,term1 term2 term3 term4 term5
+314,1909,Pite,Pite,Arthur Beresford,person,http://viaf.org/viaf/24493730,https://en.wikipedia.org/wiki/Arthur_Beresford_Pite,,9/2/1861,11/27/1934,0,0,term1 term2 term3 term4 term5
+315,1914,Poelzig,Poelzig,Hans,person,http://viaf.org/viaf/85540,https://en.wikipedia.org/wiki/Hans_Poelzig,,04/30/1869,6/14/1936,0,0,term1 term2 term3 term4 term5
+316,1948,Poliakov,Poliakov,Léon,person,http://viaf.org/viaf/9852041,https://en.wikipedia.org/wiki/L%C3%A9on_Poliakov,,11/25/1910,12/8/1997,9999,,term1 term2 term3 term4 term5
+317,1949,Ponti,Ponti,Gio,person,http://viaf.org/viaf/108666789,https://en.wikipedia.org/wiki/Gio_Ponti,,11/18/1891,9/16/1979,9999,,term1 term2 term3 term4 term5
+318,1998,Porphyrios,Porphyrios,Demetri,person,http://viaf.org/viaf/27138236,https://en.wikipedia.org/wiki/Demetri_Porphyrios,,1949,,0,0,term1 term2 term3 term4 term5
+319,1992,Predock,Predock,Antoine,person,http://viaf.org/viaf/10655261,https://en.wikipedia.org/wiki/Antoine_Predock,,6/24/1936,3/2/2024,9999,,term1 term2 term3 term4 term5
+320,1961,Price,Price,Cedric,person,http://viaf.org/viaf/95693676,https://en.wikipedia.org/wiki/Cedric_Price,,9/11/1934,8/10/2003,9999,,term1 term2 term3 term4 term5
+321,1974,Prince,Prince,Bart,person,http://viaf.org/viaf/236149294282880521410,https://en.wikipedia.org/wiki/Bart_Prince,,6/24/1947,,0,0,term1 term2 term3 term4 term5
+322,1908,Prior,Prior,Edward Schroeder,person,http://viaf.org/viaf/878688,https://en.wikipedia.org/wiki/Edward_Schroeder_Prior,,1/4/1852,8/19/1932,0,0,term1 term2 term3 term4 term5
+323,1993,Prix,Prix,Wolf Dieter,person,http://viaf.org/viaf/15031103,https://en.wikipedia.org/wiki/Wolf_Dieter_Prix,,12/13/1942,,0,0,term1 term2 term3 term4 term5
+324,1930,radburn,Radburn,,,,https://en.wikipedia.org/wiki/Radburn_design_housing,,,,0,0,term1 term2 term3 term4 term5
+325,1953,Rainer,Rainer,Arnulf,person,http://viaf.org/viaf/59210402,https://en.wikipedia.org/wiki/Arnulf_Rainer,,12/8/1929,,0,0,term1 term2 term3 term4 term5
+326,1934,Raymond,Raymond,Antonin,person,http://viaf.org/viaf/30404415,https://en.wikipedia.org/wiki/Antonin_Raymond,,5/10/1888,10/25/1976,9999,,term1 term2 term3 term4 term5
+327,1951,Reidy,Reidy,Affonso Eduardo,person,http://viaf.org/viaf/10641213,https://en.wikipedia.org/wiki/Affonso_Eduardo_Reidy,,10/26/1909,8/10/1964,9999,,term1 term2 term3 term4 term5
+328,1994,Rewal,Rewal,Raj,person,http://viaf.org/viaf/3450149068574465730003,https://en.wikipedia.org/wiki/Raj_Rewal,,11/24/1934,,9999,,term1 term2 term3 term4 term5
+330,1926,Rietveld,Rietveld,Gerrit,person,http://viaf.org/viaf/15562113,https://en.wikipedia.org/wiki/Gerrit_Rietveld,,6/24/1888,6/25/1964,0,0,term1 term2 term3 term4 term5
+331,1935,Rimpl,Rimpl,Herbert,person,http://viaf.org/viaf/25504183,https://de.wikipedia.org/wiki/Herbert_Rimpl,,1/25/1902,6/2/1978,0,0,term1 term2 term3 term4 term5
+332,1968,Roche,Roche,Kevin,person,http://viaf.org/viaf/40170981,https://en.wikipedia.org/wiki/Kevin_Roche,,6/14/1922,3/1/2019,9999,,term1 term2 term3 term4 term5
+333,1976,Roche,Roche,Kevin,person,http://viaf.org/viaf/40170981,https://en.wikipedia.org/wiki/Kevin_Roche,,6/14/1922,3/1/2019,9999,,term1 term2 term3 term4 term5
+334,1918,Rodchenko,Rodchenko,Alexander,person,http://viaf.org/viaf/56633412,https://en.wikipedia.org/wiki/Alexander_Rodchenko,,12/05/1891,12/3/1956,0,0,term1 term2 term3 term4 term5
+335,1993,ROGERS,Rogers,Richard,person,http://viaf.org/viaf/90597250,https://en.wikipedia.org/wiki/Richard_Rogers,,7/23/1933,12/18/2021,0,0,term1 term2 term3 term4 term5
+336,1958,Ronchamp,Ronchamp,,,http://viaf.org/viaf/155939852,https://en.wikipedia.org/wiki/Ronchamp,,,,0,0,term1 term2 term3 term4 term5
+337,1976,Rossi,Rossi,Aldo,person,http://viaf.org/viaf/100223891,https://en.wikipedia.org/wiki/Aldo_Rossi,,5/3/1931,9/4/1997,9999,,term1 term2 term3 term4 term5
+338,1985,ROSSI,Rossi,Aldo,person,http://viaf.org/viaf/100223891,https://en.wikipedia.org/wiki/Aldo_Rossi,,5/3/1931,9/4/1997,9999,,term1 term2 term3 term4 term5
+339,1980,Rowe,Rowe,Colin,person,http://viaf.org/viaf/100255972,https://en.wikipedia.org/wiki/Colin_Rowe,,3/27/1920,11/5/1999,9999,,term1 term2 term3 term4 term5
+340,1953,Rudolph,Rudolph,Paul,person,http://viaf.org/viaf/161676,https://en.wikipedia.org/wiki/Paul_Rudolph_(architect),,10/23/1918,8/8/1997,9999,,term1 term2 term3 term4 term5
+341,1991,"S,M,L,XL","S,M,L,XL",,,http://viaf.org/viaf/345144928979754440909,"https://en.wikipedia.org/wiki/S,M,L,XL",,10/31/1995,,0,0,term1 term2 term3 term4 term5
+342,1900,Saarinen,Saarinen,Eliel,person,http://viaf.org/viaf/39471157,https://en.wikipedia.org/wiki/Eliel_Saarinen,,8/20/1873,7/1/1950,0,0,term1 term2 term3 term4 term5
+343,1913,Saarinen,Saarinen,Eliel,person,http://viaf.org/viaf/39471157,https://en.wikipedia.org/wiki/Eliel_Saarinen,,8/20/1873,7/1/1950,0,0,term1 term2 term3 term4 term5
+344,1956,Saarinen,Saarinen,Eero,person,http://viaf.org/viaf/41868977,https://en.wikipedia.org/wiki/Eero_Saarinen,,8/20/1910,9/1/1961,9999,,term1 term2 term3 term4 term5
+345,1941,Sagebiel,Sagebiel,Ernst,person,http://viaf.org/viaf/20439598,https://en.wikipedia.org/wiki/Ernst_Sagebiel,,10/2/1892,3/5/1970,0,0,term1 term2 term3 term4 term5
+346,1914,Sant-Elia,Sant-Elia,Antonio,person,http://viaf.org/viaf/64808203,https://en.wikipedia.org/wiki/Antonio_Sant%27Elia,,04/30/1888,10/10/1916,0,0,term1 term2 term3 term4 term5
+347,1936,Sartoris,Sartoris,Alberto,person,http://viaf.org/viaf/117576649,https://fr.wikipedia.org/wiki/Alberto_Sartoris,,2/2/1901,3/8/1998,0,0,term1 term2 term3 term4 term5
+348,1908,Sauvage,Sauvage,Henri,person,http://viaf.org/viaf/62348319,https://en.wikipedia.org/wiki/Henri_Sauvage,,05/10/1873,3/21/1932,0,0,term1 term2 term3 term4 term5
+349,1974,Scarpa,Scarpa,Carlo,person,http://viaf.org/viaf/100173854,https://en.wikipedia.org/wiki/Carlo_Scarpa,,6/2/1906,11/28/1978,9999,,term1 term2 term3 term4 term5
+350,1961,SCHAROUN,Scharoun,Hans,person,http://viaf.org/viaf/74645781,https://en.wikipedia.org/wiki/Hans_Scharoun,,9/20/1893,11/25/1972,9999,,term1 term2 term3 term4 term5
+351,1917,Scheerbart,Scheerbart,Paul,person,http://viaf.org/viaf/44474928,https://en.wikipedia.org/wiki/Paul_Scheerbart,,01/08/1863,10/15/1915,0,0,term1 term2 term3 term4 term5
+352,1990,Schenzen instant city,Schenzen,,,,,,,,0,0,term1 term2 term3 term4 term5
+353,1929,SCHINDLER,Schindler,Rudolph,person,http://viaf.org/viaf/34535142,https://en.wikipedia.org/wiki/Rudolph_Schindler_(architect),,09/10/1887,8/22/1953,0,0,term1 term2 term3 term4 term5
+354,1966,Shoeffer,Schöffer,Nicolas,,http://viaf.org/viaf/7396954,https://en.wikipedia.org/wiki/Nicolas_Sch%C3%B6ffer,,6-Sep-12,8-Jan-92,0,0,term1 term2 term3 term4 term5
+355,1993,Schultes,Schultes,Axel ,,http://viaf.org/viaf/45103640,https://de.wikipedia.org/wiki/Axel_Schultes,,11/17/1943,,0,0,term1 term2 term3 term4 term5
+356,1932,Schultze-Naumburg,Schultze-Naumburg,Paul,person,http://viaf.org/viaf/3269092,https://en.wikipedia.org/wiki/Paul_Schultze-Naumburg,,6/10/1869,5/19/1949,0,0,term1 term2 term3 term4 term5
+357,1982,Scogin,Scogin,Mack,person,http://viaf.org/viaf/271334203,https://en.wikipedia.org/wiki/Mack_Scogin_Merrill_Elam,,1984,,0,0,term1 term2 term3 term4 term5
+358,1906,Baillie Scott,Scott,Baillie,person,http://viaf.org/viaf/47554870,https://en.wikipedia.org/wiki/Baillie_Scott,,10/23/1865,2/10/1945,9999,,term1 term2 term3 term4 term5
+359,1972,Scully,Scully,Vincent,person,http://viaf.org/viaf/108398033,https://en.wikipedia.org/wiki/Vincent_Scully,,8/21/1920,11/30/2017,9999,,term1 term2 term3 term4 term5
+360,1970,Seifert,Seifert,Richard,person,http://viaf.org/viaf/96273574,https://en.wikipedia.org/wiki/Richard_Seifert,,11/25/1910,10/26/2001,0,0,term1 term2 term3 term4 term5
+361,2002,Sejima,Sejima,Kazuyo,person,http://viaf.org/viaf/92989241,https://en.wikipedia.org/wiki/Kazuyo_Sejima,,10/29/1956,,9999,,term1 term2 term3 term4 term5
+362,1905,Shaw,Shaw,George R. ,person,http://viaf.org/viaf/113267400,https://en.wikipedia.org/wiki/George_R._Shaw,,10/28/1848,1/15/1937,9999,,term1 term2 term3 term4 term5
+363,1945,Shchusev,Shchusev,Alexey,,http://viaf.org/viaf/5674151778225418130007,https://en.wikipedia.org/wiki/Alexey_Shchusev,,10/8/1873,5/24/1949,0,0,term1 term2 term3 term4 term5
+364,1966,,Shoeffer,,,,,,,,0,0,term1 term2 term3 term4 term5
+365,2002,Short/Ford,Short/Ford,,,http://viaf.org/viaf/127755783,,,,,0,0,term1 term2 term3 term4 term5
+366,2002,Simpson,Simpson,John,,http://viaf.org/viaf/7229426,https://en.wikipedia.org/wiki/John_Simpson_(architect),,11/9/1954,,0,0,term1 term2 term3 term4 term5
+367,2002,Simpson,Simpson,John William,,http://viaf.org/viaf/7229426,https://en.wikipedia.org/wiki/John_William_Simpson,,9/9/1858,3/30/1933,9999,,term1 term2 term3 term4 term5
+368,1953,Soleri,Soleri,Paolo,person,http://viaf.org/viaf/95771937,https://en.wikipedia.org/wiki/Paolo_Soleri,,6/21/1919,4/9/2013,9999,,term1 term2 term3 term4 term5
+369,1985,SOM,SOM,,,http://viaf.org/viaf/95771937,https://en.wikipedia.org/wiki/SOM_(architectural_firm),,1936,,0,0,term1 term2 term3 term4 term5
+370,1900,Sommaruga,Sommaruga,Giuseppe,,http://viaf.org/viaf/20893846,https://en.wikipedia.org/wiki/Giuseppe_Sommaruga,,1867,1917,0,0,term1 term2 term3 term4 term5
+371,1947,Soto,Soto,Jesús Rafael,,http://viaf.org/viaf/17691,https://en.wikipedia.org/wiki/Jes%C3%BAs_Rafael_Soto,,6/5/1923,1/17/2005,0,0,term1 term2 term3 term4 term5
+372,1986,Sottsass,Sottsass,Ettore,person,http://viaf.org/viaf/93197959,https://en.wikipedia.org/wiki/Ettore_Sottsass,,9/14/1917,12/31/2007,9999,,term1 term2 term3 term4 term5
+373,1937,SPEER,Speer,Albert,person,http://viaf.org/viaf/17343524,https://en.wikipedia.org/wiki/Albert_Speer,,3/19/1905,9/1/1981,9999,,term1 term2 term3 term4 term5
+374,2003,NOX,Spuybroek,Lars,,http://viaf.org/viaf/52768161,https://en.wikipedia.org/wiki/Lars_Spuybroek,,9/16/1959,,0,0,term1 term2 term3 term4 term5
+375,1924,Steiner,Steiner,Rudolf,person,http://viaf.org/viaf/12315364,https://en.wikipedia.org/wiki/Rudolf_Steiner,,02/25/1861,3/30/1925,9999,,term1 term2 term3 term4 term5
+376,1973,Stern,Stern,Robert A. M. ,person,http://viaf.org/viaf/79094876,https://en.wikipedia.org/wiki/Robert_A._M._Stern,,5/23/1939,,9999,,term1 term2 term3 term4 term5
+377,1985,Stern,Stern,Robert A. M. ,person,http://viaf.org/viaf/79094876,https://en.wikipedia.org/wiki/Robert_A._M._Stern,,5/23/1939,,9999,,term1 term2 term3 term4 term5
+378,1970,STIRLING,Stirling,James,person,http://viaf.org/viaf/64803040,https://en.wikipedia.org/wiki/James_Stirling_(architect),,4/22/1926,6/25/1992,9999,,term1 term2 term3 term4 term5
+379,1985,STIRLING,Stirling,James,person,http://viaf.org/viaf/64803040,https://en.wikipedia.org/wiki/James_Stirling_(architect),,4/22/1926,6/25/1992,9999,,term1 term2 term3 term4 term5
+380,1962,Stone,Stone,Edward Durell,person,http://viaf.org/viaf/92666920,https://en.wikipedia.org/wiki/Edward_Durell_Stone,,3/9/1902,8/6/1978,0,0,term1 term2 term3 term4 term5
+381,1990,Takamatsu,Takamatsu,Shin,person,http://viaf.org/viaf/79072499,https://en.wikipedia.org/wiki/Shin_Takamatsu,,8/5/1948,,0,0,term1 term2 term3 term4 term5
+382,2001,Takasaki,Takasaki,Masaharu,,http://viaf.org/viaf/30360828,,,1953,,0,0,term1 term2 term3 term4 term5
+383,1960,Tange,Tange,Kenzo,person,http://viaf.org/viaf/92699968,https://en.wikipedia.org/wiki/Kenz%C5%8D_Tange,,9/4/1913,3/22/2005,9999,,term1 term2 term3 term4 term5
+384,1972,Tange,Tange,Kenzo,person,http://viaf.org/viaf/92699968,https://en.wikipedia.org/wiki/Kenz%C5%8D_Tange,,9/4/1913,3/22/2005,9999,,term1 term2 term3 term4 term5
+385,2000,Tange,Tange,Kenzo,person,http://viaf.org/viaf/92699968,https://en.wikipedia.org/wiki/Kenz%C5%8D_Tange,,9/4/1913,3/22/2005,9999,,term1 term2 term3 term4 term5
+386,1919,Tatlin,Tatlin,Vladimir,person,http://viaf.org/viaf/34497985,https://en.wikipedia.org/wiki/Vladimir_Tatlin,,12/28/1885,5/31/1953,0,0,term1 term2 term3 term4 term5
+387,1910,Taut,Taut,Bruno,person,http://viaf.org/viaf/17257069,https://en.wikipedia.org/wiki/Bruno_Taut,,04/04/1880,12/24/1938,9999,,term1 term2 term3 term4 term5
+388,1929,Taut,Taut,Bruno,person,http://viaf.org/viaf/17257069,https://en.wikipedia.org/wiki/Bruno_Taut,,04/04/1880,12/24/1938,9999,,term1 term2 term3 term4 term5
+389,1938,Teague,Teague,Walter Dorwin,person,http://viaf.org/viaf/17108898,https://en.wikipedia.org/wiki/Walter_Dorwin_Teague,,12/18/1883,12/5/1960,9999,,term1 term2 term3 term4 term5
+390,1931,Terragni,Terragni,Giuseppe,person,http://viaf.org/viaf/40174669,https://en.wikipedia.org/wiki/Giuseppe_Terragni,,4/18/1904,7/19/1943,0,0,term1 term2 term3 term4 term5
+391,1982,Terry,Terry,Quinlan,person,http://viaf.org/viaf/116401742,https://en.wikipedia.org/wiki/Quinlan_Terry,,7/24/1937,,9999,,term1 term2 term3 term4 term5
+392,1912,TESSENOW,Tessenow,Heinrich,person,http://viaf.org/viaf/64800354,https://en.wikipedia.org/wiki/Heinrich_Tessenow,,4/7/1876,11/1/1950,0,0,term1 term2 term3 term4 term5
+393,1967,The Whites,The Whites,,,http://viaf.org/viaf/145912003,,,,,0,0,term1 term2 term3 term4 term5
+394,1993,Tigerman,Tigerman,Stanley,person,http://viaf.org/viaf/108825481,https://en.wikipedia.org/wiki/Stanley_Tigerman,,9/20/1930,6/3/2019,0,0,term1 term2 term3 term4 term5
+395,1937,Troost,Troost,Paul,person,http://viaf.org/viaf/8165119,https://en.wikipedia.org/wiki/Paul_Troost,,8/17/1878,1/21/1934,0,0,term1 term2 term3 term4 term5
+396,1992,Tschumi,Tschumi,Bernard,person,http://viaf.org/viaf/84184458,https://en.wikipedia.org/wiki/Bernard_Tschumi,,1/25/1944,,9999,,term1 term2 term3 term4 term5
+397,1948,Tufaroli,Tufaroli,Mario,person,,https://it.wikipedia.org/wiki/Mario_Tufaroli_Luciano,,-,-,0,0,term1 term2 term3 term4 term5
+398,1961,ULM,ULM,,,http://viaf.org/viaf/164037957,https://en.wikipedia.org/wiki/Ulm_School_of_Design,,1953,,0,0,term1 term2 term3 term4 term5
+399,1980,Ungers,Ungers,Oswald,person,http://viaf.org/viaf/49341123,https://en.wikipedia.org/wiki/Oswald_Mathias_Ungers,,7/12/1926,9/30/2007,0,0,term1 term2 term3 term4 term5
+400,1914,,Unwin,Raymond,,http://viaf.org/viaf/69044093,https://en.wikipedia.org/wiki/Raymond_Unwin,,11/2/1863,6/29/1940,0,0,term1 term2 term3 term4 term5
+401,1997,Ushida-Findlay,Ushida Findlay,,,http://viaf.org/viaf/130639030,https://en.wikipedia.org/wiki/Ushida_Findlay_Architects,,1986,,0,0,term1 term2 term3 term4 term5
+402,1958,Utzon,Utzon,Jørn,person,http://viaf.org/viaf/109411665,https://en.wikipedia.org/wiki/J%C3%B8rn_Utzon,,4/9/1918,11/29/2008,0,0,term1 term2 term3 term4 term5
+403,1970,Utzon,Utzon,Jørn,person,http://viaf.org/viaf/109411665,https://en.wikipedia.org/wiki/J%C3%B8rn_Utzon,,4/9/1918,11/29/2008,0,0,term1 term2 term3 term4 term5
+404,1963,Valle,Valle,Gino,person,http://viaf.org/viaf/96470811,https://it.wikipedia.org/wiki/Gino_Valle,,12/7/1923,9/30/2003,0,0,term1 term2 term3 term4 term5
+405,1950,Vallingby,Vallingby,,,http://viaf.org/viaf/132708938,https://en.wikipedia.org/wiki/V%C3%A4llingby,,,,0,0,term1 term2 term3 term4 term5
+406,1928,Van Alen,Van Alen,William,person,http://viaf.org/viaf/64813992,https://en.wikipedia.org/wiki/William_Van_Alen,,8/10/1883,5/24/1954,0,0,term1 term2 term3 term4 term5
+407,1908,Van de Velde,Van de Velde,Henry,person,http://viaf.org/viaf/68944453,https://en.wikipedia.org/wiki/Henry_van_de_Velde,,4/3/1863,10/15/1957,0,0,term1 term2 term3 term4 term5
+408,1925,Van Doesburg,Van Doesburg,Theo,person,http://viaf.org/viaf/308859473,https://en.wikipedia.org/wiki/Theo_van_Doesburg,,8/30/1883,3/7/1931,0,0,term1 term2 term3 term4 term5
+409,1962,Van.Eyck,van Eyck,Aldo,person,http://viaf.org/viaf/185217848,https://en.wikipedia.org/wiki/Aldo_van_Eyck,,3/16/1918,1/14/1999,0,0,term1 term2 term3 term4 term5
+410,1990,Vandenhove,Vandenhove,Charles,person,http://viaf.org/viaf/20520026,https://en.wikipedia.org/wiki/Charles_Vandenhove,,7/3/1927,1/22/2019,0,0,term1 term2 term3 term4 term5
+411,1968,VENTURI,Venturi,Robert,person,http://viaf.org/viaf/108427049,https://en.wikipedia.org/wiki/Robert_Venturi,,6/25/1925,9/18/2018,9999,,term1 term2 term3 term4 term5
+412,1923,Vesnin,Vesnin,Viktor,person,http://viaf.org/viaf/23605640,https://en.wikipedia.org/wiki/Viktor_Vesnin,,04/09/1882,9/17/1950,0,0,term1 term2 term3 term4 term5
+413,2001,Vinoly,Vinoly,Rafael,person,http://viaf.org/viaf/25542313,https://en.wikipedia.org/wiki/Rafael_Vi%C3%B1oly,,6/1/1944,3/2/2023,0,0,term1 term2 term3 term4 term5
+414,1944,Vopra,Vopra,,,,,,,,0,0,term1 term2 term3 term4 term5
+415,1907,Voysey,Voysey,C.F.A.,person,http://viaf.org/viaf/13110832,https://en.wikipedia.org/wiki/C._F._A._Voysey,,5/28/1857,2/12/1941,9999,,term1 term2 term3 term4 term5
+416,1901,WAGNER,Wagner,Otto,person,http://viaf.org/viaf/39439361,https://en.wikipedia.org/wiki/Otto_Wagner,,7/13/1841,4/11/1918,0,0,term1 term2 term3 term4 term5
+417,1916,Webb,Webb,Philip,person,http://viaf.org/viaf/15634787,https://en.wikipedia.org/wiki/Philip_Webb,,1/12/1831,4/17/1915,0,0,term1 term2 term3 term4 term5
+418,1904,WELWYN,Welwyn,,,,https://en.wikipedia.org/wiki/Welwyn,,,,0,0,term1 term2 term3 term4 term5
+419,1993,Wilford,Wilford,Michael ,person,http://viaf.org/viaf/112845561,https://en.wikipedia.org/wiki/Michael_Wilford,,9/9/1938,3/10/2023,0,0,term1 term2 term3 term4 term5
+420,1908,Wood ,Wood ,Cecil,person,http://viaf.org/viaf/96298784,https://en.wikipedia.org/wiki/Cecil_Wood_(architect),,6/6/1878,11/28/1947,0,0,term1 term2 term3 term4 term5
+421,1903,WRIGHT,Wright,Frank Lloyd,person,http://viaf.org/viaf/27148716,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright,,6/8/1867,4/9/1959,9999,,term1 term2 term3 term4 term5
+422,1932,WRIGHT,Wright,Frank Lloyd,person,http://viaf.org/viaf/27148716,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright,,6/8/1867,4/9/1959,9999,,term1 term2 term3 term4 term5
+423,1938,WRIGHT,Wright,Frank Lloyd,person,http://viaf.org/viaf/27148716,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright,,6/8/1867,4/9/1959,9999,,term1 term2 term3 term4 term5
+424,1953,WRIGHT,Wright,Frank Lloyd,person,http://viaf.org/viaf/27148716,https://en.wikipedia.org/wiki/Frank_Lloyd_Wright,,6/8/1867,4/9/1959,9999,,term1 term2 term3 term4 term5
+425,1967,Yamasaki,Yamasaki,Minoru,person,http://viaf.org/viaf/79409150,https://en.wikipedia.org/wiki/Minoru_Yamasaki,,12/1/1912,2/6/1986,0,0,term1 term2 term3 term4 term5
+426,2001,YEANG,Yeang,Ken,person,http://viaf.org/viaf/73922661,https://en.wikipedia.org/wiki/Ken_Yeang,,10/6/1948,,9999,4,term1 term2 term3 term4 term5
+427,1954,Zevi,Zevi,Bruno,person,http://viaf.org/viaf/108404731,https://en.wikipedia.org/wiki/Bruno_Zevi,,1/22/1918,1/9/2000,9999,,term1 term2 term3 term4 term5
+428,1944,Zholtovsky,Zholtovsky,Ivan,person,http://viaf.org/viaf/23837172,https://en.wikipedia.org/wiki/Ivan_Zholtovsky,,11/27/1867,7/16/1959,0,0,term1 term2 term3 term4 term5
+429,2002,Zumthor,Zumthor,Peter,person,http://viaf.org/viaf/19852324,https://en.wikipedia.org/wiki/Peter_Zumthor,,4/26/1943,,9999,,term1 term2 term3 term4 term5
+430,1961,Johansen,Johansen,John M.,person,http://viaf.org/viaf/113523673,https://en.wikipedia.org/wiki/John_M._Johansen,,6/29/1916,10/26/2012,0,0,term1 term2 term3 term4 term5
+,,,Moore,Charles Herbert,,http://viaf.org/viaf/50154315,https://en.wikipedia.org/wiki/Charles_Herbert_Moore,,4/10/1840,2/15/1930,9999,,term1 term2 term3 term4 term5
+431,1914,AMSTERDAM SCHOOL,AMSTERDAM SCHOOL,,,,,,,,,,
+432,1903,cite industrielle,cite industrielle,,,,,,,,,,
+433,1920,DE-STIJL,DE-STIJL,,,,,,,,,,
+434,1900,ART NOUVEAU,ART NOUVEAU,,,,,,,,,,
+435,1903,NATIONAL ROMANTICISM,NATIONAL ROMANTICISM,,,,,,,,,,
+436,1922,EXPRESSIONISM,EXPRESSIONISM,,,,,,,,,,
+437,1924,BAUHAUS,BAUHAUS,,,,,,,,,,
+438,1923,PURISM,PURISM,,,,,,,,,,
+439,1924,CONSTRUCTIVISM,CONSTRUCTIVISM,,,,,,,,,,
+440,1924,Communist,Communist,,,,,,,,,,
+441,1951,ORGANIC,ORGANIC,,,,,,,,,,
+442,1956,CHANDIGARH,CHANDIGARH,,,,,,,,,,
+443,1950,BRUTALISM,BRUTALISM,,,,,,,,,,
+444,1951,Unite,Unite,,,,,,,,,,
+445,1957,CIAM-Team x,CIAM-Team x,,,,,,,,,,
+446,1971,HIGH TECH,HIGH TECH,,,,,,,,,,
+447,1971,Cardboard Architecture,Cardboard Architecture,,,,,,,,,,
+448,1968,STRUCTUALISM,STRUCTUALISM,,,,,,,,,,
+449,1978,SITE,SITE,,,,,,,,,,
+450,1974,Complexity & Contradiction,Complexity & Contradiction,,,,,,,,,,
+451,1970,heterogeneity,heterogeneity,,,,,,,,,,
+452,1969,Semiology,Semiology,,,,,,,,,,
+453,1978,double coding,double coding,,,,,,,,,,
+454,1976,Language of PostModernism,Language of PostModernism,,,,,,,,,,
+455,2002,Cosmogenic,Cosmogenic,,,,,,,,,,
+456,2000,Landform,Landform,,,,,,,,,,
+457,1996,Fractals,Fractals,,,,,,,,,,
+458,1993,BIOMORPHIC,BIOMORPHIC,,,,,,,,,,
+459,1997,Bilbaoism,Bilbaoism,,,,,,,,,,
+460,1993,event,event,,,,,,,,,,
+461,1996,Complexity Sciences,Complexity Sciences,,,,,,,,,,
+462,1996,Morphosis,Morphosis,,,,,,,,,,
+463,1997,generic arch,generic arch,,,,,,,,,,
+464,1978,Community A,Community A,,,,,,,,,,
+465,1972,Advocacy,Advocacy,,,,,,,,,,
+466,1980,OMA,OMA,,,,,,,,,,
+467,1975,PARTICIPATION IN DESIGN,PARTICIPATION IN DESIGN,,,,,,,,,,
+468,1975,Post-Modernism,Post-Modernism,,,,,,,,,,
+469,1972,Pluralist,Pluralist,,,,,,,,,,
+470,1978,Coop.H,Coop.H,,,,,,,,,,
+471,1979,Mallification USA,Mallification USA,,,,,,,,,,
+472,1982,Disney Po-Mo,Disney Po-Mo,,,,,,,,,,
+473,1979,Edge Cities,Edge Cities,,,,,,,,,,
+474,1980,Super Sprawl,Super Sprawl,,,,,,,,,,
+475,1989,immiseration of 2 billion,immiseration of 2 billion,,,,,,,,,,
+476,1993,Ozone Hole,Ozone Hole,,,,,,,,,,
+477,1990,3rd World Ghetto,3rd World Ghetto,,,,,,,,,,
+478,2000,Drug Culture,Drug Culture,,,,,,,,,,
+479,1994,Urban Task Force,Urban Task Force,,,,,,,,,,
+480,2000,Town Celebration,Town Celebration,,,,,,,,,,
+481,1998,CORPORATE MODERNISM,CORPORATE MODERNISM,,,,,,,,,,
+482,1963,academic,academic,,,,,,,,,,
+483,1965,EXPOS,EXPOS,,,,,,,,,,
+484,1959,TAC,TAC,,,,,,,,,,
+485,1969,bourgeoisie,bourgeoisie,,,,,,,,,,
+486,1957,SOM,SOM,,,,,,,,,,
+487,1965,BUREAUCRATIC NEO-INTERNATIONAL STYLE,BUREAUCRATIC NEO-INTERNATIONAL STYLE,,,,,,,,,,
+488,1971,PRAGMATIC,PRAGMATIC,,,,,,,,,,
+489,1967,MEGAPOLIS,MEGAPOLIS,,,,,,,,,,
+490,1941,NATIONALIST,NATIONALIST,,,,,,,,,,
+491,1942,AUTOBAHNEN,AUTOBAHNEN,,,,,,,,,,
+492,1940,MONUMENTAL,MONUMENTAL,,,,,,,,,,
+493,1940,FASCIST,FASCIST,,,,,,,,,,
+494,1934,Nazi,Nazi,,,,,,,,,,
+495,1935,Blood & Soil,Blood & Soil,,,,,,,,,,
+496,1937,HISTORICAL REVIVALIST,HISTORICAL REVIVALIST,,,,,,,,,,
+497,1938,REACTIONARY MODERNISM,REACTIONARY MODERNISM,,,,,,,,,,
+498,1940,Stripped Classicism,Stripped Classicism,,,,,,,,,,
+499,1933,RACIST,RACIST,,,,,,,,,,
+500,1939,CAPITALIST & COMMUNIST TRADITION,CAPITALIST & COMMUNIST TRADITION,,,,,,,,,,
+501,1920,Contemporary City Plan Voisin,Contemporary City Plan Voisin,,,,,,,,,,
+502,1907,RATIONALISM,RATIONALISM,,,,,,,,,,
+503,1917,engineering,engineering,,,,,,,,,,
+504,1924,Productivism,Productivism,,,,,,,,,,
+505,1925,FUNCTIONALISM,FUNCTIONALISM,,,,,,,,,,
+506,1932,INDUSTRIAL DESIGN,INDUSTRIAL DESIGN,,,,,,,,,,
+507,1932,Dymaxian,Dymaxian,,,,,,,,,,
+508,1935,CIAM,CIAM,,,,,,,,,,
+509,1940,large structure,large structure,,,,,,,,,,
+510,1930,HEROIC PERIOD,HEROIC PERIOD,,,,,,,,,,
+511,1923,BAUHAUS,BAUHAUS,,,,,,,,,,
+512,1928,SOCIAL-IDEALIST,SOCIAL-IDEALIST,,,,,,,,,,
+513,1939,emigration,emigration,,,,,,,,,,
+514,1950,space frame,space frame,,,,,,,,,,
+515,1951,geodesic Candela,geodesic Candela,,,,,,,,,,
+516,1952,hyperbolic-paraboloids,hyperbolic-paraboloids,,,,,,,,,,
+517,1962,Centre,Centre,,,,,,,,,,
+518,1963,Parametric,Parametric,,,,,,,,,,
+519,1977,Pompidou,Pompidou,,,,,,,,,,
+520,1981,neutrality,neutrality,,,,,,,,,,
+521,1990,Lightweight,Lightweight,,,,,,,,,,
+522,1986,NEW MODERNISM,NEW MODERNISM,,,,,,,,,,
+523,1988,interactive,interactive,,,,,,,,,,
+524,1987,Organic-tech,Organic-tech,,,,,,,,,,
+525,2000,super modernism,super modernism,,,,,,,,,,
+526,1998,Future Systems,Future Systems,,,,,,,,,,
+527,1996,Eco-Tech,Eco-Tech,,,,,,,,,,
+528,1998,MINIMALISM,MINIMALISM,,,,,,,,,,
+529,2001,ecological design,ecological design,,,,,,,,,,
+530,2003,KPF,KPF,,,,,,,,,,
+531,1992,Holocaust-museums,Holocaust-museums,,,,,,,,,,
+532,1985,POST MODERN,POST MODERN,,,,,,,,,,
+533,1990,Critical Regionalism,Critical Regionalism,,,,,,,,,,
+534,1986,Post-Modern Classicism,Post-Modern Classicism,,,,,,,,,,
+535,1984,MODERN CLASSICISM,MODERN CLASSICISM,,,,,,,,,,
+536,1986,CLASSICAL REVIVALISM,CLASSICAL REVIVALISM,,,,,,,,,,
+537,1993,NEW URBANISM,NEW URBANISM,,,,,,,,,,
+538,1979,Seaside,Seaside,,,,,,,,,,
+539,1980,The City,The City,,,,,,,,,,
+540,1977,Rationalism,Rationalism,,,,,,,,,,
+541,1958,LCC,LCC,,,,,,,,,,
+542,1952,INTERNATIONAL STYLE,INTERNATIONAL STYLE,,,,,,,,,,
+543,1948,LCC,LCC,,,,,,,,,,
+544,1953,Historicism,Historicism,,,,,,,,,,
+545,1977,HOK,HOK,,,,,,,,,,
+546,1974,YRM,YRM,,,,,,,,,,
+547,1969,LINCOLN CENTRE,LINCOLN CENTRE,,,,,,,,,,
+548,1918,New Delhi,New Delhi,,,,,,,,,,
+549,1902,MONUMENTAL CLASSICISM,MONUMENTAL CLASSICISM,,,,,,,,,,
+550,1923,BEAUX ARTS,BEAUX ARTS,,,,,,,,,,
+551,1923,skyscraper moderne,skyscraper moderne,,,,,,,,,,
+552,1922,classical,classical,,,,,,,,,,
+553,1922,ART DECO,ART DECO,,,,,,,,,,
+554,1913,FUTURISM,FUTURISM,,,,,,,,,,
+555,1920,UTOPIAN,UTOPIAN,,,,,,,,,,
+556,1932,streamline,streamline,,,,,,,,,,
+557,1960,Neo-Liberty,Neo-Liberty,,,,,,,,,,
+558,1966,NEO-EXPRESSIONISM,NEO-EXPRESSIONISM,,,,,,,,,,
+559,1964,blow-up,blow-up,,,,,,,,,,
+560,1964,plug in,plug in,,,,,,,,,,
+561,1961,POP,POP,,,,,,,,,,
+562,1958,Fantastic,Fantastic,,,,,,,,,,
+563,1966,ARCHIGRAM,ARCHIGRAM,,,,,,,,,,
+564,1962,METABOLISM,METABOLISM,,,,,,,,,,
+565,1962,squatters,squatters,,,,,,,,,,
+566,1967,UTOPIE,UTOPIE,,,,,,,,,,
+567,1968,situationists,situationists,,,,,,,,,,
+568,1967,Student-Activist,Student-Activist,,,,,,,,,,
+569,1968,Drop City,Drop City,,,,,,,,,,
+570,1985,decentering,decentering,,,,,,,,,,
+571,1985,Post-Humanism,Post-Humanism,,,,,,,,,,
+572,1986,DECONSTRUCTION,DECONSTRUCTION,,,,,,,,,,
+573,1980,SITE,SITE,,,,,,,,,,
+574,1999,Self-organizing systems,Self-organizing systems,,,,,,,,,,
+575,2001,fluidity,fluidity,,,,,,,,,,
+576,2002,UN Studio,UN Studio,,,,,,,,,,
+577,1995,ECSTATIC,ECSTATIC,,,,,,,,,,
+578,1998,Ecstasy,Ecstasy,,,,,,,,,,
+579,1999,world village,world village,,,,,,,,,,
+580,1999,INTERNET,INTERNET,,,,,,,,,,
+581,2000,MILLENNIUM,MILLENNIUM,,,,,,,,,,
+582,2000,Architecture,Architecture,,,,,,,,,,
+583,2000,Sustainablility Movement,Sustainability Movement,,,,,,,,,,
+584,1996,NATURAL CAPITALISM,NATURAL CAPITALISM,,,,,,,,,,
+585,1990,leisure culture,leisure culture,,,,,,,,,,
+586,1992,Computer Design,Computer Design,,,,,,,,,,
+587,1992,Entertainment Architecture,Entertainment Architecture,,,,,,,,,,
+588,1986,CAD,CAD,,,,,,,,,,
+589,1990,instant city,instant city,,,,,,,,,,
+590,1986,AGA KHAN AWARDS,AGA KHAN AWARDS,,,,,,,,,,
+591,1986,Regionalism,Regionalism,,,,,,,,,,
+592,1987,Heteropolis,Heteropolis,,,,,,,,,,
+593,1980,Exopolis,Exopolis,,,,,,,,,,
+594,1980,Los Angeles,Los Angeles,,,,,,,,,,
+595,1980,GLOBALISATION,GLOBALISATION,,,,,,,,,,
+596,1972,New Towns Marks 3,New Towns Marks 3,,,,,,,,,,
+597,1972,Port Grimaud,Port Grimaud,,,,,,,,,,
+598,1971,botch,botch,,,,,,,,,,
+599,1974,Asian Miracle,Asian Miracle,,,,,,,,,,
+600,1970,Environ Services,Environ Services,,,,,,,,,,
+601,1969,Gizmology,Gizmology,,,,,,,,,,
+602,1967,Catalogue,Catalogue,,,,,,,,,,
+603,1968,Architecture,Architecture,,,,,,,,,,
+604,1965,New Towns Marks 2,New Towns Marks 2,,,,,,,,,,
+605,1965,MOBILE,MOBILE,,,,,,,,,,
+606,1966,Las Vegas,Las Vegas,,,,,,,,,,
+607,1968,synthetic materials,synthetic materials,,,,,,,,,,
+608,1963,appliance,appliance,,,,,,,,,,
+609,1963,ranchhouse,ranchhouse,,,,,,,,,,
+610,1963,gadget,gadget,,,,,,,,,,
+611,1963,caravan,caravan,,,,,,,,,,
+612,1964,credit card,credit card,,,,,,,,,,
+613,1959,techbuilt,techbuilt,,,,,,,,,,
+614,1959,Do-it-yourself,Do-it-yourself,,,,,,,,,,
+615,1955,CONSUMER MODERN,CONSUMER MODERN,,,,,,,,,,
+616,1958,Russian Pre-fab,Russian Pre-fab,,,,,,,,,,
+617,1960,transistors,transistors,,,,,,,,,,
+618,1955,air conditioning packs,air conditioning packs,,,,,,,,,,
+619,1947,HHFA,HHFA,,,,,,,,,,
+620,1947,PHA,PHA,,,,,,,,,,
+621,1948,Hetfordshire Schools,Hetfordshire Schools,,,,,,,,,,
+622,1948,WAR MINIMAL,WAR MINIMAL,,,,,,,,,,
+623,1947,New Towns Marks 1,New Towns Marks 1,,,,,,,,,,
+624,1939,HYBRID,HYBRID,,,,,,,,,,
+625,1940,USHA,USHA,,,,,,,,,,
+626,1940,Broadace City,Broadace City,,,,,,,,,,
+627,1942,defense housing,defense housing,,,,,,,,,,
+628,1942,PLASTICS,PLASTICS,,,,,,,,,,
+629,1939,TCPA,TCPA,,,,,,,,,,
+630,1939,greenbelt,greenbelt,,,,,,,,,,
+631,1937,washing machines,washing machines,,,,,,,,,,
+632,1939,jets,jets,,,,,,,,,,
+633,1935,TV,TV,,,,,,,,,,
+634,1931,skyscraper,skyscraper,,,,,,,,,,
+635,1935,TRADITIONAL,TRADITIONAL,,,,,,,,,,
+636,1935,Holc,Holc,,,,,,,,,,
+637,1935,barlow report,barlow report,,,,,,,,,,
+638,1934,REVIVAL,REVIVAL,,,,,,,,,,
+639,1930,Linear Cities,Linear Cities,,,,,,,,,,
+640,1930,Communal Housing,Communal Housing,,,,,,,,,,
+641,1928,WHEATLEY ACT,WHEATLEY ACT,,,,,,,,,,
+642,1921,FOLK,FOLK,,,,,,,,,,
+643,1922,Vernacular,Vernacular,,,,,,,,,,
+644,1922,NEP Eclectic,NEP Eclectic,,,,,,,,,,
+645,1923,automobile,automobile,,,,,,,,,,
+646,1927,radio,radio,,,,,,,,,,
+647,1903,Bedford Park,Bedford Park,,,,,,,,,,
+648,1906,LCCarchitects dept.,LCCarchitects dept.,,,,,,,,,,
+649,1905,GARDEN CITIES,GARDEN CITIES,,,,,,,,,,

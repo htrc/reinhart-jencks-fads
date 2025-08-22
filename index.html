@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://use.typekit.net/idf2nxy.css">
   <title>Interactive Jencks Diagram CMR edits</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
@@ -272,6 +273,9 @@
     }
 
     #svgContainer svg text {
+      font-family: "abadi-condensed", sans-serif;
+      font-weight: 700;
+      font-style: normal;
       opacity: 0;
       transition: opacity 0.25s;
     }
@@ -766,6 +770,8 @@
       const dimmer = d3.select("#svgContainer svg #dimmer");
       if (dimmer.node())
         dimmer.transition().duration(500).attr("opacity", 0);
+      // reset highlight
+      updateStuckHighlights();
     }
 
 
@@ -822,11 +828,16 @@
         .selectAll("g[id^='i']")
         .each(function () {
           const g = d3.select(this);
-          const year = +g.attr("data-year");
-          const isOutOfRange = year < minYear || year > maxYear;
-          g.selectAll("text")
-            .classed("author-inactive", isOutOfRange)
-            .attr("opacity", isOutOfRange ? 1 : 0);
+          if (!g.attr("data-year")) {
+            // remove author-inactive from class
+            g.selectAll("text").classed("author-inactive", false);
+          } else{
+            const year = +g.attr("data-year");
+            const isOutOfRange = year < minYear || year > maxYear;
+            g.selectAll("text")
+              .classed("author-inactive", isOutOfRange)
+              .attr("opacity", isOutOfRange ? 1 : 0);
+          } 
         });
     }
 
@@ -859,25 +870,37 @@
           const g = this.closest("g[id^='i']");
           const itemNo = g.id.slice(1).split("-")[0];
           stuckItemNos = [itemNo];
+          // Handle for non author clicked event
+          console.log('Clicked:', itemNo, this.textContent);          
+          //const d = csvData[itemNo];
+          //if (d) {
           updateStuckHighlights();
-          console.log('Clicked:', itemNo, this.textContent);
           showAuthorDetails(itemNo, event);
+          //}
         });
     }
 
     // Sticky highlight everywhere needed with dimmer
-    function updateStuckHighlights() {
+    async function updateStuckHighlights() {
       const texts = document.querySelectorAll("#svgContainer svg g[id^='i'] text");
       let count = 0;
-      texts.forEach(text => {
+      await texts.forEach(text => {
         const g = text.closest("g[id^='i']");
         if (!g) return;
         const itemNo = String(g.id.slice(1).split("-")[0]);
+        const d = csvData[itemNo];
         if (stuckItemNos.includes(itemNo)) {
           text.classList.add("highlight");
           text.setAttribute("opacity", 1);
           count++;
-        } else {
+        }else if (!d){
+          console.log("Non author item",g.id, "itemNo:", itemNo, "not in csvData");
+          text.classList.remove("highlight");
+          text.classList.remove("author-hover");
+          text.classList.remove("author-inactive"); // <-- Clear inactive author filter
+          text.setAttribute("opacity", 0);
+        } 
+        else {
           text.classList.remove("highlight");
           text.classList.remove("author-hover");
           text.setAttribute("opacity", 0);
@@ -889,10 +912,14 @@
       // Dimmer: fade in if anything is stuck, out if nothing
       const dimmerRect = d3.select("#svgContainer svg #dimmer");
       if (stuckItemNos.length) {
+        console.log("dim enable")
         dimmerRect.transition().duration(500).attr("opacity", 0.5);
+        dimmerRect.attr("display", "block");
       } else {
         dimmerRect.transition().duration(500).attr("opacity", 0);
       }
+
+      callTimeSliderEvent();
     }
 
     function showSearchAuthorDetails(itemNo) {
@@ -987,6 +1014,16 @@
       box.style.left = rect.right + window.scrollX + 10 + "px";
       box.style.top = rect.top + window.scrollY + "px";
       box.style.display = "block";
+
+      // Adjust the top position if the popup goes beyond the viewport
+      const popupRect = box.getBoundingClientRect();
+      if (popupRect.bottom > window.innerHeight) {
+        // Move up so it fits relative to the content size, with a 20px margin from bottom
+        box.style.top = (window.innerHeight - box.offsetHeight - 20) + "px";
+      }
+      //console.log(window.innerHeight)
+      //console.log(popupRect.bottom)
+      //console.log(box.offsetHeight)      
     }
 
     // Load & inject SVG
@@ -1087,7 +1124,7 @@
               [width, height],
             ])
             .on("zoom", zoomed);
-          
+
           /*
           function (event) {
               svg.selectChild("image").attr("transform", event.transform);
@@ -1179,7 +1216,7 @@
         .attr("y", Y + 35)
         .text(d => d);
       // handles
-      const drag = which => d3.drag().on("drag", e => {
+      const drag = which => d3.drag().on("drag", async e => {
         const x = Math.max(scale(MIN), Math.min(e.x, scale(MAX)));
         if (which === "x1") {
           leftHandle.attr("cx", x);
@@ -1192,8 +1229,7 @@
           rightLabel.attr("x", x)
             .text(Math.round(scale.invert(x)));
         }
-        // updateAuthorTextVisibility(
-        updateAuthorsByYear(
+        await updateAuthorsByYear(
           Math.round(scale.invert(leftHandle.attr("cx"))),
           Math.round(scale.invert(rightHandle.attr("cx")))
         );
@@ -1243,6 +1279,22 @@
       });
     }
 
+    async function callTimeSliderEvent() {
+      const sliderSvg = d3.select("#year-slider svg");
+      const leftHandle = sliderSvg.select("circle").node();
+      const rightHandle = sliderSvg.selectAll("circle").nodes()[1];
+
+      // trigger drag event
+      if (leftHandle && rightHandle) {
+        // Get current slider years
+        const scale = d3.scaleLinear()
+          .domain([1890, 2010])
+          .range([25, 625]);
+        const minYear = Math.round(scale.invert(leftHandle.getAttribute("cx")));
+        const maxYear = Math.round(scale.invert(rightHandle.getAttribute("cx")));
+        await updateAuthorsByYear(minYear, maxYear);
+      }
+    }
 
     // Show matching suggestions below the input
     function showSuggestions() {
@@ -1273,6 +1325,24 @@
       } else {
         document.getElementById("author-search-details").style.display = "none";
       }
+
+      // highlight text based on the itemNos debugging error, not needed if updateStuckHighlights is working
+      /*
+      itemNos.forEach(itemNo => {
+        // search #svgContainer svg g element which id contains itemNo where itemNo is part of i{itemNo}
+        const g = document.querySelector(`#svgContainer svg g[id^='i${itemNo}']`);        
+        console.log("Found g element:", g);
+        if (g) {
+          const textElement = g.querySelector("text");
+          if (textElement) {
+            textElement.classList.add("highlight", "author-hover");
+            textElement.setAttribute("opacity", 1);
+            console.log("Found text element:", textElement);
+          }
+        }
+      });
+      */
+
       console.log("HighlightText stuckItemNos:", stuckItemNos);
     }
 
@@ -1327,17 +1397,27 @@
     };
 
     // Open/close dropdown on button click
-    document.addEventListener("click", e => {
+    document.addEventListener("click", async e => {
       const box = document.getElementById("author-details");
       // Only hide if the click is NOT inside the popup or a name label in SVG
       if (!box.contains(e.target) && !(e.target.tagName === "text" && e.target.closest("svg"))) {
         box.style.display = "none";
         // --- New: Unstick authors and fade out dimmer ---
         stuckItemNos = [];
-        updateStuckHighlights();
+        // clear highlights only when the window is dimmed
+        if (d3.select("#svgContainer svg #dimmer").attr("opacity") == 0.5) {
+          await updateStuckHighlights();
+        }
         // Optionally clear the search
         // document.getElementById("search").value = "";
         // document.getElementById("suggestions").style.display = "none";
+
+        // clear stuck inactive author
+        //let texts2 = document.querySelectorAll("#svgContainer svg g[id^='i'] text");
+        //let count = 0;
+        //await texts2.forEach(text => {
+        //      text.classList.remove("author-inactive")
+        //});
       }
     });
 

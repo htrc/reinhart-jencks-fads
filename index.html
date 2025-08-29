@@ -829,6 +829,7 @@
         .each(function () {
           const g = d3.select(this);
           if (!g.attr("data-year")) {
+            // if its not an author label
             // remove author-inactive from class
             g.selectAll("text").classed("author-inactive", false);
           } else{

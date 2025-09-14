@@ -82,10 +82,11 @@
 
     /* 4) Controls row */
     .controls-row {
-      display: flex;
+      display: grid;
       align-items: center;
       justify-content: space-between;
       padding: 6px 12px;
+      grid-template-columns: repeat(12, 1fr);
     }
 
     /* Keyword filter and suggestions*/
@@ -93,6 +94,9 @@
       position: relative;
       width: 300px;
       z-index: 10;
+      justify-content: left;
+      display: grid;
+      grid-column: span 2;
     }
 
     #keyword-filter label {
@@ -110,6 +114,7 @@
       border: 2px solid var(--maincolor);
       color: var(--maincolor);
       font-size: 12px;
+      border-radius: 7px;
     }
 
     #keyword-filter button {
@@ -204,11 +209,12 @@
     /* Date Slider */
     .slider-wrapper {
       flex: 1;
-      display: flex;
+      display: grid;
       justify-content: center;
       position: relative;
       margin: 0 12px;
       z-index: 5;
+      grid-column: 3/11;
     }
 
     .slider-svg {
@@ -387,7 +393,9 @@
     /* Filter menu styling */
     .filter-dropdown {
       position: relative;
-      display: inline-block;
+      display: grid;
+      justify-content: left;
+      grid-column: 12/13;
     }
 
     .filter-btn {
@@ -603,6 +611,15 @@
     .static-author-popup {
       z-index: 101 !important;
     }
+
+    /* provide CSS div 2 and div 8 spanning style */
+    .div-2 {
+      grid-column: span 2;
+    }
+
+    .div-8 {
+      grid-column: span 8;
+    }
   </style>
 </head>
 
@@ -635,19 +652,19 @@
           <input id="search" type="text" placeholder="Author" onkeyup="showSuggestions()" />
           <button onclick="highlightText()">Search</button>
           <button onclick="resetPage()">Reset</button>
+          <!-- reset/center zoom button -->
+          <button id="reset-zoom" onclick="">Reset Zoom</button>
         </div>
         <div id="suggestions" class="suggestions"></div>
         <div id="popupMatch" class="popup-match"></div>
         <div id="author-search-details" class="author-popup static-author-popup" style="display:none;"></div>
       </div>
-      <!-- reset/center zoom button -->
-      <div id="keyword-filter" style="width:75px;">
-        <button id="reset-zoom" onclick="">Reset Zoom</button>
-      </div>
-      <!-- Slider -->
+
+      <!-- Date Slider -->
       <div class="slider-wrapper">
         <div id="year-slider"></div>
       </div>
+      
       <!-- Other Filters -->
       <div class="filter-dropdown">
         <button id="filter-dropdown-btn" class="filter-btn">
@@ -832,13 +849,13 @@
             // if its not an author label
             // remove author-inactive from class
             g.selectAll("text").classed("author-inactive", false);
-          } else{
+          } else {
             const year = +g.attr("data-year");
             const isOutOfRange = year < minYear || year > maxYear;
             g.selectAll("text")
               .classed("author-inactive", isOutOfRange)
               .attr("opacity", isOutOfRange ? 1 : 0);
-          } 
+          }
         });
     }
 
@@ -872,7 +889,7 @@
           const itemNo = g.id.slice(1).split("-")[0];
           stuckItemNos = [itemNo];
           // Handle for non author clicked event
-          console.log('Clicked:', itemNo, this.textContent);          
+          console.log('Clicked:', itemNo, this.textContent);
           //const d = csvData[itemNo];
           //if (d) {
           updateStuckHighlights();
@@ -894,13 +911,13 @@
           text.classList.add("highlight");
           text.setAttribute("opacity", 1);
           count++;
-        }else if (!d){
-          console.log("Non author item",g.id, "itemNo:", itemNo, "not in csvData");
+        } else if (!d) {
+          console.log("Non author item", g.id, "itemNo:", itemNo, "not in csvData");
           text.classList.remove("highlight");
           text.classList.remove("author-hover");
           text.classList.remove("author-inactive"); // <-- Clear inactive author filter
           text.setAttribute("opacity", 0);
-        } 
+        }
         else {
           text.classList.remove("highlight");
           text.classList.remove("author-hover");
@@ -1408,6 +1425,8 @@
         // clear highlights only when the window is dimmed
         if (d3.select("#svgContainer svg #dimmer").attr("opacity") == 0.5) {
           await updateStuckHighlights();
+          // reset the search box and highlights
+          resetPage();          
         }
         // Optionally clear the search
         // document.getElementById("search").value = "";
@@ -1418,7 +1437,7 @@
         //let count = 0;
         //await texts2.forEach(text => {
         //      text.classList.remove("author-inactive")
-        //});
+        //});        
       }
     });
 
